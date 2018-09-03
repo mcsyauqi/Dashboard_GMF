@@ -967,7 +967,7 @@
 		    removeFunctions(options);
 
 		    paramObj = {
-		        name: (options.title && options.title.text) || 'Chart title',
+		        name: (options.title && options.title.text) || '',
 		        options: options,
 		        settings: {
 		            constructor: 'Chart',

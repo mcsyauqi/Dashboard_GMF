@@ -11,6 +11,9 @@
 	<script src="assets/js/code/highcharts.js"></script>
 	<script src="assets/js/code/modules/data.js"></script>
 	<script src="assets/js/code/modules/drilldown.js"></script>
+	<script src="assets/js/code/modules/funnel.js"></script>
+	<script src="assets/js/code/modules/export-data.js"></script>
+	<script src="assets/js/code/modules/exporting.js"></script>
 </head>
 <body>
 	<!-- Main Header -->
@@ -52,7 +55,7 @@
 									</div>
 								</li>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
+								<a class="dropdown-item" href="<?php echo site_url('Profile');?>"><i class="ti-user"></i> My Profile</a>
 								<a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="<?php echo base_url('Logout')?>"><i class="fa fa-power-off"></i> Logout</a>
@@ -102,7 +105,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="Administrator">
+						<a href="<?php echo site_url('Administrator');?>">
 							<i class="la la-expeditedssl"></i>
 							<p>Administrator</p>
 						</a>

@@ -84,19 +84,19 @@
 				</div>
 				<ul class="nav">
 					<li class="nav-item active">
-						<a href="<?php echo site_url('Dashboard');?>">
+						<a href="<?php echo site_url('Dashboard_admin');?>">
 							<i class="la la-dashboard"></i>
 							<p>Dashboard</p>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="<?php echo site_url('Training/training_super');?>">
+						<a href="<?php echo site_url('Training/training_admin');?>">
 							<i class="la la-certificate"></i>
 							<p>Training Compliance</p>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="<?php echo site_url('Pegawai/pegawai_super');?>">
+						<a href="<?php echo site_url('Pegawai/pegawai_admin');?>">
 							<i class="la la-group"></i>
 							<p>Employees</p>
 						</a>

@@ -7,7 +7,7 @@
 					<div class="card">
 						<div class="card-header">
 							<div class="card-title">List of Employees</div>
-							<a href="add_employee.html">
+							<a href="<?php echo site_url('Pegawai/add_pegawai');?>">
 								<button class="btn btn-info">Add Employee</button></a>
 							</div>
 							<div class="card-body">
@@ -34,24 +34,12 @@
 											<td>$500</td>
 											<td>25</td>
 											<td>bhxshgvh@mail.com</td>
-											<td><a href="edit_employee.html"><button class="btn btn-primary">Edit</button></a></td>
+											<td><a href="<?php echo site_url('Pegawai/edit_pegawai');?>"><button class="btn btn-primary">Edit</button></a></td>
 											<td><a id="hasil"><button onclick="konfirmasiDulu()" class="btn btn-danger">Delete</button></a></td>
 											<td><a href="index.html"><button class="btn btn-default">Profile</button></a></td>
 
 										</tr>
-										<tr>
-											<td>2</td>
-											<td>Jacob</td>
-											<td>Thornton</td>
-											<td>@fat</td>
-											<td>Development</td>
-											<td>$100</td>
-											<td>30</td>
-											<td>uuajanam@mail.com</td>
-											<td><a href="edit_employee.html"><button class="btn btn-primary">Edit</button></a></td>
-											<td><a id="hasil"><button onclick="konfirmasiDulu()" class="btn btn-danger">Delete</button></a></td>
-											<td><a href="index.html"><button class="btn btn-default">Profile</button></a></td>
-										</tr>
+
 										<tr>
 											<td>3</td>
 											<td colspan="2">Larry the Bird</td>

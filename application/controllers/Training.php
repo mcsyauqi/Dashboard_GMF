@@ -8,8 +8,13 @@ class Training extends CI_Controller {
 		$this->template->load('static','training');
 	}
 
-		public function training_super()
+	public function training_super()
 	{
 		$this->template->load('super_admin/static','super_admin/training_super');
+	}
+
+		public function training_admin()
+	{
+		$this->template->load('admin/static','admin/training_admin');
 	}
 }
