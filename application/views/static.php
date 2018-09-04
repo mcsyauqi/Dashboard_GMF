@@ -11,6 +11,7 @@
 	<script src="<?php echo base_url();?>assets/js/code/highcharts.js"></script>
 	<script src="<?php echo base_url();?>assets/js/code/modules/data.js"></script>
 	<script src="<?php echo base_url();?>assets/js/code/modules/drilldown.js"></script>
+
 </head>
 <body>
 	<!-- Main Header -->
@@ -32,11 +33,14 @@
 				</div>
 			</nav>
 		</div>
+<<<<<<< Updated upstream
+		
+=======
 		<div class="sidebar">
 			<div class="scrollbar-inner sidebar-wrapper">
 				
 				<ul class="nav">
-					<li class="nav-item active">
+					<li class="nav-item">
 						<a href="<?php echo site_url('Dashboard');?>">
 							<i class="la la-dashboard"></i>
 							<p>Dashboard</p>
@@ -58,6 +62,7 @@
 			</div>
 		</div>
 
+>>>>>>> Stashed changes
 		<?php echo $contents;?>
 
 		<footer class="footer">
@@ -86,6 +91,13 @@
 
 
 </body>
+
+<script>
+	function nav_aktif(){
+		document.getElementById('foo').setAttribute("class1","style1");
+	}
+</script>
+
 <script src="<?php echo base_url();?>assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/core/popper.min.js"></script>
