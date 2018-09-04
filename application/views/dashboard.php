@@ -172,67 +172,75 @@ for ($i=0; $i < $total_peg; $i++) {
 </div>
 </div>
 <div class="row">
- <div class="col-md-6">
-  <div class="cards">
-   <div class="card-header" style="margin-bottom: -30px; margin-left: 7px; background-color: #85107a; color: #ffffff">
-    <h4 class="card-title">Training Compliance</h4>
-    <p class="card-category">Avarage of Engineering Services</p>
+  <div class="col-md-4">
+  <div class="cards3">
+   <div class="card-header" style="margin-bottom: -30px; margin-left: 7px; background-color: #355a09; color: #ffffff">
+    <h4 class="card-title">MKA</h4>
+    <p class="card-category">Engineering Services</p>
   </div>
   <div class="card-body">
-    <div id="ci_container" style="min-width: 450px; height: 223px; max-width: 500px; margin:0px"></div>
+    <div id="ro_container" style="min-width: 300px; height: 223px; margin: 0 auto"></div>
 
 
 
     <script type="text/javascript">
 
-      Highcharts.chart('ci_container', {
-        chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: 0,
-          plotShadow: false
-        },
-        tooltip: {
-          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        plotOptions: {
-          pie: {
-            dataLabels: {
-              enabled: true,
-              format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-              distance: -50,
-              style: {
-                fontWeight: 'bold',
-                color: 'black'
-              }
-            },
-            startAngle: -90,
-            endAngle: -90,
-            center: ['50%', '50%']
-          }
-        },
-        series: [{
-          type: 'pie',
-          name: 'Browser share',
-          innerSize: '50%',
-          data: [
-          ['Chrome', 58.9],
-          {
-            name: 'Other',
-            y: 7.61,
-            dataLabels: {
-              enabled: false
+Highcharts.chart('ro_container', {
+    chart: {
+        type: 'column'
+    },
+    // title: {
+    //     text: 'World\'s largest cities per 2017'
+    // },
+    xAxis: {
+        type: 'category',
+        labels: {
+            rotation: -45,
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
             }
-          }
-          ]
-        }]
-      });
-
-
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Jumlah orang'
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    tooltip: {
+        pointFormat: 'Jumlah orang: <b>{point.y}</b>'
+    },
+    series: [{
+        name: 'Population',
+        data: [
+            ['0-2 Tahun', <?php echo $masa0; ?>],
+            ['2-5 Tahun', <?php echo $masa2; ?>],
+            ['>5 Tahun', <?php echo $masa5; ?>]
+        ],
+        dataLabels: {
+            enabled: true,
+            rotation: -90,
+            color: '#FFFFFF',
+            align: 'right',
+            format: '{point.y:.0f}', // one decimal
+            y: 10, // 10 pixels down from the top
+            style: {
+                fontSize: '5px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    }]
+});
     </script>
   </div>
 </div>
 </div>
-<div class="col-md-6">
+ 
+<div class="col-md-4">
   <div class="cards1">
    <div class="card-header" style="margin-bottom: -30px; margin-left: 7px; background-color: #0e175a; color: #ffffff">
     <h4 class="card-title">Manpower</h4>
@@ -308,7 +316,7 @@ for ($i=0; $i < $total_peg; $i++) {
   </div>
 </div>
 </div>
-<div class="col-md-6">
+<div class="col-md-4">
   <div class="cards2">
    <div class="card-header" style="margin-bottom: -30px; margin-left: 0px; background-color: #940a26; color: #ffffff">
     <h4 class="card-title">Generation</h4>
@@ -351,82 +359,75 @@ for ($i=0; $i < $total_peg; $i++) {
 </div>
 </div>
 </div>
-<div class="col-md-6">
-  <div class="cards3">
-   <div class="card-header" style="margin-bottom: -30px; margin-left: 7px; background-color: #355a09; color: #ffffff">
-    <h4 class="card-title">MKA</h4>
-    <p class="card-category">Engineering Services</p>
+<div class="col-md-4">
+  <div class="cards">
+   <div class="card-header" style="margin-bottom: -30px; margin-left: 7px; background-color: #85107a; color: #ffffff">
+    <h4 class="card-title">Training Compliance</h4>
+    <p class="card-category">Avarage of Engineering Services</p>
   </div>
   <div class="card-body">
-    <div id="ro_container" style="min-width: 300px; height: 223px; margin: 0 auto"></div>
+    <div id="ci_container" style="min-width: 290px; height: 300px; max-width: 400px; margin:0px"></div>
 
 
 
     <script type="text/javascript">
 
-Highcharts.chart('ro_container', {
-    chart: {
-        type: 'column'
-    },
-    // title: {
-    //     text: 'World\'s largest cities per 2017'
-    // },
-    xAxis: {
-        type: 'category',
-        labels: {
-            rotation: -45,
-            style: {
-                fontSize: '13px',
-                fontFamily: 'Verdana, sans-serif'
+      Highcharts.chart('ci_container', {
+        chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: 0,
+          plotShadow: false
+        },
+        tooltip: {
+          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+          pie: {
+            dataLabels: {
+              enabled: true,
+              format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+              distance: -50,
+              style: {
+                fontWeight: 'bold',
+                color: 'black'
+              }
+            },
+            startAngle: -90,
+            endAngle: -90,
+            center: ['50%', '50%']
+          }
+        },
+        series: [{
+          type: 'pie',
+          name: 'Browser share',
+          innerSize: '50%',
+          data: [
+          ['Chrome', 58.9],
+          {
+            name: 'Other',
+            y: 7.61,
+            dataLabels: {
+              enabled: false
             }
-        }
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Jumlah orang'
-        }
-    },
-    legend: {
-        enabled: false
-    },
-    tooltip: {
-        pointFormat: 'Jumlah orang: <b>{point.y}</b>'
-    },
-    series: [{
-        name: 'Population',
-        data: [
-            ['0-2 Tahun', <?php echo $masa0; ?>],
-            ['2-5 Tahun', <?php echo $masa2; ?>],
-            ['>5 Tahun', <?php echo $masa5; ?>]
-        ],
-        dataLabels: {
-            enabled: true,
-            rotation: -90,
-            color: '#FFFFFF',
-            align: 'right',
-            format: '{point.y:.0f}', // one decimal
-            y: 10, // 10 pixels down from the top
-            style: {
-                fontSize: '5px',
-                fontFamily: 'Verdana, sans-serif'
-            }
-        }
-    }]
-});
+          }
+          ]
+        }]
+      });
+
+
     </script>
   </div>
 </div>
 </div>
 
-<div class="col-md-12">
+<div class="col-md-8">
   <div class="card">
    <div class="card-header" style="background-color: #26043a">
     <h4 class="card-title" style="color: #ffffff">Generation</h4>
     <p class="card-category"  style="color: #ffffff">Totally of Engineering Services</p>
   </div>
   <div class="card-header">
-   <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+   <div id="container" style="min-width: 310px; height: 273px; margin: 0 auto"></div>
 
    <script type="text/javascript">
 
