@@ -134,7 +134,7 @@ for ($i=0; $i < $total_peg; $i++) {
 
 <div class="col-md-3"  style="margin-left: 80px">
   <div class="card card-stats">
-   <div class="card-body" style="background-color:#d9db15">
+   <div class="card-body" style="background-color:#ecb60f">
     <div class="row">
      <div class="col-5">
       <div class="icon-big text-center">
@@ -197,7 +197,7 @@ Highcharts.chart('ro_container', {
         labels: {
             rotation: -45,
             style: {
-                fontSize: '13px',
+                fontSize: '16px',
                 fontFamily: 'Verdana, sans-serif'
             }
         }
@@ -361,7 +361,7 @@ Highcharts.chart('ro_container', {
 </div>
 <div class="col-md-4">
   <div class="card">
-   <div class="card-header" style="background-color: #ecb60f">
+   <div class="card-header" style="background-color: #ff6e00">
     <h4 class="card-title" style="color: #ffffff">Training Compliance</h4>
     <p class="card-category" style="color: #ffffff">Avarage of Engineering Services</p>
   </div>
