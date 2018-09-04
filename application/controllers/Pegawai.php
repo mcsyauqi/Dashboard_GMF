@@ -3,9 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pegawai extends CI_Controller {
 
+	function __construct() {
+		parent:: __construct();
+		$this->load->model('M_crud');
+	
+	}
+
 	public function index()
 	{
-		$this->template->load('static','pegawai');
+		$data['pegawai'] = $this->M_crud->getAll('pegawai');
+		$this->template->load('static','pegawai',$data);
 	}
 
 	public function pegawai_super()

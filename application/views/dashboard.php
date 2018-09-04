@@ -175,12 +175,19 @@ for ($i=0; $i < $total_peg; $i++) {
 </div>
 </div>
 </div>
-<div class="row">
+<div class="row" style="box-shadow: 10px">
   <div class="col-md-4">
+<<<<<<< Updated upstream
   <div class="card">
    <div class="card-header" style="background-color: #3ea71e">
     <h4 class="card-title" style="color: #ffffff">MKA</h4>
     <p class="card-category" style="color: #ffffff">Engineering Services</p>
+=======
+  <div class="cards3" style="box-shadow: 10px">
+   <div class="card-header" style="margin-bottom: -30px; margin-left: 7px; background-color: #355a09; color: #ffffff  ">
+    <h4 class="card-title">MKA</h4>
+    <p class="card-category">Engineering Services</p>
+>>>>>>> Stashed changes
   </div>
   <div class="card-header">
     <div id="ro_container" style="min-width: 300px; height: 300px; margin: 0 auto"></div>
