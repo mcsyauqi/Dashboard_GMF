@@ -11,6 +11,7 @@
 	<script src="<?php echo base_url();?>assets/js/code/highcharts.js"></script>
 	<script src="<?php echo base_url();?>assets/js/code/modules/data.js"></script>
 	<script src="<?php echo base_url();?>assets/js/code/modules/drilldown.js"></script>
+
 </head>
 <body>
 	<!-- Main Header -->
@@ -40,32 +41,7 @@
 				</div>
 			</nav>
 		</div>
-		<div class="sidebar">
-			<div class="scrollbar-inner sidebar-wrapper">
-				
-				<ul class="nav">
-					<li class="nav-item active">
-						<a href="<?php echo site_url('Dashboard');?>">
-							<i class="la la-dashboard"></i>
-							<p>Dashboard</p>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a href="<?php echo site_url('Training');?>">
-							<i class="la la-certificate"></i>
-							<p>Training Compliance</p>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a href="<?php echo site_url('Pegawai');?>">
-							<i class="la la-group"></i>
-							<p>Employees</p>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-
+		
 		<?php echo $contents;?>
 
 		<footer class="footer">
@@ -94,6 +70,7 @@
 
 
 </body>
+
 <script src="assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 <script src="assets/js/core/popper.min.js"></script>

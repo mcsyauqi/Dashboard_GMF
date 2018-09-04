@@ -106,6 +106,10 @@ for ($i=0; $i < $total_peg; $i++) {
 
 
 ?>
+<?php 
+  $page_now="dashboard";
+  include 'navbar.php';
+?>
 
 <div class="main-panel">
   <div class="content">
