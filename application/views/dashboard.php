@@ -174,14 +174,21 @@ for ($i=0; $i < $total_peg; $i++) {
 <div class="row">
   <div class="col-md-4">
   <div class="card">
-   <div class="card-header" style="background-color: #3ea71e">
-    <h4 class="card-title" style="color: #ffffff">MKA</h4>
-    <p class="card-category" style="color: #ffffff">Engineering Services</p>
-  </div>
+    <div class="card-body" style="background-color:#3ea71e">
+    <div class="row">
+     <div class="col-5">
+      <div class="icon-big text-center">
+       <i class="la la-cubes" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
+     </div>
+   </div>
+    <div class="numbers" style="margin-left: -17%">
+     <h4 class="card-title" style="color: #ffffff">MKA</h4>
+     <p class="card-category" style="color: #ffffff">Engineering Services</p>
+ </div>
+</div>
+</div>
   <div class="card-header">
-    <div id="ro_container" style="min-width: 300px; height: 300px; margin: 0 auto"></div>
-
-
+    <div id="ro_container" style="min-width: 100%; height: 300px; margin: 0 auto"></div>
 
     <script type="text/javascript">
 
@@ -229,7 +236,7 @@ Highcharts.chart('ro_container', {
             format: '{point.y:.0f}', // one decimal
             y: 10, // 10 pixels down from the top
             style: {
-                fontSize: '5px',
+                fontSize: '15px',
                 fontFamily: 'Verdana, sans-serif'
             }
         }
@@ -242,12 +249,21 @@ Highcharts.chart('ro_container', {
  
 <div class="col-md-4">
   <div class="card">
-   <div class="card-header" style="background-color: #239ce5">
-    <h4 class="card-title" style="color: #ffffff">Manpower</h4>
-    <p class="card-category" style="color: #ffffff">Engineering Services</p>
-  </div>
+    <div class="card-body" style="background-color:#239ce5">
+    <div class="row">
+     <div class="col-5">
+      <div class="icon-big text-center">
+       <i class="la la-fire" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
+     </div>
+   </div>
+    <div class="numbers" style="margin-left: -17%">
+     <h4 class="card-title" style="color: #ffffff">Manpower</h4>
+     <p class="card-category" style="color: #ffffff">Engineering Services</p>
+ </div>
+</div>
+</div>
   <div class="card-header">
-    <div id="containers" style="min-width: 370px; height: 300px; max-width: 1000px; margin: 0 auto; margin-left:-15px"></div>
+    <div id="containers" style="min-width: 100%; height: 300px; max-width:auto; margin: 0 auto; margin-left:-15px"></div>
     <script type="text/javascript">
 
       Highcharts.chart('containers', {
@@ -318,10 +334,19 @@ Highcharts.chart('ro_container', {
 </div>
 <div class="col-md-4">
   <div class="card">
-   <div class="card-header" style="background-color: #e13232">
-    <h4 class="card-title" style="color: #ffffff">Generation</h4>
-    <p class="card-category" style="color: #ffffff">Totally of Engineering Services</p>
-  </div>
+    <div class="card-body" style="background-color:#e13232">
+    <div class="row">
+     <div class="col-5">
+      <div class="icon-big text-center">
+       <i class="la la-share-alt" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
+     </div>
+   </div>
+    <div class="numbers" style="margin-left: -17%">
+     <h4 class="card-title" style="color: #ffffff">Generation</h4>
+     <p class="card-category" style="color: #ffffff">Totally of Engineering Services</p>
+ </div>
+</div>
+</div>
   <div class="card-header">
    <div id="bar_container" style="min-width: 220px; max-width: 600px; height: 300px; margin: 0 auto"></div>
 
@@ -361,10 +386,19 @@ Highcharts.chart('ro_container', {
 </div>
 <div class="col-md-4">
   <div class="card">
-   <div class="card-header" style="background-color: #ff6e00">
-    <h4 class="card-title" style="color: #ffffff">Training Compliance</h4>
-    <p class="card-category" style="color: #ffffff">Avarage of Engineering Services</p>
-  </div>
+    <div class="card-body" style="background-color:#ff6e00">
+    <div class="row">
+     <div class="col-5">
+      <div class="icon-big text-center">
+       <i class="la la-tachometer" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
+     </div>
+   </div>
+    <div class="numbers" style="margin-left: -17%">
+     <h4 class="card-title" style="color: #ffffff">Training Compliance</h4>
+     <p class="card-category" style="color: #ffffff">Avarage of Engineering Services</p>
+ </div>
+</div>
+</div>
   <div class="card-body">
     <div id="ci_container" style="min-width: 290px; height: 300px; max-width: 400px; margin:0px; z-index: 1;"></div>
 
@@ -422,10 +456,19 @@ Highcharts.chart('ro_container', {
 
 <div class="col-md-8">
   <div class="card">
-   <div class="card-header" style="background-color: #1c5d85;" >
-    <h4 class="card-title" style="color: #ffffff">Engineering Services</h4>
-    <p class="card-category"  style="color: #ffffff">Training Compliance</p>
-  </div>
+    <div class="card-body" style="background-color:#1c5d85">
+    <div class="row">
+     <div class="col-5">
+      <div class="icon-big text-center">
+       <i class="la la-star" style="color: #ffffff; font-size: 50px; margin-left: -70%"></i>
+     </div>
+   </div>
+    <div class="numbers" style="margin-left: -29%">
+     <h4 class="card-title" style="color: #ffffff">Engineering Services</h4>
+     <p class="card-category" style="color: #ffffff">Training Compliance</p>
+ </div>
+</div>
+</div>
   <div class="card-header">
    <div id="container" style="min-width: 310px; height: 297px; margin: 0 auto"></div>
 
