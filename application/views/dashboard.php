@@ -250,7 +250,7 @@ for ($i=0; $i < $total_peg; $i++) {
           type: 'pie'
         },
         tooltip: {
-          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+          pointFormat: '{series.name}: <b>{point.y} Orang</b>'
         },
         plotOptions: {
           pie: {
@@ -266,7 +266,7 @@ for ($i=0; $i < $total_peg; $i++) {
           }
         },
         series: [{
-          name: 'Prosentase',
+          name: 'Jumlah',
           colorByPoint: true,
           data: [{
             name: 'DE',
