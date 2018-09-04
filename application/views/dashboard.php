@@ -122,7 +122,7 @@ for ($i=0; $i < $total_peg; $i++) {
         <div class="row">
          <div class="col-5">
           <div class="icon-big text-center icon-warning">
-           <i class="la la-user"></i>
+           <i class="la la-user" style="color: #ffffff"></i>
          </div>
        </div>
        <div class="col-7 d-flex align-items-center">
@@ -138,11 +138,11 @@ for ($i=0; $i < $total_peg; $i++) {
 
 <div class="col-md-3"  style="margin-left: 80px">
   <div class="card card-stats">
-   <div class="card-body" style="background-color:#bfa822">
+   <div class="card-body" style="background-color:#d9db15">
     <div class="row">
      <div class="col-5">
       <div class="icon-big text-center">
-       <i class="la la-bar-chart text-success"></i>
+       <i class="la la-bar-chart" style="color: #ffffff"></i>
      </div>
    </div>
    <div class="col-7 d-flex align-items-center">
@@ -157,11 +157,11 @@ for ($i=0; $i < $total_peg; $i++) {
 </div>
 <div class="col-md-3"  style="margin-left: 80px">
   <div class="card card-stats">
-   <div class="card-body" style="background-color:#0e3c07">
+   <div class="card-body" style="background-color:#189a90">
     <div class="row">
      <div class="col-5">
       <div class="icon-big text-center">
-       <i class="la la-tasks text-danger"></i>
+       <i class="la la-tasks" style="color: #ffffff"></i>
      </div>
    </div>
    <div class="col-7 d-flex align-items-center">
@@ -176,193 +176,14 @@ for ($i=0; $i < $total_peg; $i++) {
 </div>
 </div>
 <div class="row">
- <div class="col-md-6">
-  <div class="cards">
-   <div class="card-header" style="margin-bottom: -30px; margin-left: 7px; background-color: #85107a; color: #ffffff">
-    <h4 class="card-title">Training Compliance</h4>
-    <p class="card-category">Avarage of Engineering Services</p>
+  <div class="col-md-4">
+  <div class="card">
+   <div class="card-header" style="background-color: #3ea71e">
+    <h4 class="card-title" style="color: #ffffff">MKA</h4>
+    <p class="card-category" style="color: #ffffff">Engineering Services</p>
   </div>
-  <div class="card-body">
-    <div id="ci_container" style="min-width: 450px; height: 223px; max-width: 500px; margin:0px"></div>
-
-
-
-    <script type="text/javascript">
-
-      Highcharts.chart('ci_container', {
-        chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: 0,
-          plotShadow: false
-        },
-        tooltip: {
-          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        plotOptions: {
-          pie: {
-            dataLabels: {
-              enabled: true,
-              format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-              distance: -50,
-              style: {
-                fontWeight: 'bold',
-                color: 'black'
-              }
-            },
-            startAngle: -90,
-            endAngle: -90,
-            center: ['50%', '50%']
-          }
-        },
-        series: [{
-          type: 'pie',
-          name: 'Browser share',
-          innerSize: '50%',
-          data: [
-          ['Chrome', 58.9],
-          {
-            name: 'Other',
-            y: 7.61,
-            dataLabels: {
-              enabled: false
-            }
-          }
-          ]
-        }]
-      });
-
-
-    </script>
-  </div>
-</div>
-</div>
-<div class="col-md-6">
-  <div class="cards1">
-   <div class="card-header" style="margin-bottom: -30px; margin-left: 7px; background-color: #0e175a; color: #ffffff">
-    <h4 class="card-title">Manpower</h4>
-    <p class="card-category">Engineering Services</p>
-  </div>
-  <div class="card-body">
-    <div id="containers" style="min-width: 300px; height: 223px; max-width: 1000px; margin: 0 auto;"></div>
-    <script type="text/javascript">
-
-      Highcharts.chart('containers', {
-        chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false,
-          type: 'pie'
-        },
-        tooltip: {
-          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        plotOptions: {
-          pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-              enabled: true,
-              format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-              style: {
-                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-              }
-            }
-          }
-        },
-        series: [{
-          name: 'Prosentase',
-          colorByPoint: true,
-          data: [{
-            name: 'DE',
-            y: <?php echo $jumlah_de; ?>,
-          }, {
-            name: 'EE',
-            y: <?php echo $jumlah_ee; ?>
-          }, {
-            name: 'GM',
-            y: <?php echo $jumlah_gm; ?>
-          }, {
-            name: 'Manager',
-            y: <?php echo $jumlah_m; ?>
-          }, {
-            name: 'Secretary',
-            y: <?php echo $jumlah_sec; ?>
-          }, {
-            name: 'Senior ADO',
-            y: <?php echo $jumlah_sado; ?>
-          }, {
-            name: 'Senior DE',
-            y: <?php echo $jumlah_sde; ?>
-          }, {
-            name: 'Senior TPO',
-            y: <?php echo $jumlah_stpo; ?>
-          }, {
-            name: 'TPO',
-            y: <?php echo $jumlah_tpo; ?>
-          }, {
-            name: 'Trainee for DE',
-            y: <?php echo $jumlah_tde; ?>
-          }, {
-            name: 'Vice President',
-            y: <?php echo $jumlah_vp; ?>
-          }]
-        }]
-      });
-    </script>
-  </div>
-</div>
-</div>
-<div class="col-md-6">
-  <div class="cards2">
-   <div class="card-header" style="margin-bottom: -30px; margin-left: 0px; background-color: #940a26; color: #ffffff">
-    <h4 class="card-title">Generation</h4>
-    <p class="card-category">Totally of Engineering Services</p>
-  </div>
-  <div class="card-body">
-   <div id="bar_container" style="min-width: 220px; max-width: 600px; height: 223px; margin: 0 auto"></div>
-
-
-
-   <script type="text/javascript">
-
-    Highcharts.chart('bar_container', {
-      chart: {
-        type: 'bar'
-      },
-      xAxis: {
-        categories: ['20-30', '31-40', '41-50','>50']
-      },
-      yAxis: {
-        min: 0,
-        title: {
-          text: '<?php echo "Total Pekerja: ".$total_peg." Orang"?>'
-        }
-      },
-      plotOptions: {
-        series: {
-          stacking: 'normal'
-        }
-      },
-      series: [{
-        name: 'Kelompok usia kerja',
-        data: [<?php echo $usia20?>, <?php echo $usia30?>, <?php echo $usia40?>, <?php echo $usia50?>],
-        dataLabels: {
-          enabled: false
-        }
-      }]
-    });
-  </script>
-</div>
-</div>
-</div>
-<div class="col-md-6">
-  <div class="cards3">
-   <div class="card-header" style="margin-bottom: -30px; margin-left: 7px; background-color: #355a09; color: #ffffff">
-    <h4 class="card-title">MKA</h4>
-    <p class="card-category">Engineering Services</p>
-  </div>
-  <div class="card-body">
-    <div id="ro_container" style="min-width: 300px; height: 223px; margin: 0 auto"></div>
+  <div class="card-header">
+    <div id="ro_container" style="min-width: 300px; height: 300px; margin: 0 auto"></div>
 
 
 
@@ -422,15 +243,195 @@ Highcharts.chart('ro_container', {
   </div>
 </div>
 </div>
-
-<div class="col-md-12">
+ 
+<div class="col-md-4">
   <div class="card">
-   <div class="card-header" style="background-color: #26043a">
-    <h4 class="card-title" style="color: #ffffff">Generation</h4>
-    <p class="card-category"  style="color: #ffffff">Totally of Engineering Services</p>
+   <div class="card-header" style="background-color: #239ce5">
+    <h4 class="card-title" style="color: #ffffff">Manpower</h4>
+    <p class="card-category" style="color: #ffffff">Engineering Services</p>
   </div>
   <div class="card-header">
-   <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <div id="containers" style="min-width: 370px; height: 300px; max-width: 1000px; margin: 0 auto; margin-left:-15px"></div>
+    <script type="text/javascript">
+
+      Highcharts.chart('containers', {
+        chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false,
+          type: 'pie'
+        },
+        tooltip: {
+          pointFormat: '{series.name}: <b>{point.y} Orang</b>'
+        },
+        plotOptions: {
+          pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+              enabled: true,
+              format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+              style: {
+                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+              }
+            }
+          }
+        },
+        series: [{
+          name: 'Jumlah',
+          colorByPoint: true,
+          data: [{
+            name: 'DE',
+            y: <?php echo $jumlah_de; ?>,
+          }, {
+            name: 'EE',
+            y: <?php echo $jumlah_ee; ?>
+          }, {
+            name: 'GM',
+            y: <?php echo $jumlah_gm; ?>
+          }, {
+            name: 'Manager',
+            y: <?php echo $jumlah_m; ?>
+          }, {
+            name: 'Secretary',
+            y: <?php echo $jumlah_sec; ?>
+          }, {
+            name: 'Senior ADO',
+            y: <?php echo $jumlah_sado; ?>
+          }, {
+            name: 'Senior DE',
+            y: <?php echo $jumlah_sde; ?>
+          }, {
+            name: 'Senior TPO',
+            y: <?php echo $jumlah_stpo; ?>
+          }, {
+            name: 'TPO',
+            y: <?php echo $jumlah_tpo; ?>
+          }, {
+            name: 'Trainee for DE',
+            y: <?php echo $jumlah_tde; ?>
+          }, {
+            name: 'Vice President',
+            y: <?php echo $jumlah_vp; ?>
+          }]
+        }]
+      });
+    </script>
+  </div>
+</div>
+</div>
+<div class="col-md-4">
+  <div class="card">
+   <div class="card-header" style="background-color: #e13232">
+    <h4 class="card-title" style="color: #ffffff">Generation</h4>
+    <p class="card-category" style="color: #ffffff">Totally of Engineering Services</p>
+  </div>
+  <div class="card-header">
+   <div id="bar_container" style="min-width: 220px; max-width: 600px; height: 300px; margin: 0 auto"></div>
+
+
+
+   <script type="text/javascript">
+
+    Highcharts.chart('bar_container', {
+      chart: {
+        type: 'bar'
+      },
+      xAxis: {
+        categories: ['20-30', '31-40', '41-50','>50']
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: '<?php echo "Total Pekerja: ".$total_peg." Orang"?>'
+        }
+      },
+      plotOptions: {
+        series: {
+          stacking: 'normal'
+        }
+      },
+      series: [{
+        name: 'Kelompok usia kerja',
+        data: [<?php echo $usia20?>, <?php echo $usia30?>, <?php echo $usia40?>, <?php echo $usia50?>],
+        dataLabels: {
+          enabled: false
+        }
+      }]
+    });
+  </script>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+  <div class="card">
+   <div class="card-header" style="background-color: #ecb60f">
+    <h4 class="card-title" style="color: #ffffff">Training Compliance</h4>
+    <p class="card-category" style="color: #ffffff">Avarage of Engineering Services</p>
+  </div>
+  <div class="card-body">
+    <div id="ci_container" style="min-width: 290px; height: 300px; max-width: 400px; margin:0px; z-index: 1;"></div>
+
+
+
+    <script type="text/javascript">
+
+      Highcharts.chart('ci_container', {
+        chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: 0,
+          plotShadow: false
+        },
+        tooltip: {
+          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+          pie: {
+            dataLabels: {
+              enabled: true,
+              format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+              distance: -50,
+              style: {
+                fontWeight: 'bold',
+                color: 'black'
+              }
+            },
+            startAngle: -90,
+            endAngle: -90,
+            center: ['50%', '50%']
+          }
+        },
+        series: [{
+          type: 'pie',
+          name: 'Browser share',
+          innerSize: '50%',
+          data: [
+          ['Chrome', 58.9],
+          {
+            name: 'Other',
+            y: 7.61,
+            dataLabels: {
+              enabled: false
+            }
+          }
+          ]
+        }]
+      });
+
+
+    </script>
+  </div>
+</div>
+</div>
+
+<div class="col-md-8">
+  <div class="card">
+   <div class="card-header" style="background-color: #1c5d85;" >
+    <h4 class="card-title" style="color: #ffffff">Engineering Services</h4>
+    <p class="card-category"  style="color: #ffffff">Training Compliance</p>
+  </div>
+  <div class="card-header">
+   <div id="container" style="min-width: 310px; height: 297px; margin: 0 auto"></div>
 
    <script type="text/javascript">
 
@@ -472,39 +473,59 @@ Highcharts.chart('container', {
     "colorByPoint": true,
     "data": [
     {
-      "name": "Chrome",
+      "name": "HUMAN FACTOR",
       "y": 62.74,
-      "drilldown": "Chrome"
+      "drilldown": "HUMAN FACTOR"
     },
     {
-      "name": "Firefox",
+      "name": "CASR,FAR",
       "y": 10.57,
-      "drilldown": "Firefox"
+      "drilldown": "CASR,FAR"
     },
     {
-      "name": "Internet Explorer",
+      "name": "FTS LV.2",
       "y": 7.23,
-      "drilldown": "Internet Explorer"
+      "drilldown": "FTS LV.2"
     },
     {
-      "name": "Safari",
+      "name": "SMS",
       "y": 5.58,
-      "drilldown": "Safari"
+      "drilldown": "SMS"
     },
     {
-      "name": "Edge",
+      "name": "EWIS",
       "y": 4.02,
-      "drilldown": "Edge"
+      "drilldown": "EWIS"
     },
     {
-      "name": "Opera",
+      "name": "MODULE 10",
       "y": 1.92,
-      "drilldown": "Opera"
+      "drilldown": "MODULE 10"
     },
     {
-      "name": "Other",
+      "name": "GMF QS",
       "y": 7.62,
-      "drilldown": null
+      "drilldown": "GMF QS"
+    },
+    {
+      "name": "BATK",
+      "y": 1.92,
+      "drilldown": "BATK"
+    },
+    {
+      "name": "BASIC ENG.",
+      "y": 1.92,
+      "drilldown": "BE"
+    },
+    {
+      "name": "CONT. AIR",
+      "y": 1.92,
+      "drilldown": "CONT. AIR"
+    },
+    {
+      "name": "TYPE RATING",
+      "y": 1.92,
+      "drilldown": "TYPE RATING"
     }
     ]
   }
@@ -512,8 +533,8 @@ Highcharts.chart('container', {
   "drilldown": {
     "series": [
     {
-      "name": "Chrome",
-      "id": "Chrome",
+      "name": "HUMAN FACTOR",
+      "id": "HUMAN FACTOR",
       "data": [
       [
       "v65.0",

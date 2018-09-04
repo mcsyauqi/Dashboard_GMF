@@ -78,4 +78,3 @@
 			document.getElementById("hasil").innerHTML = text;
 		}
 	</script>
-	</html>

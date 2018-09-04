@@ -26,15 +26,7 @@
 			</div>
 			<nav class="navbar navbar-header navbar-expand-lg">
 				<div class="container-fluid">
-					<form class="navbar-left navbar-form nav-search mr-md-3" action="" style="padding-top: 1%;">
-						<div class="input-group">
-							<input type="text" placeholder="Search ..." class="form-control">
-							<div class="input-group-append">
-								<span class="input-group-text">
-									<i class="la la-search search-icon"></i>
-								</span>
-							</div>
-						</div>
+					<form >
 					</form>					
 					<a href="<?php echo base_url();?>Login" class="btn btn-info" style="color: #FFFFFF; margin-top: 5px">Login
 					</a>
@@ -70,20 +62,19 @@
 
 
 </body>
-
-<script src="assets/js/core/jquery.3.2.1.min.js"></script>
-<script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-<script src="assets/js/core/popper.min.js"></script>
-<script src="assets/js/core/bootstrap.min.js"></script>
-<script src="assets/js/plugin/chartist/chartist.min.js"></script>
-<script src="assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
-<script src="assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-<script src="assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
-<script src="assets/js/plugin/chart-circle/circles.min.js"></script>
-<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-<script src="assets/js/ready.min.js"></script>
-<script src="assets/js/demo.js"></script>
+<script src="<?php echo base_url();?>assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/core/popper.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/core/bootstrap.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/plugin/chartist/chartist.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/plugin/chart-circle/circles.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/ready.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/demo.js"></script>
 <!-- untuk notifikasi 
 	<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script> 
 -->
