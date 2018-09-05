@@ -15,7 +15,7 @@ for ($i=0; $i < $total_peg; $i++) {
   if ($max<$usia->y) {
     $max=$usia->y;
   }
-    if ($min>$usia->y) {
+  if ($min>$usia->y) {
     $min=$usia->y;
   }
 }
@@ -32,7 +32,7 @@ for ($i=0; $i < $total_peg; $i++) {
   if ($max_mka<$lama_kerja->y) {
     $max_mka=$lama_kerja->y;
   }
-    if ($min_mka>$lama_kerja->y) {
+  if ($min_mka>$lama_kerja->y) {
     $min_mka=$lama_kerja->y;
   }
 }
@@ -63,46 +63,54 @@ $jumlah_tde = mysqli_num_rows($tde);
 $vp = mysqli_query($connect,"SELECT jabatan from pegawai where jabatan = 'Vice President' ");
 $jumlah_vp = mysqli_num_rows($vp); 
 
-//data chart generation
 
+//data chart generation
 $peg = mysqli_query($connect, "SELECT * from pegawai");
-$akhir = date_create(); // waktu sekarang
-$usia20=0;
-$usia30=0;
-$usia40=0;
-$usia50=0;
-for ($i=0; $i < $total_peg; $i++) { 
+$jumlah = mysqli_num_rows($peg);
+$baby = 0;
+$gen_x = 0;
+$gen_y = 0;
+$gen_z = 0;
+$alpha = 0;
+for ($i=0; $i < $jumlah; $i++) { 
   $array_data = mysqli_fetch_array($peg);
-  $awal  = date_create($array_data['tgl_lahir']);
-  $usia  = date_diff($awal, $akhir);
-  if ($usia->y>=20 && $usia->y <=30) {
-    $usia20++;
-  } elseif ($usia->y>30 && $usia->y <=40) {
-    $usia30++;
-  } elseif ($usia->y>40 && $usia->y <=50) {
-    $usia40++;
-  } else
-    $usia50++;
+  $lahir = substr($array_data['tgl_lahir'],0,4);
+  if ($lahir<=1960) {
+  $baby++;
+} elseif ($lahir>1960 && $lahir <=1980) {
+  $gen_x++;
+} elseif ($lahir>1980 && $lahir <=2000) {
+  $gen_y++;
+} elseif ($lahir>2000 && $lahir<=2010) {
+  $gen_z++;
+} else
+$alpha++;
 }
 
-//data chart generation
+
+
+
+//data chart awp
 
 $peg = mysqli_query($connect, "SELECT * from pegawai");
 $akhir = date_create(); // waktu sekarang
 $masa0=0;
-$masa2=0;
-$masa5=0;
+$masa6=0;
+$masa11=0;
+$masa21=0;
 for ($i=0; $i < $total_peg; $i++) { 
   $array_data = mysqli_fetch_array($peg);
   $awal_kerja  = date_create($array_data['tgl_masuk']);
   $lama_kerja  = date_diff($awal_kerja, $akhir);
-  if ($lama_kerja->y>=0 && $lama_kerja->y <=2) {
+  if ($lama_kerja->y>=0 && $lama_kerja->y <=5) {
     $masa0++;
-  } elseif ($lama_kerja->y>2 && $lama_kerja->y <=5) {
-    $masa2++;
+  } elseif ($lama_kerja->y>5 && $lama_kerja->y <=10) {
+    $masa6++;
+  } elseif ($lama_kerja->y>11 && $lama_kerja->y <=20) {
+    $masa11++;
   } else
-    $masa5++;
-  }
+  $masa21++;
+}
 
 
 ?>
@@ -123,7 +131,7 @@ for ($i=0; $i < $total_peg; $i++) {
        </div>
        <div class="col-7 d-flex align-items-center">
         <div class="numbers">
-         <p class="card-category" style="color: #ffffff">Total Pekerja</p>
+         <p class="card-category" style="color: #ffffff">Total Workers</p>
          <h4 class="card-title" style="color: #ffffff"><?php echo $total_peg." Orang"?></h4>
        </div>
      </div>
@@ -143,7 +151,7 @@ for ($i=0; $i < $total_peg; $i++) {
    </div>
    <div class="col-7 d-flex align-items-center">
     <div class="numbers">
-     <p class="card-category" style="color: #ffffff">Rentang Usia</p>
+     <p class="card-category" style="color: #ffffff">Ages</p>
      <h4 class="card-title" style="color: #ffffff"><?php echo $min."-".$max." Thn"?></h4>
    </div>
  </div>
@@ -162,7 +170,7 @@ for ($i=0; $i < $total_peg; $i++) {
    </div>
    <div class="col-7 d-flex align-items-center">
     <div class="numbers">
-     <p class="card-category" style="color: #ffffff">Rentang MKA</p>
+     <p class="card-category" style="color: #ffffff">Working Period</p>
      <h4 class="card-title" style="color: #ffffff"><?php echo $min_mka."-".$max_mka." Thn"?></h4>
    </div>
  </div>
@@ -173,181 +181,182 @@ for ($i=0; $i < $total_peg; $i++) {
 </div>
 <div class="row">
   <div class="col-md-4">
-  <div class="card">
-    <div class="card-body" style="background-color:#3ea71e">
-    <div class="row">
-     <div class="col-5">
-      <div class="icon-big text-center">
-       <i class="la la-cubes" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
+    <div class="card">
+      <div class="card-body" style="background-color:#3ea71e">
+        <div class="row">
+         <div class="col-5">
+          <div class="icon-big text-center">
+           <i class="la la-cubes" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
+         </div>
+       </div>
+       <div class="numbers" style="margin-left: -17%">
+         <h4 class="card-title" style="color: #ffffff">Active Working Period</h4>
+         <p class="card-category" style="color: #ffffff">Engineering Services</p>
+       </div>
      </div>
    </div>
-    <div class="numbers" style="margin-left: -17%">
-     <h4 class="card-title" style="color: #ffffff">MKA</h4>
-     <p class="card-category" style="color: #ffffff">Engineering Services</p>
- </div>
-</div>
-</div>
-  <div class="card-header">
+   <div class="card-header">
     <div id="ro_container" style="min-width: 100%; height: 300px; margin: 0 auto"></div>
 
     <script type="text/javascript">
 
-Highcharts.chart('ro_container', {
-    chart: {
-        type: 'column'
-    },
+      Highcharts.chart('ro_container', {
+        chart: {
+          type: 'column'
+        },
     // title: {
     //     text: 'World\'s largest cities per 2017'
     // },
     xAxis: {
-        type: 'category',
-        labels: {
-            rotation: -45,
-            style: {
-                fontSize: '16 px',
-                fontFamily: 'Verdana, sans-serif'
-            }
+      type: 'category',
+      labels: {
+        rotation: -45,
+        style: {
+          fontSize: '16 px',
+          fontFamily: 'Verdana, sans-serif'
         }
+      }
     },
     yAxis: {
-        min: 0,
-        title: {
-            text: 'Jumlah orang'
-        }
+      min: 0,
+      title: {
+        text: 'Jumlah orang'
+      }
     },
     legend: {
-        enabled: false
+      enabled: false
     },
     tooltip: {
-        pointFormat: 'Jumlah orang: <b>{point.y}</b>'
+      pointFormat: 'Jumlah orang: <b>{point.y}</b>'
     },
     series: [{
-        name: 'Population',
-        data: [
-            ['0-2 Tahun', <?php echo $masa0; ?>],
-            ['2-5 Tahun', <?php echo $masa2; ?>],
-            ['>5 Tahun', <?php echo $masa5; ?>]
-        ],
-        dataLabels: {
-            enabled: true,
-            rotation: -90,
-            color: '#FFFFFF',
-            align: 'right',
+      name: 'Population',
+      data: [
+      ['0-5 Tahun', <?php echo $masa0; ?>],
+      ['6-10 Tahun', <?php echo $masa6; ?>],
+      ['11-20 Tahun', <?php echo $masa11; ?>],
+      ['21-35 Tahun', <?php echo $masa21; ?>]
+      ],
+      dataLabels: {
+        enabled: true,
+        rotation: -90,
+        color: '#FFFFFF',
+        align: 'right',
             format: '{point.y:.0f}', // one decimal
             y: 10, // 10 pixels down from the top
             style: {
-                fontSize: '15px',
-                fontFamily: 'Verdana, sans-serif'
-            }
-        }
-    }]
-});
-    </script>
-  </div>
-</div>
-</div>
- 
-<div class="col-md-4">
-  <div class="card">
-    <div class="card-body" style="background-color:#239ce5">
-    <div class="row">
-     <div class="col-5">
-      <div class="icon-big text-center">
-       <i class="la la-fire" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
-     </div>
-   </div>
-    <div class="numbers" style="margin-left: -17%">
-     <h4 class="card-title" style="color: #ffffff">Manpower</h4>
-     <p class="card-category" style="color: #ffffff">Engineering Services</p>
- </div>
-</div>
-</div>
-  <div class="card-header">
-    <div id="containers" style="min-width: 100%; height: 300px; max-width:auto; margin: 0 auto; margin-left:-15px"></div>
-    <script type="text/javascript">
-
-      Highcharts.chart('containers', {
-        chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false,
-          type: 'pie'
-        },
-        tooltip: {
-          pointFormat: '{series.name}: <b>{point.y} Orang</b>'
-        },
-        plotOptions: {
-          pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-              enabled: true,
-              format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-              style: {
-                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-              }
+              fontSize: '15px',
+              fontFamily: 'Verdana, sans-serif'
             }
           }
-        },
-        series: [{
-          name: 'Jumlah',
-          colorByPoint: true,
-          data: [{
-            name: 'DE',
-            y: <?php echo $jumlah_de; ?>,
-          }, {
-            name: 'EE',
-            y: <?php echo $jumlah_ee; ?>
-          }, {
-            name: 'GM',
-            y: <?php echo $jumlah_gm; ?>
-          }, {
-            name: 'Manager',
-            y: <?php echo $jumlah_m; ?>
-          }, {
-            name: 'Secretary',
-            y: <?php echo $jumlah_sec; ?>
-          }, {
-            name: 'Senior ADO',
-            y: <?php echo $jumlah_sado; ?>
-          }, {
-            name: 'Senior DE',
-            y: <?php echo $jumlah_sde; ?>
-          }, {
-            name: 'Senior TPO',
-            y: <?php echo $jumlah_stpo; ?>
-          }, {
-            name: 'TPO',
-            y: <?php echo $jumlah_tpo; ?>
-          }, {
-            name: 'Trainee for DE',
-            y: <?php echo $jumlah_tde; ?>
-          }, {
-            name: 'Vice President',
-            y: <?php echo $jumlah_vp; ?>
-          }]
         }]
       });
     </script>
   </div>
 </div>
 </div>
+
+<div class="col-md-4">
+  <div class="card">
+    <div class="card-body" style="background-color:#239ce5">
+      <div class="row">
+       <div class="col-5">
+        <div class="icon-big text-center">
+         <i class="la la-fire" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
+       </div>
+     </div>
+     <div class="numbers" style="margin-left: -17%">
+       <h4 class="card-title" style="color: #ffffff">Manpower</h4>
+       <p class="card-category" style="color: #ffffff">Engineering Services</p>
+     </div>
+   </div>
+ </div>
+ <div class="card-header">
+  <div id="containers" style="min-width: 100%; height: 300px; max-width:auto; margin: 0 auto; margin-left:-15px"></div>
+  <script type="text/javascript">
+
+    Highcharts.chart('containers', {
+      chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.y} Orang</b>'
+      },
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: true,
+            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+            style: {
+              color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+            }
+          }
+        }
+      },
+      series: [{
+        name: 'Jumlah',
+        colorByPoint: true,
+        data: [{
+          name: 'DE',
+          y: <?php echo $jumlah_de; ?>,
+        }, {
+          name: 'Expert',
+          y: <?php echo $jumlah_ee; ?>
+        }, {
+          name: 'GM',
+          y: <?php echo $jumlah_gm; ?>
+        }, {
+          name: 'Manager',
+          y: <?php echo $jumlah_m; ?>
+        }, {
+          name: 'Secretary',
+          y: <?php echo $jumlah_sec; ?>
+        }, {
+          name: 'SADO',
+          y: <?php echo $jumlah_sado; ?>
+        }, {
+          name: 'SDE',
+          y: <?php echo $jumlah_sde; ?>
+        }, {
+          name: 'STPO',
+          y: <?php echo $jumlah_stpo; ?>
+        }, {
+          name: 'TPO',
+          y: <?php echo $jumlah_tpo; ?>
+        }, {
+          name: 'Trainee',
+          y: <?php echo $jumlah_tde; ?>
+        }, {
+          name: 'VP',
+          y: <?php echo $jumlah_vp; ?>
+        }]
+      }]
+    });
+  </script>
+</div>
+</div>
+</div>
 <div class="col-md-4">
   <div class="card">
     <div class="card-body" style="background-color:#e13232">
-    <div class="row">
-     <div class="col-5">
-      <div class="icon-big text-center">
-       <i class="la la-share-alt" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
+      <div class="row">
+       <div class="col-5">
+        <div class="icon-big text-center">
+         <i class="la la-share-alt" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
+       </div>
+     </div>
+     <div class="numbers" style="margin-left: -17%">
+       <h4 class="card-title" style="color: #ffffff">Generation</h4>
+       <p class="card-category" style="color: #ffffff">Engineering Services</p>
      </div>
    </div>
-    <div class="numbers" style="margin-left: -17%">
-     <h4 class="card-title" style="color: #ffffff">Generation</h4>
-     <p class="card-category" style="color: #ffffff">Totally of Engineering Services</p>
  </div>
-</div>
-</div>
-  <div class="card-header">
+ <div class="card-header">
    <div id="bar_container" style="min-width: 220px; max-width: 600px; height: 300px; margin: 0 auto"></div>
 
 
@@ -359,7 +368,7 @@ Highcharts.chart('ro_container', {
         type: 'bar'
       },
       xAxis: {
-        categories: ['20-30', '31-40', '41-50','>50']
+        categories: ['Baby Boomers', 'X Generation', 'Y Geneartion','Z Generation','Alpha Generation']
       },
       yAxis: {
         min: 0,
@@ -374,7 +383,7 @@ Highcharts.chart('ro_container', {
       },
       series: [{
         name: 'Kelompok usia kerja',
-        data: [<?php echo $usia20?>, <?php echo $usia30?>, <?php echo $usia40?>, <?php echo $usia50?>],
+        data: [<?php echo $baby?>, <?php echo $gen_x?>, <?php echo $gen_y?>, <?php echo $gen_z?>, <?php echo $alpha?>],
         dataLabels: {
           enabled: false
         }
@@ -387,89 +396,89 @@ Highcharts.chart('ro_container', {
 <div class="col-md-4">
   <div class="card">
     <div class="card-body" style="background-color:#ff6e00">
-    <div class="row">
-     <div class="col-5">
-      <div class="icon-big text-center">
-       <i class="la la-tachometer" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
+      <div class="row">
+       <div class="col-5">
+        <div class="icon-big text-center">
+         <i class="la la-tachometer" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
+       </div>
+     </div>
+     <div class="numbers" style="margin-left: -17%">
+       <h4 class="card-title" style="color: #ffffff">Training Compliance</h4>
+       <p class="card-category" style="color: #ffffff">Avarage of Engineering Services</p>
      </div>
    </div>
-    <div class="numbers" style="margin-left: -17%">
-     <h4 class="card-title" style="color: #ffffff">Training Compliance</h4>
-     <p class="card-category" style="color: #ffffff">Avarage of Engineering Services</p>
  </div>
-</div>
-</div>
-  <div class="card-body">
-    <div id="ci_container" style="min-width: 290px; height: 300px; max-width: 400px; margin:0px; z-index: 1;"></div>
+ <div class="card-body">
+  <div id="ci_container" style="min-width: 290px; height: 300px; max-width: 400px; margin:0px; z-index: 1;"></div>
 
 
 
-    <script type="text/javascript">
+  <script type="text/javascript">
 
-      Highcharts.chart('ci_container', {
-        chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: 0,
-          plotShadow: false
-        },
-        tooltip: {
-          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        plotOptions: {
-          pie: {
-            dataLabels: {
-              enabled: true,
-              format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-              distance: -50,
-              style: {
-                fontWeight: 'bold',
-                color: 'black'
-              }
-            },
-            startAngle: -90,
-            endAngle: -90,
-            center: ['50%', '50%']
-          }
-        },
-        series: [{
-          type: 'pie',
-          name: 'Browser share',
-          innerSize: '50%',
-          data: [
-          ['Chrome', 58.9],
-          {
-            name: 'Other',
-            y: 7.61,
-            dataLabels: {
-              enabled: false
+    Highcharts.chart('ci_container', {
+      chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: 0,
+        plotShadow: false
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+      },
+      plotOptions: {
+        pie: {
+          dataLabels: {
+            enabled: true,
+            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+            distance: -50,
+            style: {
+              fontWeight: 'bold',
+              color: 'black'
             }
+          },
+          startAngle: -90,
+          endAngle: -90,
+          center: ['50%', '50%']
+        }
+      },
+      series: [{
+        type: 'pie',
+        name: 'Browser share',
+        innerSize: '50%',
+        data: [
+        ['Chrome', 58.9],
+        {
+          name: 'Other',
+          y: 7.61,
+          dataLabels: {
+            enabled: false
           }
-          ]
-        }]
-      });
+        }
+        ]
+      }]
+    });
 
 
-    </script>
-  </div>
+  </script>
+</div>
 </div>
 </div>
 
 <div class="col-md-8">
   <div class="card">
     <div class="card-body" style="background-color:#1c5d85">
-    <div class="row">
-     <div class="col-5">
-      <div class="icon-big text-center">
-       <i class="la la-star" style="color: #ffffff; font-size: 50px; margin-left: -70%"></i>
+      <div class="row">
+       <div class="col-5">
+        <div class="icon-big text-center">
+         <i class="la la-star" style="color: #ffffff; font-size: 50px; margin-left: -70%"></i>
+       </div>
+     </div>
+     <div class="numbers" style="margin-left: -29%">
+       <h4 class="card-title" style="color: #ffffff">Engineering Services</h4>
+       <p class="card-category" style="color: #ffffff">Training Compliance</p>
      </div>
    </div>
-    <div class="numbers" style="margin-left: -29%">
-     <h4 class="card-title" style="color: #ffffff">Engineering Services</h4>
-     <p class="card-category" style="color: #ffffff">Training Compliance</p>
  </div>
-</div>
-</div>
-  <div class="card-header">
+ <div class="card-header">
    <div id="container" style="min-width: 310px; height: 297px; margin: 0 auto"></div>
 
    <script type="text/javascript">
