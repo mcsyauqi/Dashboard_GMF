@@ -110,67 +110,67 @@ for ($i=0; $i < $total_peg; $i++) {
 }
 
 //data chart training compliance
-$data_human = mysqli_query($connect, "SELECT * FROM training WHERE stat_human=5 or stat_human=1");
+$data_human = mysqli_query($connect, "SELECT * FROM training WHERE stat_human=5");
 $data_human_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_human=5 or stat_human=4 or stat_human=1");
 $human = mysqli_num_rows($data_human); 
 $human_total = mysqli_num_rows($data_human_total);
 $human_persen =  ($human/$human_total)*100;
 
-$data_cas = mysqli_query($connect, "SELECT * FROM training WHERE stat_cas=5 or stat_cas=1");
+$data_cas = mysqli_query($connect, "SELECT * FROM training WHERE stat_cas=5");
 $data_cas_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_cas=5 or stat_cas=4 or stat_cas=1");
 $cas = mysqli_num_rows($data_cas); 
 $cas_total = mysqli_num_rows($data_cas_total);
 $cas_persen =  ($cas/$cas_total)*100;
 
-$data_fts = mysqli_query($connect, "SELECT * FROM training WHERE stat_fts=5 or stat_fts=1");
+$data_fts = mysqli_query($connect, "SELECT * FROM training WHERE stat_fts=5");
 $data_fts_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_fts=5 or stat_fts=4 or stat_fts=1");
 $fts = mysqli_num_rows($data_fts); 
 $fts_total = mysqli_num_rows($data_fts_total);
 $fts_persen =  ($fts/$fts_total)*100;
 
-$data_sms = mysqli_query($connect, "SELECT * FROM training WHERE stat_sms=5 or stat_sms=1");
+$data_sms = mysqli_query($connect, "SELECT * FROM training WHERE stat_sms=5");
 $data_sms_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_sms=5 or stat_sms=4 or stat_sms=1");
 $sms = mysqli_num_rows($data_sms); 
 $sms_total = mysqli_num_rows($data_sms_total);
 $sms_persen =  ($sms/$sms_total)*100;
 
-$data_ewis = mysqli_query($connect, "SELECT * FROM training WHERE stat_ewis=5 or stat_ewis=1");
+$data_ewis = mysqli_query($connect, "SELECT * FROM training WHERE stat_ewis=5");
 $data_ewis_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_ewis=5 or stat_ewis=4 or stat_ewis=1");
 $ewis = mysqli_num_rows($data_ewis); 
 $ewis_total = mysqli_num_rows($data_ewis_total);
 $ewis_persen =  ($ewis/$ewis_total)*100;
 
-$data_module = mysqli_query($connect, "SELECT * FROM training WHERE stat_module=5 or stat_module=1");
+$data_module = mysqli_query($connect, "SELECT * FROM training WHERE stat_module=5");
 $data_module_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_module=5 or stat_module=4 or stat_module=1");
 $module = mysqli_num_rows($data_module); 
 $module_total = mysqli_num_rows($data_module_total);
 $module_persen =  ($module/$module_total)*100;
 
-$data_gqs = mysqli_query($connect, "SELECT * FROM training WHERE stat_gqs=5 or stat_gqs=1");
+$data_gqs = mysqli_query($connect, "SELECT * FROM training WHERE stat_gqs=5");
 $data_gqs_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_gqs=5 or stat_gqs=4 or stat_gqs=1");
 $gqs = mysqli_num_rows($data_gqs); 
 $gqs_total = mysqli_num_rows($data_gqs_total);
 $gqs_persen =  ($gqs/$gqs_total)*100;
 
-$data_batk = mysqli_query($connect, "SELECT * FROM training WHERE stat_batk=5 or stat_batk=1");
+$data_batk = mysqli_query($connect, "SELECT * FROM training WHERE stat_batk=5");
 $data_batk_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_batk=5 or stat_batk=4 or stat_batk=1");
 $batk = mysqli_num_rows($data_batk); 
 $batk_total = mysqli_num_rows($data_batk_total);
 $batk_persen =  ($batk/$batk_total)*100;
 
-$data_basic = mysqli_query($connect, "SELECT * FROM training WHERE stat_basic=5 or stat_basic=1");
+$data_basic = mysqli_query($connect, "SELECT * FROM training WHERE stat_basic=5");
 $data_basic_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_basic=5 or stat_basic=4 or stat_basic=1");
 $basic = mysqli_num_rows($data_basic); 
 $basic_total = mysqli_num_rows($data_basic_total);
 $basic_persen =  ($basic/$basic_total)*100;
 
-$data_cont = mysqli_query($connect, "SELECT * FROM training WHERE stat_cont=5 or stat_cont=1");
+$data_cont = mysqli_query($connect, "SELECT * FROM training WHERE stat_cont=5");
 $data_cont_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_cont=5 or stat_cont=4 or stat_cont=1");
 $cont = mysqli_num_rows($data_cont); 
 $cont_total = mysqli_num_rows($data_cont_total);
 $cont_persen =  ($cont/$cont_total)*100;
 
-$data_typer = mysqli_query($connect, "SELECT * FROM training WHERE stat_typer=5 or stat_typer=1");
+$data_typer = mysqli_query($connect, "SELECT * FROM training WHERE stat_typer=5");
 $data_typer_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_typer=5 or stat_typer=4 or stat_typer=1");
 $typer = mysqli_num_rows($data_typer); 
 $typer_total = mysqli_num_rows($data_typer_total);
