@@ -170,12 +170,11 @@ $cont = mysqli_num_rows($data_cont);
 $cont_total = mysqli_num_rows($data_cont_total);
 $cont_persen =  ($cont/$cont_total)*100;
 
-$data_typer = mysqli_query($connect, "SELECT * FROM training WHERE stat_typer=5");
-$data_typer_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_typer=5 or stat_typer=4 or stat_typer=1");
-$typer = mysqli_num_rows($data_typer); 
-$typer_total = mysqli_num_rows($data_typer_total);
-$typer_persen =  ($typer/$typer_total)*100;
-
+// $data_typer1 = mysqli_query($connect, "SELECT * FROM training WHERE stat_typer1= NOT NULL");
+// $data_typer1_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_typer1=5 or stat_typer1=4 or stat_typer1=1");
+// $typer1 = mysqli_num_rows($data_typer1); 
+// $typer1_total = mysqli_num_rows($data_typer1_total);
+// $typer1_persen =  ($typer1/$typer1_total)*100;
 
 
 ?>
@@ -634,11 +633,6 @@ Highcharts.chart('container', {
       "name": "CONT. AIR",
       "y": <?php echo $cont_persen; ?>,
       "drilldown": "CONT. AIR"
-    },
-    {
-      "name": "TYPE RATING",
-      "y": <?php echo $typer_persen; ?>,
-      "drilldown": "TYPE RATING"
     }
     ]
   }
