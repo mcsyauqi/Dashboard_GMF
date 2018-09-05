@@ -109,7 +109,9 @@ for ($i=0; $i < $total_peg; $i++) {
   $masa21++;
 }
 
-//data chart training compliance
+
+
+//data chart training-training
 $data_human = mysqli_query($connect, "SELECT * FROM training WHERE stat_human=5");
 $data_human_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_human=5 or stat_human=4 or stat_human=1");
 $human = mysqli_num_rows($data_human); 
@@ -169,6 +171,11 @@ $data_cont_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_con
 $cont = mysqli_num_rows($data_cont); 
 $cont_total = mysqli_num_rows($data_cont_total);
 $cont_persen =  ($cont/$cont_total)*100;
+
+
+//data chart training compliance
+$training_comp=($human_persen+$cas_persen+$fts_persen+$sms_persen+$ewis_persen+$module_persen+$gqs_persen+$batk_persen+$basic_persen+$cont_persen)/10;
+$sisa_training_comp=100-$training_comp;
 
 // $data_typer1 = mysqli_query($connect, "SELECT * FROM training WHERE stat_typer1= NOT NULL");
 // $data_typer1_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_typer1=5 or stat_typer1=4 or stat_typer1=1");
@@ -506,13 +513,13 @@ $cont_persen =  ($cont/$cont_total)*100;
       },
       series: [{
         type: 'pie',
-        name: 'Browser share',
+        name: 'Prosentase',
         innerSize: '50%',
         data: [
-        ['Chrome', 58.9],
+        ['Success', <?php echo "$training_comp"?>],
         {
-          name: 'Other',
-          y: 7.61,
+          name: 'Not yet',
+          y: <?php echo "$sisa_training_comp"?>,
           dataLabels: {
             enabled: false
           }
@@ -581,7 +588,7 @@ Highcharts.chart('container', {
 
   "series": [
   {
-    "name": "Browsers",
+    "name": "Training",
     "colorByPoint": true,
     "data": [
     {
