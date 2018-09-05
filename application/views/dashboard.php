@@ -38,7 +38,7 @@ for ($i=0; $i < $total_peg; $i++) {
   }
 }
 
-//data chart manpower
+//data chart man power
 $de = mysqli_query($connect,"SELECT jabatan from pegawai where jabatan = 'Development Engineer' ");
 $jumlah_de = mysqli_num_rows($de);
 $ee = mysqli_query($connect,"SELECT jabatan from pegawai where jabatan = 'Engineering Expert' ");
