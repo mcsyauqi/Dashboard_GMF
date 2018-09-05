@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
 
@@ -34,7 +33,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2 text" >
-                        <img src="<?php echo base_url();?>assets/login/img/backgrounds/logo.png" width="50%" title="logoGMF">
+                        <img src="<?php echo base_url();?>assets/login/img/backgrounds/logo.png" width="50%" title="logoGMF" style="padding-top: 100px">
                         <h1><strong>Admin</strong> Login</h1>
                     </div>
 
