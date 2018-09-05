@@ -5,13 +5,13 @@ class Pegawai extends CI_Controller {
 
 	function __construct() {
 		parent:: __construct();
-		$this->load->model('M_crud');
+		$this->load->model('Db_pegawai');
 	
 	}
 
 	public function index()
 	{
-		$data['pegawai'] = $this->M_crud->getAll('pegawai');
+		$data['pegawai'] = $this->Db_pegawai->getAll('pegawai');
 		$this->template->load('static','pegawai',$data);
 	}
 

@@ -15,7 +15,7 @@ for ($i=0; $i < $total_peg; $i++) {
   if ($max<$usia->y) {
     $max=$usia->y;
   }
-    if ($min>$usia->y) {
+  if ($min>$usia->y) {
     $min=$usia->y;
   }
 }
@@ -32,7 +32,7 @@ for ($i=0; $i < $total_peg; $i++) {
   if ($max_mka<$lama_kerja->y) {
     $max_mka=$lama_kerja->y;
   }
-    if ($min_mka>$lama_kerja->y) {
+  if ($min_mka>$lama_kerja->y) {
     $min_mka=$lama_kerja->y;
   }
 }
@@ -82,7 +82,7 @@ for ($i=0; $i < $total_peg; $i++) {
   } elseif ($usia->y>40 && $usia->y <=50) {
     $usia40++;
   } else
-    $usia50++;
+  $usia50++;
 }
 
 //data chart generation
@@ -101,10 +101,13 @@ for ($i=0; $i < $total_peg; $i++) {
   } elseif ($lama_kerja->y>2 && $lama_kerja->y <=5) {
     $masa2++;
   } else
-    $masa5++;
-  }
+  $masa5++;
+}
+?>
 
-
+<?php 
+$page_now="dashboard";
+include 'navbar.php';
 ?>
 
 <div class="main-panel">
@@ -173,6 +176,7 @@ for ($i=0; $i < $total_peg; $i++) {
 </div>
 <div class="row">
   <div class="col-md-4">
+<<<<<<< Updated upstream
   <div class="card">
     <div class="card-body" style="background-color:#3ea71e">
     <div class="row">
@@ -189,64 +193,80 @@ for ($i=0; $i < $total_peg; $i++) {
 </div>
   <div class="card-header">
     <div id="ro_container" style="min-width: 100%; height: 300px; margin: 0 auto"></div>
+=======
+    <div class="card">
+     <div class="card-header" style="background-color: #3ea71e">
+      <h4 class="card-title" style="color: #ffffff">MKA</h4>
+      <p class="card-category" style="color: #ffffff">Engineering Services</p>
+    </div>
+    <div class="card-header">
+      <div id="ro_container" style="min-width: 80%; height: 300px; margin: 0 auto"></div>
 
-    <script type="text/javascript">
 
-Highcharts.chart('ro_container', {
-    chart: {
-        type: 'column'
-    },
+>>>>>>> Stashed changes
+
+      <script type="text/javascript">
+
+        Highcharts.chart('ro_container', {
+          chart: {
+            type: 'column'
+          },
     // title: {
     //     text: 'World\'s largest cities per 2017'
     // },
     xAxis: {
-        type: 'category',
-        labels: {
-            rotation: -45,
-            style: {
-                fontSize: '16 px',
-                fontFamily: 'Verdana, sans-serif'
-            }
+      type: 'category',
+      labels: {
+        rotation: -45,
+        style: {
+          fontSize: '16 px',
+          fontFamily: 'Verdana, sans-serif'
         }
+      }
     },
     yAxis: {
-        min: 0,
-        title: {
-            text: 'Jumlah orang'
-        }
+      min: 0,
+      title: {
+        text: 'Jumlah orang'
+      }
     },
     legend: {
-        enabled: false
+      enabled: false
     },
     tooltip: {
-        pointFormat: 'Jumlah orang: <b>{point.y}</b>'
+      pointFormat: 'Jumlah orang: <b>{point.y}</b>'
     },
     series: [{
-        name: 'Population',
-        data: [
-            ['0-2 Tahun', <?php echo $masa0; ?>],
-            ['2-5 Tahun', <?php echo $masa2; ?>],
-            ['>5 Tahun', <?php echo $masa5; ?>]
-        ],
-        dataLabels: {
-            enabled: true,
-            rotation: -90,
-            color: '#FFFFFF',
-            align: 'right',
+      name: 'Population',
+      data: [
+      ['0-2 Tahun', <?php echo $masa0; ?>],
+      ['2-5 Tahun', <?php echo $masa2; ?>],
+      ['>5 Tahun', <?php echo $masa5; ?>]
+      ],
+      dataLabels: {
+        enabled: true,
+        rotation: -90,
+        color: '#FFFFFF',
+        align: 'right',
             format: '{point.y:.0f}', // one decimal
             y: 10, // 10 pixels down from the top
             style: {
+<<<<<<< Updated upstream
                 fontSize: '15px',
                 fontFamily: 'Verdana, sans-serif'
+=======
+              fontSize: '5px',
+              fontFamily: 'Verdana, sans-serif'
+>>>>>>> Stashed changes
             }
-        }
-    }]
-});
+          }
+        }]
+      });
     </script>
   </div>
 </div>
 </div>
- 
+
 <div class="col-md-4">
   <div class="card">
     <div class="card-body" style="background-color:#239ce5">
@@ -263,7 +283,11 @@ Highcharts.chart('ro_container', {
 </div>
 </div>
   <div class="card-header">
+<<<<<<< Updated upstream
     <div id="containers" style="min-width: 100%; height: 300px; max-width:auto; margin: 0 auto; margin-left:-15px"></div>
+=======
+    <div id="containers" style=" min-width: 100%; height: 300px; max-width: 100%; margin: 0 auto; margin-left:-15px"></div>
+>>>>>>> Stashed changes
     <script type="text/javascript">
 
       Highcharts.chart('containers', {
@@ -296,7 +320,7 @@ Highcharts.chart('ro_container', {
             name: 'DE',
             y: <?php echo $jumlah_de; ?>,
           }, {
-            name: 'EE',
+            name: 'Expert',
             y: <?php echo $jumlah_ee; ?>
           }, {
             name: 'GM',
@@ -308,22 +332,22 @@ Highcharts.chart('ro_container', {
             name: 'Secretary',
             y: <?php echo $jumlah_sec; ?>
           }, {
-            name: 'Senior ADO',
+            name: 'SADO',
             y: <?php echo $jumlah_sado; ?>
           }, {
-            name: 'Senior DE',
+            name: 'SDE',
             y: <?php echo $jumlah_sde; ?>
           }, {
-            name: 'Senior TPO',
+            name: 'STPO',
             y: <?php echo $jumlah_stpo; ?>
           }, {
             name: 'TPO',
             y: <?php echo $jumlah_tpo; ?>
           }, {
-            name: 'Trainee for DE',
+            name: 'Trainee',
             y: <?php echo $jumlah_tde; ?>
           }, {
-            name: 'Vice President',
+            name: 'VP',
             y: <?php echo $jumlah_vp; ?>
           }]
         }]
@@ -348,7 +372,7 @@ Highcharts.chart('ro_container', {
 </div>
 </div>
   <div class="card-header">
-   <div id="bar_container" style="min-width: 220px; max-width: 600px; height: 300px; margin: 0 auto"></div>
+   <div id="bar_container" style="min-width: 100%; max-width: auto; height: 300px; margin: 0 auto"></div>
 
 
 
@@ -400,7 +424,7 @@ Highcharts.chart('ro_container', {
 </div>
 </div>
   <div class="card-body">
-    <div id="ci_container" style="min-width: 290px; height: 300px; max-width: 400px; margin:0px; z-index: 1;"></div>
+    <div id="ci_container" style="min-width: 100%; height: 300px; max-width: auto; margin:0px; z-index: 1;"></div>
 
 
 
@@ -470,7 +494,7 @@ Highcharts.chart('ro_container', {
 </div>
 </div>
   <div class="card-header">
-   <div id="container" style="min-width: 310px; height: 297px; margin: 0 auto"></div>
+   <div id="container" style="min-width: 100%; height: 297px; margin: 0 auto"></div>
 
    <script type="text/javascript">
 
