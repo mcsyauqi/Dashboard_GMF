@@ -9,62 +9,42 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="card">
-						<div class="col-xs-12 table-responsive">
-							<table id="table_employee" class="table table-bordered table-hover dataTable" 
-							style="background-color: rgb(210, 221, 232); overflow-x:auto;">
-							<thead>
-								<tr>
-									<th style="text-align: center">No. Pegawai</th>
-									<th style="text-align: center">Name</th>
-									<th style="text-align: center">Bidang</th>
-									<th style="text-align: center">Unit</th>
-									<th style="text-align: center">Date of Joining</th>
-									<th style="text-align: center">Function</th>
-									<th style="text-align: center">Education</th>
-									<!--               <th style="text-align: center">Edit</th> -->
-									<th style="text-align: center">Delete</th>
-								</tr>
-							</thead>
-							<tbody>
-
-								<?php
-								foreach ($pegawai as $row) 
-								{
-									$no_peg = $row->no_peg;
-									?>
-									<tr>
-
-										<td><?php echo $row->no_peg;?></td>
-										<td><?php echo $row->nama_peg;?></td>
-										<td><?php echo $row->bidang;?></td>
-										<td><?php echo $row->unit;?></td>
-
-										<td><?php
-										$tgl_bener = strtotime($row->tgl_masuk); 
-										echo date("d M Y",$tgl_bener);
-
-										?></td>
-
-
-										<td><?php echo $row->jabatan;?></td>
-										<td><?php echo $row->pendidikan;?></td>
-
-										<td><p data-placement="top" align="center" data-toggle="tooltip" title="Delete" ><center><button style="width:23px;height:23px" class="btn btn-danger btn-xs" data-title="Delete"  data-toggle="modal"  data-target="#delete"  ><span class="fa fa-times"></span></button></center></p></td>
-									</tr>
-									<?php
-								}
-								?>
-
-
-
-							</tbody>
-						</table>
-
-						<!-- PAGINATION-->
-
-						<!-- /.box-body -->
-					</div>
-					<!-- /.box -->
+						<div class="card-header">
+									</div>
+						<div class="container" style="overflow-x: scroll;">
+		<table class="table table-striped table-bordered data" >
+			<thead>
+				<tr>			
+					<th>No. Peg</th>
+					<th>Nama</th>
+					<th>Bidang</th>
+					<th>Unit</th>
+					<th>Date of Joining</th>
+					<th>Function</th>
+					<th>Education</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>				
+					<td>00000</td>
+					<td>Andi</td>
+					<td>Jakarta</td>
+					<td>Web Designer</td>
+					<td>21</td>
+					<td>Aktif</td>
+					<td>S1</td>
+				<tr>				
+					<td>111111</td>
+					<td>Malas Ngoding</td>
+					<td>Bandung</td>
+					<td>Web Developer</td>
+					<td>26</td>
+					<td>Aktif</td>
+					<td>D3</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 				</div>
 
 

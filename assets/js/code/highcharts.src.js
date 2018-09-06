@@ -8980,7 +8980,7 @@
 		         *         Gradient
 		         * @default #FFFFFF
 		         */
-		        backgroundColor: '#ffffff',
+		        backgroundColor: '#000',
 
 		        /**
 		         * The background color or gradient for the plot area.
@@ -9140,7 +9140,7 @@
 		         * @default {highcharts|highmaps} Chart title
 		         * @default {highstock} null
 		         */
-		        text: '',
+		        text: 'Chart title',
 
 		        /**
 		         * The horizontal alignment of the title. Can be one of "left", "center"
@@ -10146,7 +10146,7 @@
 		         */
 		        style: {
 		            position: 'absolute',
-		            backgroundColor: '#ffffff',
+		            backgroundColor: '#000000',
 		            opacity: 0.5,
 		            textAlign: 'center'
 		        }

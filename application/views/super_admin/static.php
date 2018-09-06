@@ -10,10 +10,13 @@
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/demo.css">
 	<script src="<?php echo base_url();?>assets/js/code/highcharts.js"></script>
 	<script src="<?php echo base_url();?>assets/js/code/modules/data.js"></script>
-	<script src="<?php echo base_url();?>assets/js/code/modules/drilldown.js"></script>
+	<script src="<?php echo base_url();?>assets/js/code/modules/drilldown.js"></script><!-- 
 	<script src="<?php echo base_url();?>assets/js/code/modules/funnel.js"></script>
 	<script src="<?php echo base_url();?>assets/js/code/modules/export-data.js"></script>
-	<script src="<?php echo base_url();?>assets/js/code/modules/exporting.js"></script>
+	<script src="<?php echo base_url();?>assets/js/code/modules/exporting.js"></script> -->
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/dataTable/css/jquery.dataTables.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/dataTable/css/dataTables.bootstrap4.css">
+	
 </head>
 <body>
 	<!-- Main Header -->
@@ -27,17 +30,7 @@
 				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
 			</div>
 			<nav class="navbar navbar-header navbar-expand-lg">
-				<div class="container-fluid">
-					<form class="navbar-left navbar-form nav-search mr-md-3" action="" >
-						<div class="input-group">
-							<input type="text" placeholder="Search ..." class="form-control">
-							<div class="input-group-append">
-								<span class="input-group-text">
-									<i class="la la-search search-icon"></i>
-								</span>
-							</div>
-						</div>
-					</form>					
+				<div class="container-fluid">				
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">						
 						<li class="nav-item dropdown">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="true"> <img src="<?php echo base_url();?>assets/img/profile2.jpg" alt="user-img" width="36" class="img-circle">
@@ -152,11 +145,16 @@
 <script src="<?php echo base_url();?>assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/plugin/chart-circle/circles.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/ready.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/demo.js"></script>
+<!-- <script src="<?php echo base_url();?>assets/js/ready.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/demo.js"></script> -->
+<script src="<?php echo base_url();?>assets/dataTable/js/jquery.dataTables.js"></script>
+<script src="<?php echo base_url();?>assets/dataTable/js/dataTables.bootstrap4.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.data').DataTable();
+	});
+</script>
 <!-- untuk notifikasi 
 	<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script> 
 -->
