@@ -17,7 +17,8 @@ class Pegawai extends CI_Controller {
 
 	public function pegawai_super()
 	{
-		$this->template->load('super_admin/static','super_admin/pegawai_super');
+		$data['pegawai'] = $this->Db_pegawai->getAll('pegawai');
+		$this->template->load('super_admin/static','super_admin/pegawai_super',$data);
 	}
 
 	public function pegawai_admin()
