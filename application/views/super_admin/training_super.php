@@ -5,9 +5,26 @@
 			<div class="row">
 				<div class="col-md-12" style="max-width: 100%; width: auto;">
 					<div class="card">
-						<div class="card-header" style="padding: 20px 15px; text-align: left;">
+						<div class="card-header" style="margin-top: -1%; text-align: center;">
+										<p class="demo">
+											<div class="dropdown">
 
-						</div>
+												<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+
+													Export as
+
+												</button>
+
+												<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+
+													<a class="dropdown-item" href="#">Excel</a>
+													<a class="dropdown-item" href="#">PDF</a>
+
+												</ul>
+
+											</div>
+										</p>
+									</div>
 						<div class="container" style="overflow-x: scroll;">
 							<table class="table table-striped table-bordered data" style="width: 150%" >
 								<thead>

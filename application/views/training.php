@@ -13,30 +13,31 @@
 										<div class="card-title">List of Employees Training</div>
 									</div>
 									<div class="container" style="overflow-x: scroll;">
-		<table class="table table-striped table-bordered data" >
+		<table class="table table-striped table-bordered data" style="width: 150%" >
 			<thead>
 				<tr>			
-					<th>No. Peg</th>
-					<th>Nama</th>
-					<th>Unit</th>
-					<th>Human Factor</th>
-					<th>CASR</th>
-					<th>FTS</th>
-					<th>SMS</th>
-					<th>EWIS</th>
-					<th>Module 10</th>
-					<th>GMF QS</th>
-					<th>BATK</th>
-					<th>Basic Eng.</th>
-					<th>Cont. Air</th>
-					<th>Type Rating</th>
+					<th style="text-align: center; width: 6%">No. Peg</th>
+					<!-- <th style="text-align: center; width: 15%">Nama</th> -->
+					<!-- <th style="text-align: center; width: 3.5%">Unit</th> -->
+					<th style="text-align: center; width: 5%">Human Factor</th>
+					<th style="text-align: center; width: 5%">CASR</th>
+					<th style="text-align: center; width: 5%">FTS</th>
+					<th style="text-align: center; width: 5%">SMS</th>
+					<th style="text-align: center; width: 5%">EWIS</th>
+					<th style="text-align: center; width: 5%">Module 10</th>
+					<th style="text-align: center; width: 5%">GMF QS</th>
+					<th style="text-align: center; width: 5%">BATK</th>
+					<th style="text-align: center; width: 5%">Basic Eng.</th>
+					<th style="text-align: center; width: 5%">Cont. Air</th>
+					<th style="text-align: center; width: 5%">Type Rating</th>
+					<th style="text-align: center; width: 15%">Progress Training</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>				
 					<td>00000</td>
-					<td>Andi</td>
-					<td>TEC</td>
+					<!-- <td>Andi</td>
+					<td>TEC</td> -->
 					<td>Aktif</td>
 					<td>Non-Aktif</td>
 					<td>Aktif</td>
@@ -48,10 +49,14 @@
 					<td>Non-Aktif</td>
 					<td>Aktif</td>
 					<td>Aktif</td>
+					<td><p class="demo">
+													<div class="progress">
+														<div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+													</div></p></td>
 				<tr>				
 					<td>111111</td>
-					<td>Purnama</td>
-					<td>TEL</td>
+					<!-- <td>Purnama</td>
+					<td>TEL</td> -->
 					<td>Aktif</td>
 					<td>Non-Aktif</td>
 					<td>Aktif</td>
@@ -63,6 +68,10 @@
 					<td>Aktif</td>
 					<td>Non-Aktif</td>
 					<td>Non-Aktif</td>
+					<td><p class="demo">
+													<div class="progress">
+														<div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+													</div></p></td>
 				</tr>
 			</tbody>
 		</table>
