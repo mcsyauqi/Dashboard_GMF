@@ -3227,6 +3227,7 @@ body {
 
 .la-edit:before {
   content: "\f1c1";
+  color: #0893a7;
 }
 
 .la-eject:before {

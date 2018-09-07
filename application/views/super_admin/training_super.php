@@ -102,20 +102,3 @@
 		</div>
 	</div>
 </div>
-
-
-
-<script>
-	function konfirmasiDulu(){
-		var konfirmasi = confirm("Silakan Klik Tombol Salah Satu Tombol");
-		var text = "";
-
-		if(konfirmasi === true) {
-			text = "Kamu klik Tombol OK";
-		}else{
-			text = "Kamu klik Tombol Cancel";
-		}
-
-		document.getElementById("hasil").innerHTML = text;
-	}
-</script>

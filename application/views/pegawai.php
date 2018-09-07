@@ -26,8 +26,6 @@
 											<th style="text-align: center">Date of Joining</th>
 											<th style="text-align: center">Function</th>
 											<th style="text-align: center">Education</th>
-											<th style="text-align: center">Edit</th>
-											<th style="text-align: center">Delete</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -47,8 +45,6 @@
 											echo date("d-M-Y",$tgl_bener);?></td>
 											<td><?php echo $peg->jabatan;?></td>
 											<td><?php echo $peg->pendidikan;?></td>
-											<td><a href="edit_employee.html"><i class="la la-edit" style="font-size:20px"></i></a></td>
-											<td><a id="hasil"><i onclick="konfirmasiDulu()" class="la la-remove" style="font-size: 20px"></i></a></td>
 										</tr>
 									<?php }
 									?>
