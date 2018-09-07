@@ -80,7 +80,7 @@
 				</div>
 				<ul class="nav">
 					<li class="nav-item active">
-						<a href="<?php echo site_url('Dashboard');?>">
+						<a href="<?php echo site_url('Dashboard_super');?>">
 							<i class="la la-dashboard"></i>
 							<p>Dashboard</p>
 						</a>

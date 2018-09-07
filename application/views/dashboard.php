@@ -1,4 +1,8 @@
 <?php
+
+  $page_now="dashboard";
+  include 'navbar.php';
+
  $connect = mysqli_connect('localhost','root','','db_gmf');
 
 //data total pekerja

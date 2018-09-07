@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,9 +37,7 @@
 				</div>
 			</nav>
 		</div>
-<<<<<<< Updated upstream
-		
-=======
+
 		<div class="sidebar">
 			<div class="scrollbar-inner sidebar-wrapper">
 				
@@ -64,25 +64,10 @@
 			</div>
 		</div>
 
->>>>>>> Stashed changes
 		<?php echo $contents;?>
 
 		<footer class="footer">
-			<div class="container-fluid">
-				<nav class="pull-left">
-					<ul class="nav">
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Website
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								Help
-							</a>
-						</li>
-					</ul>
-				</nav>
+
 				<div class="copyright ml-auto">
 					<strong>Copyright &copy; Engineering Human Capital - GMF AeroAsia | <a href="mailto: ahmadthariqsyauqi@gmail.com"> Developed by Syauqi </a>
 						<a href="mailto: nurunnafis23@gmail.com">& Nafis</a>.</strong> All rights
@@ -109,8 +94,6 @@
 <script src="<?php echo base_url();?>assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/plugin/chart-circle/circles.min.js"></script>
-<!-- <script src="<?php echo base_url();?>assets/js/ready.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/demo.js"></script> -->
 <script src="<?php echo base_url();?>assets/dataTable/js/jquery.dataTables.js"></script>
 <script src="<?php echo base_url();?>assets/dataTable/js/dataTables.bootstrap4.js"></script>
 <script type="text/javascript">
@@ -118,7 +101,5 @@
 		$('.data').DataTable();
 	});
 </script>
-<!-- untuk notifikasi 
-	<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script> 
--->
+
 </html>

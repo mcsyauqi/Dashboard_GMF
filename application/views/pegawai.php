@@ -10,74 +10,52 @@
 				<div class="col-md-12">
 					<div class="card">
 						<div class="card-header">
-									</div>
-						<div class="container" style="overflow-x: scroll;">
-		<table class="table table-striped table-bordered data" >
-			<thead>
-				<tr>			
-					<th>No. Peg</th>
-					<th>Nama</th>
-					<th>Bidang</th>
-					<th>Unit</th>
-					<th>Date of Joining</th>
-					<th>Function</th>
-					<th>Education</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>				
-					<td>00000</td>
-					<td>Andi</td>
-					<td>Jakarta</td>
-					<td>Web Designer</td>
-					<td>21</td>
-					<td>Aktif</td>
-					<td>S1</td>
-				<tr>				
-					<td>111111</td>
-					<td>Malas Ngoding</td>
-					<td>Bandung</td>
-					<td>Web Developer</td>
-					<td>26</td>
-					<td>Aktif</td>
-					<td>D3</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-				</div>
-
-
-
-
-				<div class="modal modal-danger fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-
-
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-label="close">
-									<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-									<h4 class="modal-title" >Delete Employee</h4>
-								</div>
-								<div class="modal-body">
-									<p>Are you sure you want to delete this Record?</p>
-								</div>
-								<!-- <?php $unames //= $this->uri->segment(3)?> -->
-								<div class="modal-footer">
-									<button type="button" class="btn btn-outline pull-right" data-dismiss="modal"><span class="fa fa-close"></span> No</button>
-									<a class ="button" href="<?php echo base_url('user/deletepegawai/'.$uname.'/'.$no_peg); ?>"> <button type="button" class="btn btn-outline" style="margin-right: 1%;"><span class="fa fa-check"></span> Yes</button></a>
-
-								</div>
+							<a href="<?php echo site_url('Pegawai/add_pegawai');?>">
+								<button class="btn btn-info">Add Employee</button></a>
 							</div>
+							<div class="container" style="overflow-x: scroll;">
+								<table class="table table-striped table-bordered data" >
+									<thead>
+										<tr>			
+											<th style="text-align: center">No. Peg</th>
+											<th style="text-align: center">Nama</th>
+											<th style="text-align: center">Bidang</th>
+											<th style="text-align: center">Unit</th>
+											<th style="text-align: center">Date of Joining</th>
+											<th style="text-align: center">Function</th>
+											<th style="text-align: center">Education</th>
+											<th style="text-align: center">Edit</th>
+											<th style="text-align: center">Delete</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php
+										foreach ($pegawai as $peg) 
+										{
 
-
-
-
+											$no_peg = $peg->no_peg;
+											?>
+										<tr>
+											<td><?php echo $peg->no_peg;?></td>
+											<td><?php echo $peg->nama_peg;?></td>
+											<td><?php echo $peg->bidang;?></td>
+											<td><?php echo $peg->unit;?></td>
+											<td><?php
+											$tgl_bener = strtotime($peg->tgl_masuk); 
+											echo date("d-M-Y",$tgl_bener);?></td>
+											<td><?php echo $peg->jabatan;?></td>
+											<td><?php echo $peg->pendidikan;?></td>
+											<td><a href="edit_employee.html"><i class="la la-edit" style="font-size:20px"></i></a></td>
+											<td><a id="hasil"><i onclick="konfirmasiDulu()" class="la la-remove" style="font-size: 20px"></i></a></td>
+										</tr>
+									<?php }
+									?>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>

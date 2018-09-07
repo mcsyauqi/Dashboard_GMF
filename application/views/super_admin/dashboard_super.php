@@ -1,4 +1,8 @@
 <?php
+
+  $page_now="dashboard_super";
+  include 'navbar.php';
+
  $connect = mysqli_connect('localhost','root','','db_gmf');
 
 //data total pekerja
@@ -38,7 +42,7 @@ for ($i=0; $i < $total_peg; $i++) {
   }
 }
 
-//data chart manpower
+//data chart man power
 $de = mysqli_query($connect,"SELECT jabatan from pegawai where jabatan = 'Development Engineer' ");
 $jumlah_de = mysqli_num_rows($de);
 $ee = mysqli_query($connect,"SELECT jabatan from pegawai where jabatan = 'Engineering Expert' ");
@@ -109,12 +113,79 @@ for ($i=0; $i < $total_peg; $i++) {
   $masa21++;
 }
 
+
+
+//data chart training-training
+$data_human = mysqli_query($connect, "SELECT * FROM training WHERE stat_human=5");
+$data_human_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_human=5 or stat_human=4 or stat_human=1");
+$human = mysqli_num_rows($data_human); 
+$human_total = mysqli_num_rows($data_human_total);
+$human_persen =  ($human/$human_total)*100;
+
+$data_cas = mysqli_query($connect, "SELECT * FROM training WHERE stat_cas=5");
+$data_cas_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_cas=5 or stat_cas=4 or stat_cas=1");
+$cas = mysqli_num_rows($data_cas); 
+$cas_total = mysqli_num_rows($data_cas_total);
+$cas_persen =  ($cas/$cas_total)*100;
+
+$data_fts = mysqli_query($connect, "SELECT * FROM training WHERE stat_fts=5");
+$data_fts_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_fts=5 or stat_fts=4 or stat_fts=1");
+$fts = mysqli_num_rows($data_fts); 
+$fts_total = mysqli_num_rows($data_fts_total);
+$fts_persen =  ($fts/$fts_total)*100;
+
+$data_sms = mysqli_query($connect, "SELECT * FROM training WHERE stat_sms=5");
+$data_sms_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_sms=5 or stat_sms=4 or stat_sms=1");
+$sms = mysqli_num_rows($data_sms); 
+$sms_total = mysqli_num_rows($data_sms_total);
+$sms_persen =  ($sms/$sms_total)*100;
+
+$data_ewis = mysqli_query($connect, "SELECT * FROM training WHERE stat_ewis=5");
+$data_ewis_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_ewis=5 or stat_ewis=4 or stat_ewis=1");
+$ewis = mysqli_num_rows($data_ewis); 
+$ewis_total = mysqli_num_rows($data_ewis_total);
+$ewis_persen =  ($ewis/$ewis_total)*100;
+
+$data_module = mysqli_query($connect, "SELECT * FROM training WHERE stat_module=5");
+$data_module_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_module=5 or stat_module=4 or stat_module=1");
+$module = mysqli_num_rows($data_module); 
+$module_total = mysqli_num_rows($data_module_total);
+$module_persen =  ($module/$module_total)*100;
+
+$data_gqs = mysqli_query($connect, "SELECT * FROM training WHERE stat_gqs=5");
+$data_gqs_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_gqs=5 or stat_gqs=4 or stat_gqs=1");
+$gqs = mysqli_num_rows($data_gqs); 
+$gqs_total = mysqli_num_rows($data_gqs_total);
+$gqs_persen =  ($gqs/$gqs_total)*100;
+
+$data_batk = mysqli_query($connect, "SELECT * FROM training WHERE stat_batk=5");
+$data_batk_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_batk=5 or stat_batk=4 or stat_batk=1");
+$batk = mysqli_num_rows($data_batk); 
+$batk_total = mysqli_num_rows($data_batk_total);
+$batk_persen =  ($batk/$batk_total)*100;
+
+$data_basic = mysqli_query($connect, "SELECT * FROM training WHERE stat_basic=5");
+$data_basic_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_basic=5 or stat_basic=4 or stat_basic=1");
+$basic = mysqli_num_rows($data_basic); 
+$basic_total = mysqli_num_rows($data_basic_total);
+$basic_persen =  ($basic/$basic_total)*100;
+
+$data_cont = mysqli_query($connect, "SELECT * FROM training WHERE stat_cont=5");
+$data_cont_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_cont=5 or stat_cont=4 or stat_cont=1");
+$cont = mysqli_num_rows($data_cont); 
+$cont_total = mysqli_num_rows($data_cont_total);
+$cont_persen =  ($cont/$cont_total)*100;
+
+
 //data chart training compliance
+$training_comp=($human_persen+$cas_persen+$fts_persen+$sms_persen+$ewis_persen+$module_persen+$gqs_persen+$batk_persen+$basic_persen+$cont_persen)/10;
+$sisa_training_comp=100-$training_comp;
 
-
-
-
-
+// $data_typer1 = mysqli_query($connect, "SELECT * FROM training WHERE stat_typer1= NOT NULL");
+// $data_typer1_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_typer1=5 or stat_typer1=4 or stat_typer1=1");
+// $typer1 = mysqli_num_rows($data_typer1); 
+// $typer1_total = mysqli_num_rows($data_typer1_total);
+// $typer1_persen =  ($typer1/$typer1_total)*100;
 
 
 ?>
@@ -446,13 +517,13 @@ for ($i=0; $i < $total_peg; $i++) {
       },
       series: [{
         type: 'pie',
-        name: 'Browser share',
+        name: 'Prosentase',
         innerSize: '50%',
         data: [
-        ['Chrome', 58.9],
+        ['Success', <?php echo "$training_comp"?>],
         {
-          name: 'Other',
-          y: 7.61,
+          name: 'Not yet',
+          y: <?php echo "$sisa_training_comp"?>,
           dataLabels: {
             enabled: false
           }
@@ -516,68 +587,63 @@ Highcharts.chart('container', {
 
   tooltip: {
     headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-    pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+    pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b><br/>'
   },
 
   "series": [
   {
-    "name": "Browsers",
+    "name": "Training",
     "colorByPoint": true,
     "data": [
     {
       "name": "HUMAN FACTOR",
-      "y": 62.74,
+      "y": <?php echo $human_persen; ?>,
       "drilldown": "HUMAN FACTOR"
     },
     {
       "name": "CASR,FAR",
-      "y": 10.57,
+      "y": <?php echo $cas_persen; ?>,
       "drilldown": "CASR,FAR"
     },
     {
       "name": "FTS LV.2",
-      "y": 7.23,
+      "y": <?php echo $fts_persen; ?>,
       "drilldown": "FTS LV.2"
     },
     {
       "name": "SMS",
-      "y": 5.58,
+      "y": <?php echo $sms_persen; ?>,
       "drilldown": "SMS"
     },
     {
       "name": "EWIS",
-      "y": 4.02,
+      "y": <?php echo $ewis_persen; ?>,
       "drilldown": "EWIS"
     },
     {
       "name": "MODULE 10",
-      "y": 1.92,
+      "y": <?php echo $module_persen; ?>,
       "drilldown": "MODULE 10"
     },
     {
       "name": "GMF QS",
-      "y": 7.62,
+      "y": <?php echo $gqs_persen; ?>,
       "drilldown": "GMF QS"
     },
     {
       "name": "BATK",
-      "y": 1.92,
+      "y": <?php echo $batk_persen; ?>,
       "drilldown": "BATK"
     },
     {
       "name": "BASIC ENG.",
-      "y": 1.92,
+      "y": <?php echo $basic_persen; ?>,
       "drilldown": "BE"
     },
     {
       "name": "CONT. AIR",
-      "y": 1.92,
+      "y": <?php echo $cont_persen; ?>,
       "drilldown": "CONT. AIR"
-    },
-    {
-      "name": "TYPE RATING",
-      "y": 1.92,
-      "drilldown": "TYPE RATING"
     }
     ]
   }

@@ -10,7 +10,9 @@ class Training extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->template->load('static','training');
+		$data['pegawai'] = $this->Db_pegawai->getAll('pegawai');
+		$data['training'] = $this->Db_training->getAll('training');		
+		$this->template->load('static','training',$data);
 	}
 
 	public function training_super()
