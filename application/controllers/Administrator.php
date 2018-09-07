@@ -9,7 +9,7 @@ class Administrator extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['user'] = $this->Db_user->getAll('user');
+		$data['user'] = $this->Db_user->getAll();
 		$this->template->load('super_admin/static','super_admin/administrator', $data);
 	}
 

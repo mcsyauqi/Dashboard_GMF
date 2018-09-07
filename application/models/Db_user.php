@@ -14,9 +14,12 @@ class Db_user extends CI_Model{
 	// 	return $data->row();
 	// }
 
-	public function getAll($table) {
+	public function getAll() {
 		
-		return $this->db->get($table)->result();
+		return $this->db->select('pegawai.no_peg, pegawai.nama_peg, user.username, user.password')
+		->from('pegawai')
+		->join('user', 'pegawai.no_peg=user.no_peg')
+		->get();
 	}
 	
 }

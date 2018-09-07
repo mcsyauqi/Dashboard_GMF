@@ -19,9 +19,7 @@ include 'navbar.php';
 									<thead>
 										<tr>			
 											<th style="text-align: center">No. Peg</th>
-											<!-- <th style="text-align: center">Nama</th>
-											<th style="text-align: center">Bidang</th>
-											<th style="text-align: center">Unit</th> -->
+											<th style="text-align: center">Nama</th>
 											<th style="text-align: center">username</th>
 											<th style="text-align: center">Password</th>
 											<th style="text-align: center">Edit</th>
@@ -30,16 +28,12 @@ include 'navbar.php';
 									</thead>
 									<tbody>
 										<?php
-										foreach ($user as $us) 
+										foreach ($user->result() as $us) 
 										{
-
-											$no_peg = $us->no_peg;
 											?>
 											<tr>
-												<td><?php echo $us->no_peg;?></td>
-											<!-- <td><?php echo $peg->nama_peg;?></td>
-											<td><?php echo $peg->bidang;?></td>
-											<td><?php echo $peg->unit;?></td> -->
+											<td><?php echo $us->no_peg;?></td>
+											<td><?php echo $us->nama_peg;?></td>
 											<td><?php echo $us->username;?></td>
 											<td><?php echo $us->password;?></td>
 											<td><a href="edit_employee.html"><i class="la la-edit" style="font-size:20px"></i></a></td>
