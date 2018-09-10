@@ -12,8 +12,6 @@
 				<div class="col-md-12">
 					<div class="card">
 						<div class="card-header">
-							<a href="<?php echo site_url('Pegawai/add_pegawai');?>">
-								<button class="btn btn-info">Add Employee</button></a>
 							</div>
 							<div class="container" style="overflow-x: scroll;">
 								<table class="table table-striped table-bordered data" >

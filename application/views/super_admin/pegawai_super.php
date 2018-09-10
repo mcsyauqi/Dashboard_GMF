@@ -1,6 +1,6 @@
 <?php 
-  $page_now="pegawai_super";
-  include 'navbar.php';
+$page_now="pegawai_super";
+include 'navbar.php';
 ?>
 <div class="main-panel">
 	<div class="content">
@@ -35,21 +35,22 @@
 
 											$no_peg = $peg->no_peg;
 											?>
-										<tr>
-											<td><?php echo $peg->no_peg;?></td>
-											<td><?php echo $peg->nama_peg;?></td>
-											<td><?php echo $peg->bidang;?></td>
-											<td><?php echo $peg->unit;?></td>
-											<td><?php
-											$tgl_bener = strtotime($peg->tgl_masuk); 
-											echo date("d-M-Y",$tgl_bener);?></td>
-											<td><?php echo $peg->jabatan;?></td>
-											<td><?php echo $peg->pendidikan;?></td>
-											<td><a href="edit_employee.html"><i class="la la-edit" style="font-size:20px"></i></a></td>
-											<td><a id="hasil"><i onclick="konfirmasiDulu()" class="la la-remove" style="font-size: 20px"></i></a></td>
-										</tr>
-									<?php }
-									?>
+											<tr>
+												<td><?php echo $peg->no_peg;?></td>
+												<td><?php echo $peg->nama_peg;?></td>
+												<td><?php echo $peg->bidang;?></td>
+												<td><?php echo $peg->unit;?></td>
+												<td><?php
+												$tgl_bener = strtotime($peg->tgl_masuk); 
+												echo date("d-M-Y",$tgl_bener);?></td>
+												<td><?php echo $peg->jabatan;?></td>
+												<td><?php echo $peg->pendidikan;?></td>
+												<td><a href="edit_pegawai/<?php echo $peg->no_peg;?>"><i class="la la-edit" style="font-size:20px"></i></a></td>
+												<td><a id="hasil" href="delete_pegawai/<?php echo $peg->no_peg;?>"><i class="la la-remove" style="font-size: 20px"></i></a></td>
+
+											</tr>
+										<?php }
+										?>
 									</tbody>
 								</table>
 							</div>

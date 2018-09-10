@@ -33,7 +33,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2 text" >
-                        <img src="<?php echo base_url();?>assets/login/img/backgrounds/logo.png" width="50%" title="logoGMF" style="padding-top: 100px">
+                        <img src="<?php echo base_url();?>assets/login/img/backgrounds/logo.png" width="50%" title="logoGMF">
                         <h1><strong>Admin</strong> Login</h1>
                     </div>
 
@@ -41,36 +41,34 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-6 col-sm-offset-3 form-box">
-                       <div class="form-top">
-                          <div class="form-center">
-                             <h3>Login</h3>
-                         </div>
+                     <div class="form-top">
+                      <div class="form-center">
+                       <h3>Login</h3>
+                   </div>
 
-                     </div>
-                     <div class="form-bottom" >
-                         <form role="form" action="<?php echo base_url('Login/do_login/'); ?>" method="post" class="login-form">
-                            <div class="form-group">
-                                <label class="sr-only" for="form-username">Username</label>
-                                <input type="username" name="username" placeholder="Username..." class="form-username form-control" id="form-username">
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="form-password">Password</label>
-                                <input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
-                            </div>
-                             <font color="red"><?php echo $this->session->flashdata('gagallogin')?></font>
-                            <button type="submit" class="btn">LOGIN</button>
-                        </form>
+               </div>
+               <div class="form-bottom" >
+                   <form role="form" action="<?php echo base_url('Login/do_login/'); ?>" method="post" class="login-form">
+                    <label for="username"><b>Username</b></label>
+                    <input style="width: 100%" type="text" placeholder="Enter Username" name="username" required>
 
-                        <div >
-                            <hr style="size: solid 2px;">
-                             <h3 style="font-size: 15px;color: grey;">PT. GMF AeroAsia, Tbk.</h3>
-                         </div>
-                    </div>
+                    <label for="password"><b>Password</b></label>
+                    <input style="width: 100%" type="password" placeholder="Enter Password" name="password" required>
 
-             </div>
-         </div>
-     </div>
- </div>
+                    <font color="red"><?php echo $this->session->flashdata('gagallogin')?></font>
+                    <button style="margin-top: 30px" type="submit" class="btn">LOGIN</button>
+                </form>
+
+                <div >
+                    <hr style="size: solid 2px;">
+                    <h3 style="font-size: 15px;color: grey;">PT. GMF AeroAsia, Tbk.</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
 </div>
 
 </div>
