@@ -33,23 +33,11 @@
 				<div class="container-fluid">				
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">						
 						<li class="nav-item dropdown">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="true"> <img src="<?php echo base_url();?>assets/img/profile2.jpg" alt="user-img" width="36" class="img-circle">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="true"> 
 								<span>GMF</span>
 							</a>
 							<ul class="dropdown-menu dropdown-user">
-								<li>
-									<div class="user-box">
-										<div class="u-img"><img src="<?php echo base_url();?>assets/img/profile2.jpg" alt="user"></div>
-										<div class="u-text">
-											<h4><strong>GMF</strong> 
-												<h4><span class="user-level">Super Admin</span></h4>
-											</h4>
-										</div>
-									</div>
-								</li>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="<?php echo site_url('Profile');?>"><i class="ti-user"></i> My Profile</a>
-								<a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
+								<a class="dropdown-item" href="#"><i class="ti-settings"></i> Change Password</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="<?php echo base_url('Logout')?>"><i class="fa fa-power-off"></i> Logout</a>
 							</ul>
@@ -62,9 +50,6 @@
 		<div class="sidebar">
 			<div class="scrollbar-inner sidebar-wrapper">
 				<div class="user">
-					<div class="photo">
-						<img src="<?php echo base_url();?>assets/img/profile2.jpg">
-					</div>
 					<div class="info">
 						<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 							<span>

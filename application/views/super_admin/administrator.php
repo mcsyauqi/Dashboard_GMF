@@ -50,6 +50,7 @@ include 'navbar.php';
 									</div>
 								</div>
 							</div>
+						</div>
 							<div class="container" style="overflow-x: scroll;">
 								<table class="table table-striped table-bordered data" >
 									<thead>
