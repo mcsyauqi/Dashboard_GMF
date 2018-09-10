@@ -6,6 +6,7 @@ class Administrator extends CI_Controller {
 	function __construct() {
 		parent:: __construct();
 		$this->load->model('Db_user');
+		$this->load->model('Db_admin');
 	}
 	public function index()
 	{
@@ -23,6 +24,20 @@ class Administrator extends CI_Controller {
 	{
 		$data['user'] = $this->Db_user->getAll('user');
 		$this->template->load('super_admin/static','super_admin/edit_admin', $data);
+	}
+
+	public function input_admin()
+	{
+		$data = array(
+			'no_peg' => $this->input->post('no_peg'),
+			'tipe' => $this->input->post('tipe'),
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
+		);
+
+		$this->Db_admin->input_admin($data);
+
+		redirect (site_url('Administrator'));
 	}
 
 }

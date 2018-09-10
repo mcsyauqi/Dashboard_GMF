@@ -66,6 +66,26 @@ class Pegawai extends CI_Controller {
 		$this->template->load('super_admin/static','super_admin/edit_pegawai',$data);
 	}
 
+	public function update_pegawai()
+	{
+		$id = $this->input->post('no_peg');
+		$data = array(
+			'no_peg' => $this->input->post('no_peg'),
+			'nama_peg' => $this->input->post('nama_peg'),
+			'dinas' => $this->input->post('dinas'),
+			'bidang' => $this->input->post('bidang'),
+			'unit' => $this->input->post('unit'),
+			'jabatan' => $this->input->post('jabatan'),
+			'pendidikan' => $this->input->post('pendidikan'),
+			'tgl_masuk' => $this->input->post('tgl_masuk'),
+			'tgl_lahir' => $this->input->post('tgl_lahir'),
+		);
+
+		$this->Db_pegawai->update_pegawai($data, $id);
+
+		redirect (site_url('Pegawai/pegawai_super'));
+	}
+
 	public function edit()
 	{
 		$this->load->model('Db_pegawai');

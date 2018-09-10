@@ -38,7 +38,7 @@
 					</li>
 					<li class="nav-item <?php if($page_now=='administrator') echo 'active';?>">
 						<a href="<?php echo site_url('Administrator');?>" onclick="">
-							<i class="la la-group"></i>
+							<i class="la la-expeditedssl"></i>
 							<p>Administrator</p>
 						</a>
 					</li>

@@ -1,3 +1,8 @@
+<?php 
+$page_now="pegawai_super";
+include 'navbar.php';
+?>
+
 <div class="main-panel">
 	<div class="content">
 		<div class="container-fluid">
@@ -11,15 +16,11 @@
 						foreach ($pegawai -> result() as $peg) 
 						{
 							$no_peg = $peg->no_peg;
-							?>
 
+						}
 
-							<?php
-							$tgl_bener = strtotime($peg->tgl_masuk); 
-							echo date("d-M-Y",$tgl_bener);?>
-
-						<?php }
 						?>
+						<form method="post" action="<?php echo site_url('Pegawai/update_pegawai')?>">
 						<div class="card-body">
 							<div class="form-group">
 								<label for="form_employee">ID</label>
@@ -102,12 +103,18 @@
 							</div>
 							<div class="form-group">
 								<label for="form_employee">Date Of Joining</label>
-								<input type="date" class="form-control form-control" id="defaultInput" name="tgl_masuk" value="<?php echo date("d-M-Y",$tgl_masuk;?>">
+								<input type="date" class="form-control form-control" id="defaultInput" name="tgl_masuk" value="<?php echo $peg->tgl_masuk;?>">
 							</div>
 							<div class="form-group">
 								<label for="form_employee">Date Of Birth</label>
-								<input type="date" class="form-control form-control" id="defaultInput" name="tgl_lahir" value="<?php echo date("d-M-Y",$tgl_bener);?>">
+								<input type="date" class="form-control form-control" id="defaultInput" name="tgl_lahir" value="<?php echo $peg->tgl_lahir;?>">
 							</div>
+							<div class="card-action">
+								<button class="btn btn-success">Save</button>
+								<a href="<?php echo site_url('Pegawai/pegawai_super');?>">
+								<button class="btn btn-danger"  style="margin-right:10px">Cancel</button></a>
+							</div>
+						</form>
 						</div>
 					</div>
 				</div>

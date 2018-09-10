@@ -1,3 +1,8 @@
+<?php 
+$page_now="administrator";
+include 'navbar.php';
+?>
+
 <div class="main-panel">
 				<div class="content">
 					<div class="container-fluid">
