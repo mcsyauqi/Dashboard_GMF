@@ -1,11 +1,8 @@
 		<div class="sidebar">
 			<div class="scrollbar-inner sidebar-wrapper">
 				<div class="user">
-					<div class="photo">
-						<img src="<?php echo base_url();?>assets/img/profile2.jpg">
-					</div>
 					<div class="info">
-						<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+						<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true" style="text-align: center;">
 							<span>
 								Syauqi
 								<span class="user-level">Admin</span>
