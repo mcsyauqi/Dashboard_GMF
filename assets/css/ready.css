@@ -5077,10 +5077,10 @@ body {
   border-radius: 0px;
   background-color: #ffffff;
   margin-bottom: 30px;
-  -webkit-box-shadow: 3px 5px 5px 1px rgba(0, 0.07, 0.07, 0.58);
-  -moz-box-shadow: 3px 5px 5px 1px rgba(0, 0.07, 0.07, 0.58);
-  box-shadow: 3px 5px 5px 1px rgba(0, 0.07, 0.07, 0.58);
-  border: 1px solid #eee;
+  -webkit-box-shadow: 2px 4px 4px 1px rgba(0, 0.02, 0.02, 0.4);
+  -moz-box-shadow: 2px 4px 4px 1px rgba(0, 0.02, 0.02, 0.4);
+  box-shadow: 2px 4px 4px 1px rgba(0, 0.02, 0.02, 0.4);
+  border: 0px solid #eee;
   border-radius: 10px;
 }
 .card .card-header {

@@ -337,7 +337,7 @@ $sisa_training_comp=100-$training_comp;
       <div class="row">
        <div class="col-5">
         <div class="icon-big text-center">
-         <i class="la la-fire" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
+         <i class="la la-users" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
        </div>
      </div>
      <div class="numbers" style="margin-left: -17%">
@@ -443,7 +443,7 @@ $sisa_training_comp=100-$training_comp;
         type: 'bar'
       },
       xAxis: {
-        categories: ['Baby Boomers', 'X Generation', 'Y Geneartion','Z Generation','Alpha Generation']
+        categories: ['Baby Boomers', 'X Generation', 'Y Geneartion','Z Generation']
       },
       yAxis: {
         min: 0,
@@ -458,7 +458,7 @@ $sisa_training_comp=100-$training_comp;
       },
       series: [{
         name: 'Kelompok usia kerja',
-        data: [<?php echo $baby?>, <?php echo $gen_x?>, <?php echo $gen_y?>, <?php echo $gen_z?>, <?php echo $alpha?>],
+        data: [<?php echo $baby?>, <?php echo $gen_x?>, <?php echo $gen_y?>, <?php echo $gen_z?>],
         dataLabels: {
           enabled: false
         }
