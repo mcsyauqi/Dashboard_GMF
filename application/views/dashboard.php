@@ -337,7 +337,7 @@ $sisa_training_comp=100-$training_comp;
       <div class="row">
        <div class="col-5">
         <div class="icon-big text-center">
-         <i class="la la-fire" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
+         <i class="la la-users" style="color: #ffffff; font-size: 50px; margin-left: -40%"></i>
        </div>
      </div>
      <div class="numbers" style="margin-left: -17%">
