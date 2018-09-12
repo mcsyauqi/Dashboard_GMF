@@ -2,57 +2,96 @@
   $page_now="training_admin";
   include 'navbar.php';
 ?>
-
 <div class="main-panel">
 	<div class="content">
 		<div class="container-fluid">
 			<h4 class="page-title">Training Compliance</h4>
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12" style="max-width: 100%; width: auto;">
 					<div class="card">
-						<div class="card-header" style="padding: 30px 15px">
-							<div class="card-title">List of Employees Training</div>
-						</div>
-						<div class="card-body">
-							<table class="table table-striped mt-3">
+						<div class="card-header" style="margin-top: -1%; text-align: center;">
+										<p class="demo">
+											<div class="dropdown">
+
+												<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+
+													Export as
+
+												</button>
+
+												<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+
+													<a class="dropdown-item" href="#">Excel</a>
+													<a class="dropdown-item" href="#">PDF</a>
+
+												</ul>
+
+											</div>
+										</p>
+									</div>
+						<div class="container" style="overflow-x: scroll;">
+							<table class="table table-striped table-bordered data" style="width: 150%" rules="row" >
 								<thead>
-									<tr>
-										<th scope="col">#</th>
-										<th scope="col">First</th>
-										<th scope="col">Last</th>
-										<th scope="col">Handle</th>
-										<th scope="col">Job</th>
-										<th scope="col">Salary</th>
-										<th scope="col">Age</th>
-										<th scope="col">Email</th>
+									<tr>			
+										<th style="text-align: center; width: 6%">No. Peg</th>
+										<!-- <th style="text-align: center; width: 15%">Nama</th> -->
+										<!-- <th style="text-align: center; width: 3.5%">Unit</th> -->
+										<th style="text-align: center; width: 5%">Human Factor</th>
+										<th style="text-align: center; width: 5%">CASR</th>
+										<th style="text-align: center; width: 5%">FTS</th>
+										<th style="text-align: center; width: 5%">SMS</th>
+										<th style="text-align: center; width: 5%">EWIS</th>
+										<th style="text-align: center; width: 5%">Module 10</th>
+										<th style="text-align: center; width: 5%">GMF QS</th>
+										<th style="text-align: center; width: 5%">BATK</th>
+										<th style="text-align: center; width: 5%">Basic Eng.</th>
+										<th style="text-align: center; width: 5%">Cont. Air</th>
+										<th style="text-align: center; width: 5%">Type Rating</th>
+										<th style="text-align: center; width: 15%">Progress Training</th>
+										<th style="text-align: center; width: 2%">Edit</th>
+										
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>@mdo</td>
-										<td>Business</td>
-										<td>$500</td>
-										<td>25</td>
-										<td>bhxshgvh@mail.com</td>
-										<td><a href="edit_employee.html"><button class="btn btn-primary">Edit</button></a></td>
-										<td><a id="hasil"><button onclick="konfirmasiDulu()" class="btn btn-danger">Delete</button></a></td>
-										<td><a href="index.html"><button class="btn btn-default">Profile</button></a></td>
+									<?php
+									foreach ($training as $train) 
+									{
 
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>Jacob</td>
-										<td>Thornton</td>
-										<td>@fat</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td colspan="2">Larry the Bird</td>
-										<td>@twitter</td>
-									</tr>
+										$no_peg = $train->no_peg;
+										// $train = $train->no_peg;
+										?>
+										<tr>
+											<td><?php echo $train->no_peg;?></td>
+											<td><?php $done_bener = strtotime($train->done_human); 
+											echo date("d-M-Y",$done_bener);?></td>
+											<td><?php $done_bener2 = strtotime($train->done_cas); 
+											echo date("d-M-Y",$done_bener2);?></td>
+											<td><?php $done_bener3 = strtotime($train->done_fts); 
+											echo date("d-M-Y",$done_bener3);?></td>
+											<td><?php $done_bener4 = strtotime($train->done_sms); 
+											echo date("d-M-Y",$done_bener4);?></td>
+											<td><?php $done_bener5 = strtotime($train->done_ewis); 
+											echo date("d-M-Y",$done_bener5);?></td>
+											<td><?php $done_bener6 = strtotime($train->done_module); 
+											echo date("d-M-Y",$done_bener6);?></td>
+											<td><?php $done_bener7 = strtotime($train->done_gqs); 
+											echo date("d-M-Y",$done_bener7);?></td>
+											<td><?php $done_bener8 = strtotime($train->done_batk); 
+											echo date("d-M-Y",$done_bener8);?></td>
+											<td><?php $done_bener9 = strtotime($train->done_basic); 
+											echo date("d-M-Y",$done_bener9);?></td>
+											<td><?php $done_bener10 = strtotime($train->done_cont); 
+											echo date("d-M-Y",$done_bener10);?></td>
+											<td><?php $done_bener11 = strtotime($train->done_typer1); 
+											echo date("d-M-Y",$done_bener11);?></td>
+											<td><p class="demo">
+													<div class="progress">
+														<div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+													</div></p></td>
+											<td><a href="edit_employee.html"><i class="la la-edit" style="font-size:20px"></i></a></td>
+										</tr>
+									<?php }
+									?>
 								</tbody>
 							</table>
 						</div>
@@ -62,46 +101,3 @@
 		</div>
 	</div>
 </div>
-	
-	<script>
-		$('#displayNotif').on('click', function(){
-			var placementFrom = $('#notify_placement_from option:selected').val();
-			var placementAlign = $('#notify_placement_align option:selected').val();
-			var state = $('#notify_state option:selected').val();
-			var style = $('#notify_style option:selected').val();
-			var content = {};
-
-			content.message = 'Turning standard Bootstrap alerts into "notify" like notifications';
-			content.title = 'Bootstrap notify';
-			if (style == "withicon") {
-				content.icon = 'la la-bell';
-			} else {
-				content.icon = 'none';
-			}
-			content.url = 'index.html';
-			content.target = '_blank';
-
-			$.notify(content,{
-				type: state,
-				placement: {
-					from: placementFrom,
-					align: placementAlign
-				},
-				time: 1000,
-			});
-		});
-	</script>
-	<script>
-		function konfirmasiDulu(){
-			var konfirmasi = confirm("Silakan Klik Tombol Salah Satu Tombol");
-			var text = "";
-			
-			if(konfirmasi === true) {
-				text = "Kamu klik Tombol OK";
-			}else{
-				text = "Kamu klik Tombol Cancel";
-			}
-			
-			document.getElementById("hasil").innerHTML = text;
-		}
-	</script>

@@ -23,11 +23,7 @@ class Pegawai extends CI_Controller {
 		$this->template->load('super_admin/static','super_admin/pegawai_super',$data);
 	}
 
-	public function pegawai_admin()
-	{
-		$this->template->load('admin/static','admin/pegawai_admin');
-	}
-
+	
 	public function add_pegawai()
 	{
 		$this->template->load('super_admin/static','super_admin/add_pegawai');
@@ -110,6 +106,11 @@ class Pegawai extends CI_Controller {
 		}
 	}
 
+	public function pegawai_admin()
+	{
+		$data['pegawai'] = $this->Db_pegawai->getAll('pegawai');
+		$this->template->load('admin/static','admin/pegawai_admin',$data);
+	}
 
 }
 

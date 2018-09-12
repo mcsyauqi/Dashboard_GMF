@@ -24,6 +24,8 @@ class Training extends CI_Controller {
 
 	public function training_admin()
 	{
-		$this->template->load('admin/static','admin/training_admin');
+		$data['pegawai'] = $this->Db_pegawai->getAll('pegawai');
+		$data['training'] = $this->Db_training->getAll('training');
+		$this->template->load('admin/static','admin/training_admin',$data);
 	}
 }
