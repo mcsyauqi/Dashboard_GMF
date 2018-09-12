@@ -4769,6 +4769,7 @@ body {
 
 .la-remove:before, .la-times:before {
   content: "\f342";
+  color: #dd2808;
 }
 
 .la-times-circle:before {
@@ -5076,10 +5077,11 @@ body {
   border-radius: 0px;
   background-color: #ffffff;
   margin-bottom: 30px;
-  -webkit-box-shadow: 5px 10px 15px 1px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 5px 10px 15px 1px rgba(0, 0, 0, 0.8);
-  box-shadow: 5px 10px 15px 1px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 3px 5px 5px 1px rgba(0, 0.07, 0.07, 0.58);
+  -moz-box-shadow: 3px 5px 5px 1px rgba(0, 0.07, 0.07, 0.58);
+  box-shadow: 3px 5px 5px 1px rgba(0, 0.07, 0.07, 0.58);
   border: 1px solid #eee;
+  border-radius: 10px;
 }
 .card .card-header {
   padding: 15px 15px;
@@ -5119,6 +5121,7 @@ body {
 }
 .card .card-body {
   padding: 15px 15px 10px 15px;
+  border-radius: 10px;
 }
 .card .card-footer {
   background-color: transparent;
@@ -5560,13 +5563,15 @@ body {
   padding: 8px;
 }
 .table thead th {
-  color: #554;
+  color: #171716;
   border-bottom-width: 2px;
 }
 .table td, .table th {
   font-size: 14px;
+  border: 2;
   border-color: #ebedf2 !important;
   padding: 0.75rem !important;
+  border-collapse: collapse;
 }
 
 /* table full-width */
@@ -5605,8 +5610,8 @@ body {
 }
 
 .table-striped td, .table-striped th {
-  border-top: 0 !important;
-  border-bottom: 0 !important;
+  border-top: 1 !important;
+  border-bottom: 1 !important;
 
 }
 

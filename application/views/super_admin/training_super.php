@@ -30,7 +30,7 @@
 										</p>
 									</div>
 						<div class="container" style="overflow-x: scroll;">
-							<table class="table table-striped table-bordered data" style="width: 150%" >
+							<table class="table table-striped table-bordered data" style="width: 150%" rules="row" >
 								<thead>
 									<tr>			
 										<th style="text-align: center; width: 6%">No. Peg</th>

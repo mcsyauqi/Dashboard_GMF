@@ -66,14 +66,27 @@
 
 		<?php echo $contents;?>
 
-		<footer class="footer">
-
+		<footer class="footer" style="width: 100%">
+			<div class="container-fluid">
+				<nav class="pull-left">
+					<ul class="nav">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Website
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Help
+							</a>
+						</li>
+					</ul>
+				</nav>	
 				<div class="copyright ml-auto">
 					<strong>Copyright &copy; Engineering Human Capital - GMF AeroAsia | <a href="mailto: ahmadthariqsyauqi@gmail.com"> Developed by Syauqi </a>
 						<a href="mailto: nurunnafis23@gmail.com">& Nafis</a>.</strong> All rights
 					</div>				
 				</div>
-			</div>
 		</footer>
 
 

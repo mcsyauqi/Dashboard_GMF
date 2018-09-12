@@ -73,7 +73,7 @@ include 'navbar.php';
 												<td><?php echo $us->nama_peg;?></td>
 												<td><?php echo $us->username;?></td>
 												<td><?php echo $us->password;?></td>
-												<td><a class="la la-edit" style="font-size:20px" data-toggle="modal" data-target="#myModals"></a>
+												<td><i class="la la-edit" style="font-size:20px" data-toggle="modal" data-target="#myModals"></i>
 													<div class="modal fade" id="myModals" tabindex="-1" role="dialog" aria-labelledby="myModalsLabel">
 														<div class="modal-dialog" role="document">
 															<div class="modal-content">
@@ -117,7 +117,7 @@ include 'navbar.php';
 																	</div>
 																</form>
 															</div></td>
-															<td><a id="hasil"><i onclick="konfirmasiDulu()" class="la la-remove" style="font-size: 20px"></i></a></td>
+															<td><i id="hasil" onclick="konfirmasiDulu()" class="la la-remove" style="font-size: 20px"></i></td>
 														</tr>
 													<?php }
 													?>

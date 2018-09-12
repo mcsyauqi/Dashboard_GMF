@@ -94,7 +94,7 @@
 
 		<?php echo $contents;?>
 
-		<footer class="footer">
+		<footer class="footer" style="width: 100%">
 			<div class="container-fluid">
 				<nav class="pull-left">
 					<ul class="nav">
