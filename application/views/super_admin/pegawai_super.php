@@ -19,7 +19,7 @@ include 'navbar.php';
 										<tr>			
 											<th style="text-align: center">No. Peg</th>
 											<th style="text-align: center">Nama</th>
-											<th style="text-align: center">Bidang</th>
+											<!-- <th style="text-align: center">Bidang</th> -->
 											<th style="text-align: center">Unit</th>
 											<th style="text-align: center">Date of Joining</th>
 											<th style="text-align: center">Function</th>
@@ -38,7 +38,7 @@ include 'navbar.php';
 											<tr>
 												<td><?php echo $peg->no_peg;?></td>
 												<td><?php echo $peg->nama_peg;?></td>
-												<td><?php echo $peg->bidang;?></td>
+												<!-- <td><?php echo $peg->bidang;?></td> -->
 												<td><?php echo $peg->unit;?></td>
 												<td><?php
 												$tgl_bener = strtotime($peg->tgl_masuk); 

@@ -116,13 +116,13 @@ for ($i=0; $i < $total_peg; $i++) {
 
 
 //data chart training-training
-$data_human = mysqli_query($connect, "SELECT * FROM training WHERE stat_human=5");
+$data_human = mysqli_query($connect, "SELECT * FROM training WHERE stat_human=5 or stat_human=4");
 $data_human_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_human=5 or stat_human=4 or stat_human=1");
 $human = mysqli_num_rows($data_human); 
 $human_total = mysqli_num_rows($data_human_total);
 $human_persen =  ($human/$human_total)*100;
 
-$data_cas = mysqli_query($connect, "SELECT * FROM training WHERE stat_cas=5");
+$data_cas = mysqli_query($connect, "SELECT * FROM training WHERE stat_cas=5 or stat_cas=4");
 $data_cas_total = mysqli_query($connect, "SELECT * FROM training WHERE stat_cas=5 or stat_cas=4 or stat_cas=1");
 $cas = mysqli_num_rows($data_cas); 
 $cas_total = mysqli_num_rows($data_cas_total);

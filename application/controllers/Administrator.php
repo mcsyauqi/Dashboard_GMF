@@ -40,6 +40,22 @@ class Administrator extends CI_Controller {
 		redirect (site_url('Administrator'));
 	}
 
+	public function update_admin()
+	{
+		$id = $this->input->post('no_peg');
+		$data = array(
+			'no_peg' => $this->input->post('no_peg'),
+			'nama_peg' => $this->input->post('nama_peg'),
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
+
+		);
+
+		$this->Db_pegawai->update_admin($data, $id);
+
+		redirect (site_url('Administrator'));
+	}
+
 }
 
 ?>

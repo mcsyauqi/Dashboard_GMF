@@ -77,13 +77,13 @@ $alpha = 0;
 for ($i=0; $i < $jumlah; $i++) { 
   $array_data = mysqli_fetch_array($peg);
   $lahir = substr($array_data['tgl_lahir'],0,4);
-  if ($lahir<=1960) {
+  if ($lahir>1945 && $lahir<=1965) {
   $baby++;
-} elseif ($lahir>1960 && $lahir <=1980) {
+} elseif ($lahir>1965 && $lahir <=1980) {
   $gen_x++;
-} elseif ($lahir>1980 && $lahir <=2000) {
+} elseif ($lahir>1980 && $lahir <=1995) {
   $gen_y++;
-} elseif ($lahir>2000 && $lahir<=2010) {
+} elseif ($lahir>1995 && $lahir<=2010) {
   $gen_z++;
 } else
 $alpha++;
@@ -443,7 +443,7 @@ $sisa_training_comp=100-$training_comp;
         type: 'bar'
       },
       xAxis: {
-        categories: ['Baby Boomers', 'X Generation', 'Y Geneartion','Z Generation','Alpha Generation']
+        categories: ['Baby Boomers', 'X Generation', 'Y Geneartion','Z Generation']
       },
       yAxis: {
         min: 0,
@@ -458,7 +458,7 @@ $sisa_training_comp=100-$training_comp;
       },
       series: [{
         name: 'Kelompok usia kerja',
-        data: [<?php echo $baby?>, <?php echo $gen_x?>, <?php echo $gen_y?>, <?php echo $gen_z?>, <?php echo $alpha?>],
+        data: [<?php echo $baby?>, <?php echo $gen_x?>, <?php echo $gen_y?>, <?php echo $gen_z?>],
         dataLabels: {
           enabled: false
         }

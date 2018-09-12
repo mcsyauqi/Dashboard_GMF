@@ -16,15 +16,9 @@ include 'navbar.php';
 						foreach ($pegawai -> result() as $peg) 
 						{
 							$no_peg = $peg->no_peg;
-<<<<<<< Updated upstream
 
 						}
 
-=======
-
-						}
-
->>>>>>> Stashed changes
 						?>
 						<form method="post" action="<?php echo site_url('Pegawai/update_pegawai')?>">
 						<div class="card-body">
@@ -116,11 +110,8 @@ include 'navbar.php';
 								<input type="date" class="form-control form-control" id="defaultInput" name="tgl_lahir" value="<?php echo $peg->tgl_lahir;?>">
 							</div>
 							<div class="card-action">
-<<<<<<< Updated upstream
 								<button class="btn btn-success">Save</button>
-=======
-								<button class="btn btn-success">Add</button>
->>>>>>> Stashed changes
+								
 								<a href="<?php echo site_url('Pegawai/pegawai_super');?>">
 								<button class="btn btn-danger"  style="margin-right:10px">Cancel</button></a>
 							</div>
