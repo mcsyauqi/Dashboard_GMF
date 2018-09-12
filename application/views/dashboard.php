@@ -77,13 +77,13 @@ $alpha = 0;
 for ($i=0; $i < $jumlah; $i++) { 
   $array_data = mysqli_fetch_array($peg);
   $lahir = substr($array_data['tgl_lahir'],0,4);
-  if ($lahir>1945 && $lahir<=1965) {
+  if ($lahir>1945 && $lahir<=1964) {
   $baby++;
-} elseif ($lahir>1965 && $lahir <=1980) {
+} elseif ($lahir>1964 && $lahir <=1979) {
   $gen_x++;
-} elseif ($lahir>1980 && $lahir <=1995) {
+} elseif ($lahir>1979 && $lahir <=1994) {
   $gen_y++;
-} elseif ($lahir>1995 && $lahir<=2010) {
+} elseif ($lahir>1994 && $lahir<=2010) {
   $gen_z++;
 } else
 $alpha++;

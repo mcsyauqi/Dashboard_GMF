@@ -45,14 +45,20 @@ class Administrator extends CI_Controller {
 		$id = $this->input->post('no_peg');
 		$data = array(
 			'no_peg' => $this->input->post('no_peg'),
-			'nama_peg' => $this->input->post('nama_peg'),
+			// 'nama_peg' => $this->input->post('nama_peg'),
 			'username' => $this->input->post('username'),
 			'password' => $this->input->post('password'),
 
 		);
 
-		$this->Db_pegawai->update_admin($data, $id);
+		$this->Db_admin->update_admin($data, $id);
 
+		redirect (site_url('Administrator'));
+	}
+
+	public function delete_admin(){
+		$id = array('no_peg' => $this->uri->segment(3));
+		$this->Db_admin->delete_admin($id);
 		redirect (site_url('Administrator'));
 	}
 

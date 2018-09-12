@@ -8,5 +8,13 @@ class Db_admin extends CI_Model{
 		$this->db->insert('user', $data);
 		return TRUE;
 	}
+
+	public function update_admin($data,$id){
+		$this->db->where('no_peg',$id)->update('user', $data);
+	}
+
+	public function delete_admin($id){
+		$this->db->delete('user', $id);
+	}
 	
 }
