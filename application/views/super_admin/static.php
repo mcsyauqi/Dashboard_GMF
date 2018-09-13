@@ -16,12 +16,24 @@
 	<script src="<?php echo base_url();?>assets/js/code/modules/exporting.js"></script> -->
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/dataTable/css/jquery.dataTables.css">
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/dataTable/css/dataTables.bootstrap4.css">
+	<style type="text/css">
+	@media print {
+		#non_print {
+			display: none;
+		}
+
+		footer {
+			position: fixed;
+			bottom: 0;
+		}
+	}
+	</style>
 	
 </head>
 <body>
 	<!-- Main Header -->
 	<div class="wrapper">
-		<div class="main-header">
+		<div class="main-header" id="non_print">
 			<div class="logo-header">
 				<img src="<?php echo base_url();?>assets/img/logo.png" width="90%" title="logo GMF">
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +59,7 @@
 				</div>
 			</nav>
 		</div>
-		<div class="sidebar">
+		<div class="sidebar" id="non_print">
 			<div class="scrollbar-inner sidebar-wrapper">
 				<div class="user">
 					<div class="info">
@@ -94,7 +106,7 @@
 
 		<?php echo $contents;?>
 
-		<footer class="footer" style="width: 100%">
+		<footer class="footer" style="width: 100%" id="non_print">
 			<div class="container-fluid">
 				<nav class="pull-left">
 					<ul class="nav">
@@ -132,14 +144,14 @@
 <script src="<?php echo base_url();?>assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/plugin/chart-circle/circles.min.js"></script>
 <!-- <script src="<?php echo base_url();?>assets/js/ready.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/demo.js"></script> -->
-<script src="<?php echo base_url();?>assets/dataTable/js/jquery.dataTables.js"></script>
-<script src="<?php echo base_url();?>assets/dataTable/js/dataTables.bootstrap4.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('.data').DataTable();
-	});
-</script>
+	<script src="<?php echo base_url();?>assets/js/demo.js"></script> -->
+	<script src="<?php echo base_url();?>assets/dataTable/js/jquery.dataTables.js"></script>
+	<script src="<?php echo base_url();?>assets/dataTable/js/dataTables.bootstrap4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.data').DataTable();
+		});
+	</script>
 <!-- untuk notifikasi 
 	<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script> 
 -->

@@ -17,7 +17,6 @@ class Training extends CI_Controller {
 
 	public function training_super()
 	{
-		$data['pegawai'] = $this->Db_pegawai->getAll('pegawai');
 		$data['training'] = $this->Db_training->getAll('training');
 		$this->template->load('super_admin/static','super_admin/training_super',$data);
 	}

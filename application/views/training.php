@@ -1,7 +1,4 @@
-<?php 
-  $page_now="training";
-  include 'navbar.php';
-?>
+
 <div class="main-panel">
 	<div class="content">
 		<div class="container-fluid">
@@ -36,7 +33,7 @@
 								</thead>
 								<tbody>
 									<?php
-									foreach ($training as $train) 
+									foreach ($training -> result() as $train) 
 									{
 
 										$no_peg = $train->no_peg;

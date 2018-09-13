@@ -1,4 +1,4 @@
-		<div class="sidebar">
+		<div class="sidebar" id="non_print">
 			<div class="scrollbar-inner sidebar-wrapper">
 				<div class="user">
 					<div class="info">

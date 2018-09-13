@@ -16,7 +16,10 @@ class Db_training extends CI_Model{
 
 	public function getAll($table) {
 		
-		return $this->db->get($table)->result();
+		return $this->db->select('*')
+		->from('training')
+		->join('pegawai', 'pegawai.no_peg=training.no_peg')
+		->get();
 	}
 	
 }
