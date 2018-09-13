@@ -6156,8 +6156,8 @@ body {
   border-color: #23CCEF !important;
 }
 .btn-info:hover, .btn-info:focus, .btn-info:disabled {
-  background: #23CCEF !important;
-  border-color: #23CCEF !important;
+  background: #23CCEF;
+  border-color: #23CCEF;
 }
 
 .btn-success {
