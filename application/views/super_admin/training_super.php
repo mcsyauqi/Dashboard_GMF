@@ -1,5 +1,3 @@
-
-
 <?php 
 $page_now="training_super";
 include 'navbar.php';
