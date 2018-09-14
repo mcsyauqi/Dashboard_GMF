@@ -636,236 +636,68 @@ Highcharts.chart('container', {
       "drilldown": "BATK"
     },
     {
-      "name": "BASIC ENG.",
+      "name": "BASIC ENG",
       "y": <?php echo $basic_persen; ?>,
-      "drilldown": "BE"
+      "drilldown": "BASIC ENG"
     },
     {
-      "name": "CONT. AIR",
+      "name": "CONT_AIR",
       "y": <?php echo $cont_persen; ?>,
-      "drilldown": "CONT. AIR"
+      "drilldown": "CONT_AIR"
     }
     ]
   }
   ],
-  "drilldown": {
+  <?php 
+
+  $cek_training = mysqli_query($connect,"SELECT * from jenis_training");
+  $jumlah_training = mysqli_num_rows($cek_training);
+
+  for ($i=0; $i < $jumlah_training ; $i++) { 
+    $array_training= mysqli_fetch_array($cek_training);
+    $nama_training[$i] = $array_training['nama_training'];
+  } ?>
+   "drilldown": {
     "series": [
+<?php
+  for ($j=0; $j < $jumlah_training; $j++) { ?>
     {
-      "name": "HUMAN FACTOR",
-      "id": "HUMAN FACTOR",
+
+      "name": "<?php echo $nama_training[$j]; ?>",
+      "id": "<?php echo $nama_training[$j]; ?>",
       "data": [
-      [
-      "v65.0",
-      0.1
-      ],
-      [
-      "v64.0",
-      1.3
-      ],
-      [
-      "v63.0",
-      53.02
-      ],
-      [
-      "v62.0",
-      1.4
-      ],
-      [
-      "v61.0",
-      0.88
-      ],
-      [
-      "v60.0",
-      0.56
-      ],
-      [
-      "v59.0",
-      0.45
-      ],
-      [
-      "v58.0",
-      0.49
-      ],
-      [
-      "v57.0",
-      0.32
-      ],
-      [
-      "v56.0",
-      0.29
-      ],
-      [
-      "v55.0",
-      0.79
-      ],
-      [
-      "v54.0",
-      0.18
-      ],
-      [
-      "v51.0",
-      0.13
-      ],
-      [
-      "v49.0",
-      2.16
-      ],
-      [
-      "v48.0",
-      0.13
-      ],
-      [
-      "v47.0",
-      0.11
-      ],
-      [
-      "v43.0",
-      0.17
-      ],
-      [
-      "v29.0",
-      0.26
-      ]
+      ["TEA-1",5],
+      ["TEA-2",0.29],
+      ["TEA-3",0.27],
+      ["TEA-4",0.27],
+      ["TEC-1",6.2],
+      ["TED-1",0.29],
+      ["TED-2",0.27],
+      ["TED-3",0.27],
+      ["TED-4",6.2],
+      ["TED-5",0.29],
+      ["TEL-1",0.27],
+      ["TEL-2",0.27],
+      ["TER-1",6.2],
+      ["TER-2",0.29],
+      ["TER-3",0.27],
+      ["TER-4",0.27],
+      ["TER-5",6.2],
+      ["JKTTEA",0.29],
+      ["JKTTEB",0.27],
+      ["JKTTEC",0.27],
+      ["JKTTED",6.2],
+      ["JKTTEJ",0.29],
+      ["JKTTEL",0.27],
+      ["JKTTEN",0.27],
+      ["JKTTEQ",6.2],
+      ["JKTTER",0.29],
+      ["JKTTEX",0.27],
+      ["JKTTEZ",0.27],
+      ["JKTTE",0.47]
       ]
     },
-    {
-      "name": "Firefox",
-      "id": "Firefox",
-      "data": [
-      [
-      "v58.0",
-      1.02
-      ],
-      [
-      "v57.0",
-      7.36
-      ],
-      [
-      "v56.0",
-      0.35
-      ],
-      [
-      "v55.0",
-      0.11
-      ],
-      [
-      "v54.0",
-      0.1
-      ],
-      [
-      "v52.0",
-      0.95
-      ],
-      [
-      "v51.0",
-      0.15
-      ],
-      [
-      "v50.0",
-      0.1
-      ],
-      [
-      "v48.0",
-      0.31
-      ],
-      [
-      "v47.0",
-      0.12
-      ]
-      ]
-    },
-    {
-      "name": "Internet Explorer",
-      "id": "Internet Explorer",
-      "data": [
-      [
-      "v11.0",
-      6.2
-      ],
-      [
-      "v10.0",
-      0.29
-      ],
-      [
-      "v9.0",
-      0.27
-      ],
-      [
-      "v8.0",
-      0.47
-      ]
-      ]
-    },
-    {
-      "name": "Safari",
-      "id": "Safari",
-      "data": [
-      [
-      "v11.0",
-      3.39
-      ],
-      [
-      "v10.1",
-      0.96
-      ],
-      [
-      "v10.0",
-      0.36
-      ],
-      [
-      "v9.1",
-      0.54
-      ],
-      [
-      "v9.0",
-      0.13
-      ],
-      [
-      "v5.1",
-      0.2
-      ]
-      ]
-    },
-    {
-      "name": "Edge",
-      "id": "Edge",
-      "data": [
-      [
-      "v16",
-      2.6
-      ],
-      [
-      "v15",
-      0.92
-      ],
-      [
-      "v14",
-      0.4
-      ],
-      [
-      "v13",
-      0.1
-      ]
-      ]
-    },
-    {
-      "name": "Opera",
-      "id": "Opera",
-      "data": [
-      [
-      "v50.0",
-      0.96
-      ],
-      [
-      "v49.0",
-      0.82
-      ],
-      [
-      "v12.1",
-      0.14
-      ]
-      ]
-    }
+  <?php } ?>
     ]
   }
 });
