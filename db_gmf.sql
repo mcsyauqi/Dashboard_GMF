@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2018 at 08:32 AM
+-- Generation Time: Sep 17, 2018 at 05:27 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -25,6 +25,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jenis_training`
+--
+
+CREATE TABLE `jenis_training` (
+  `id` int(255) NOT NULL,
+  `nama_training` varchar(300) NOT NULL,
+  `id_name` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jenis_training`
+--
+
+INSERT INTO `jenis_training` (`id`, `nama_training`, `id_name`) VALUES
+(1, 'HUMAN FACTOR', 'HUMAN FACTOR'),
+(2, 'CASR,FAR', 'CASR,FAR'),
+(3, 'FTS LV.2', 'FTS LV.2'),
+(4, 'SMS', 'SMS'),
+(5, 'EWIS', 'EWIS'),
+(6, 'MODULE 10', 'MODULE 10'),
+(7, 'GMF QS', 'GMF QS'),
+(8, 'BATK', 'BATK'),
+(9, 'BASIC ENG', 'BASIC ENG'),
+(10, 'CONT_AIR', 'CONT_AIR');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pegawai`
 --
 
@@ -32,8 +60,8 @@ CREATE TABLE `pegawai` (
   `no_peg` int(10) NOT NULL,
   `nama_peg` varchar(50) NOT NULL,
   `dinas` enum('JKTTE','JKTTGW') NOT NULL DEFAULT 'JKTTE',
-  `bidang` enum('JKTTEA','JKTTEC','JKTTED','JKTTEJ','JKTTEL','JKTTEN','JKTTEQ','JKTTER','JKTTEX','JKTTEZ') NOT NULL,
-  `unit` enum('TEA-1','TEA-2','TEA-3','TEA-4','TEC-1','TED-1','TED-2','TED-3','TED-4','TED-5','TEL-1','TEL-2','TER-1','TER-2','TER-3','TER-4','TER-5') NOT NULL,
+  `bidang` enum('JKTTEA','JKTTEB','JKTTEC','JKTTED','JKTTEJ','JKTTEL','JKTTEN','JKTTEQ','JKTTER','JKTTEX','JKTTEZ','JKTTE') NOT NULL,
+  `unit` enum('TEA-1','TEA-2','TEA-3','TEA-4','TEC-1','TED-1','TED-2','TED-3','TED-4','TED-5','TEL-1','TEL-2','TER-1','TER-2','TER-3','TER-4','TER-5','JKTTEA','JKTTEB','JKTTEC','JKTTED','JKTTEJ','JKTTEL','JKTTEN','JKTTEQ','JKTTER','JKTTEX','JKTTEZ','JKTTE') NOT NULL,
   `jabatan` enum('Development Engineer','Engineering Expert','General Manager','Manager','Secretary','Senior Aircraft Data Officer','Senior Development Engineer','Senior Technical Publication Officer','Technical Publication Officer','Trainee for Development Engineer','Vice President') NOT NULL,
   `pendidikan` varchar(50) NOT NULL DEFAULT '-',
   `tgl_masuk` date NOT NULL,
@@ -45,48 +73,47 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`no_peg`, `nama_peg`, `dinas`, `bidang`, `unit`, `jabatan`, `pendidikan`, `tgl_masuk`, `tgl_lahir`) VALUES
-(111111, 'GMF', '', '', 'TEC-1', 'Development Engineer', '-', '2017-01-01', '1998-04-01'),
-(222222, 'Ahmad Thariq Syauqi', '', '', 'TER-1', 'General Manager', 'S1 Teknologi Informasi', '2018-01-01', '1997-04-01'),
+(0, 'Nuwas', 'JKTTE', 'JKTTED', 'TED-5', 'Secretary', 's1', '2018-09-21', '2018-09-14'),
 (519884, 'Siti Royanti', 'JKTTE', 'JKTTED', 'TED-1', 'Senior Aircraft Data Officer', 'SLTA - SMEA', '1984-02-06', '1963-10-05'),
 (522776, 'Endro Cahyo', 'JKTTE', 'JKTTED', 'TED-5', 'Manager', 'STRATA 1', '1988-09-15', '1963-12-06'),
 (524943, 'Ahadi', 'JKTTE', 'JKTTER', 'TER-5', 'Technical Publication Officer', 'SLTA - SMA', '1991-06-01', '1963-06-23'),
 (525307, 'Rona Talakua', 'JKTTE', 'JKTTER', 'TER-5', 'Technical Publication Officer', 'SLTA - SMA', '1990-06-01', '1968-04-12'),
-(525723, 'Endik Gunawan', 'JKTTE', 'JKTTEL', '', 'General Manager', 'STRATA 2', '1991-05-29', '1966-11-07'),
+(525723, 'Endik Gunawan', 'JKTTE', 'JKTTEL', 'JKTTEL', 'General Manager', 'STRATA 2', '1991-05-29', '1966-11-07'),
 (526912, 'Nurdin Muhamad', 'JKTTE', 'JKTTEL', 'TEL-1', 'Senior Development Engineer', 'STRATA 1', '1992-06-16', '1966-10-20'),
 (527264, 'Rosdiana', 'JKTTE', 'JKTTER', 'TER-5', 'Senior Technical Publication Officer', 'SLTA - SMK', '1992-04-16', '1969-03-30'),
 (527555, 'Budi Santoso', 'JKTTE', 'JKTTER', 'TER-3', 'Senior Aircraft Data Officer', 'SLTA - SMA', '1992-07-06', '1970-05-20'),
 (527556, 'Khalikin', 'JKTTE', 'JKTTER', 'TER-5', 'Senior Technical Publication Officer', 'SLTA - SMEA', '1992-07-06', '1969-05-17'),
-(527561, 'Bambang Suryowinarto', 'JKTTE', '', '', 'Vice President', 'STRATA 1', '1993-02-01', '1964-09-30'),
-(527563, 'R.Purubojo Soemadi', 'JKTTE', '', '', 'Engineering Expert', 'STRATA 1', '1993-02-01', '1965-03-13'),
+(527561, 'Bambang Suryowinarto', 'JKTTE', 'JKTTE', 'JKTTE', 'Vice President', 'STRATA 1', '1993-02-01', '1964-09-30'),
+(527563, 'R.Purubojo Soemadi', 'JKTTE', 'JKTTE', 'JKTTE', 'Engineering Expert', 'STRATA 1', '1993-02-01', '1965-03-13'),
 (527627, 'Dadang Juanda', 'JKTTE', 'JKTTEA', 'TEA-1', 'Manager', 'SETARA DIPLOMA II', '1993-12-27', '1970-07-23'),
 (527722, 'Denny Faizal', 'JKTTE', 'JKTTED', 'TED-5', 'Development Engineer', 'SLTA - SMA', '1992-09-16', '1968-04-02'),
 (527736, 'Arman Januarsyah', 'JKTTE', 'JKTTER', 'TER-2', 'Senior Development Engineer', 'STRATA 1', '1993-12-31', '1967-01-25'),
 (527830, 'Evita Rosa', 'JKTTE', 'JKTTER', 'TER-5', 'Senior Technical Publication Officer', 'SLTA - SMA', '1992-10-01', '1971-07-13'),
 (527941, 'Yudi Priyambodo', 'JKTTE', 'JKTTER', 'TER-2', 'Senior Development Engineer', 'SETARA DIPLOMA II', '1994-04-16', '1967-06-26'),
-(528819, 'Nugroho', 'JKTTE', 'JKTTEA', '', 'Senior Development Engineer', 'STRATA 1', '1993-12-24', '1967-07-08'),
-(528822, 'Zuriati', 'JKTTE', 'JKTTEA', '', 'General Manager', 'STRATA 1', '1993-12-27', '1968-09-17'),
+(528819, 'Nugroho', 'JKTTE', 'JKTTEA', 'JKTTEA', 'Senior Development Engineer', 'STRATA 1', '1993-12-24', '1967-07-08'),
+(528822, 'Zuriati', 'JKTTE', 'JKTTEA', 'JKTTEA', 'General Manager', 'STRATA 1', '1993-12-27', '1968-09-17'),
 (529216, 'Edy Noerachman', 'JKTTE', 'JKTTER', 'TER-4', 'Manager', 'DIPLOMA III', '1993-12-24', '1970-02-08'),
-(530334, 'Endi Harijoso', 'JKTTE', 'JKTTEQ', '', 'General Manager', 'STRATA 1', '1994-12-01', '1969-03-17'),
+(530334, 'Endi Harijoso', 'JKTTE', 'JKTTEQ', 'JKTTEQ', 'General Manager', 'STRATA 1', '1994-12-01', '1969-03-17'),
 (530336, 'Betran Gerson', 'JKTTE', 'JKTTEA', 'TEA-3', 'Manager', 'STRATA 1', '1994-12-01', '1965-12-02'),
-(530337, 'Helmi', 'JKTTE', 'JKTTEA', '', 'Senior Development Engineer', 'STRATA 1', '1994-12-01', '1969-06-15'),
-(530339, 'Eri Rusli', 'JKTTE', 'JKTTEA', '', 'Senior Development Engineer', 'STRATA 1', '1994-12-01', '1966-07-10'),
-(530341, 'Ferdinan Sinaga', 'JKTTE', 'JKTTER', '', 'General Manager', 'STRATA 1', '1994-12-01', '1969-03-17'),
+(530337, 'Helmi', 'JKTTE', 'JKTTEA', 'JKTTEA', 'Senior Development Engineer', 'STRATA 1', '1994-12-01', '1969-06-15'),
+(530339, 'Eri Rusli', 'JKTTE', 'JKTTEA', 'JKTTEA', 'Senior Development Engineer', 'STRATA 1', '1994-12-01', '1966-07-10'),
+(530341, 'Ferdinan Sinaga', 'JKTTE', 'JKTTER', 'JKTTER', 'General Manager', 'STRATA 1', '1994-12-01', '1969-03-17'),
 (530346, 'Fordiyanto', 'JKTTE', 'JKTTER', 'TER-5', 'Manager', 'STRATA 1', '1994-12-01', '1968-11-18'),
-(530348, 'Arif Sugianto', 'JKTTE', 'JKTTED', '', 'General Manager', 'STRATA 3', '1994-12-01', '1969-03-25'),
+(530348, 'Arif Sugianto', 'JKTTE', 'JKTTED', 'JKTTED', 'General Manager', 'STRATA 3', '1994-12-01', '1969-03-25'),
 (530351, 'Muhammad Noor Eko B.S', 'JKTTE', 'JKTTER', 'TER-2', 'Senior Development Engineer', 'STRATA 1', '1994-12-01', '1965-05-15'),
-(530352, 'Ahmad Yani Chumaidhy', 'JKTTE', '', '', 'Engineering Expert', 'STRATA 1', '1994-12-01', '1965-10-02'),
-(530354, 'Mochamad Ramdhan  A', 'JKTTE', 'JKTTEA', '', 'Engineering Expert', 'STRATA 1', '1994-12-01', '1966-01-21'),
+(530352, 'Ahmad Yani Chumaidhy', 'JKTTE', 'JKTTE', 'JKTTE', 'Engineering Expert', 'STRATA 1', '1994-12-01', '1965-10-02'),
+(530354, 'Mochamad Ramdhan  A', 'JKTTE', 'JKTTEA', 'JKTTEA', 'Engineering Expert', 'STRATA 1', '1994-12-01', '1966-01-21'),
 (530356, 'Syafrial Hidayat', 'JKTTE', 'JKTTEA', 'TEA-4', 'Engineering Expert', 'STRATA 1', '1994-12-01', '1969-04-30'),
-(532013, 'Andriyono Novan Kartoko', 'JKTTE', 'JKTTEJ', '', 'General Manager', 'STRATA 1', '2008-12-04', '1979-11-22'),
-(532015, 'Mahar Bachtiar Hidayat', 'JKTTE', 'JKTTEN', '', 'General Manager', 'STRATA 1', '2008-12-04', '1981-01-31'),
-(532072, 'Glorianta Sananta Sri', 'JKTTE', 'JKTTEA', '', 'Engineering Expert', 'STRATA 1', '2009-01-02', '1966-07-21'),
-(532135, 'Agus Pribadi Muhardjanto', 'JKTTE', 'JKTTEA', '', 'Engineering Expert', 'STRATA 1', '2009-02-10', '1965-08-17'),
+(532013, 'Andriyono Novan Kartoko', 'JKTTE', 'JKTTEJ', 'JKTTEJ', 'General Manager', 'STRATA 1', '2008-12-04', '1979-11-22'),
+(532015, 'Mahar Bachtiar Hidayat', 'JKTTE', 'JKTTEN', 'JKTTEN', 'General Manager', 'STRATA 1', '2008-12-04', '1981-01-31'),
+(532072, 'Glorianta Sananta Sri', 'JKTTE', 'JKTTEA', 'JKTTEA', 'Engineering Expert', 'STRATA 1', '2009-01-02', '1966-07-21'),
+(532135, 'Agus Pribadi Muhardjanto', 'JKTTE', 'JKTTEA', 'JKTTEA', 'Engineering Expert', 'STRATA 1', '2009-02-10', '1965-08-17'),
 (532180, 'Nazarullah Ibny', 'JKTTE', 'JKTTED', 'TED-2', 'Manager', 'STRATA 1', '2009-05-11', '1980-07-01'),
 (532213, 'Agus Prasetyo Nugroho', 'JKTTE', 'JKTTER', 'TER-1', 'Manager', 'STRATA 1', '2009-06-10', '1983-08-01'),
-(532226, 'Fany Fitriani', 'JKTTE', '', '', 'Secretary', 'DIPLOMA III', '2009-08-01', '1982-07-20'),
+(532226, 'Fany Fitriani', 'JKTTE', 'JKTTE', 'JKTTE', 'Secretary', 'DIPLOMA III', '2009-08-01', '1982-07-20'),
 (532227, 'Purwoko Yuliono', 'JKTTE', 'JKTTEA', 'TEA-2', 'Manager', 'STRATA 1', '2009-08-01', '1977-07-24'),
 (532235, 'Firmansyah', 'JKTTE', 'JKTTED', 'TED-1', 'Manager', 'STRATA 2', '2009-08-03', '1982-01-31'),
-(532262, 'Prima Edy Setiawan', 'JKTTE', 'JKTTEZ', '', 'General Manager', 'STRATA 1', '2009-11-01', '1980-09-13'),
+(532262, 'Prima Edy Setiawan', 'JKTTE', 'JKTTEZ', 'JKTTEZ', 'General Manager', 'STRATA 1', '2009-11-01', '1980-09-13'),
 (532275, 'Doddy Triadi Pinilih Enggarsyah', 'JKTTE', 'JKTTER', 'TER-2', 'Manager', 'STRATA 1', '2009-11-01', '1982-05-04'),
 (532464, 'Lola Eria', 'JKTTE', 'JKTTER', 'TER-4', 'Senior Technical Publication Officer', 'SLTA - SMK PENERBANGAN', '2010-06-01', '1991-05-10'),
 (532793, 'Abdur Rahim', 'JKTTE', 'JKTTEA', 'TEA-4', 'Manager', 'STRATA 2', '2010-08-01', '1976-08-24'),
@@ -98,22 +125,22 @@ INSERT INTO `pegawai` (`no_peg`, `nama_peg`, `dinas`, `bidang`, `unit`, `jabatan
 (533084, 'Yoga Seftian Dwianda', 'JKTTE', 'JKTTED', 'TED-4', 'Manager', 'STRATA 1', '2011-03-16', '1986-09-17'),
 (533208, 'Aulia Athar', 'JKTTE', 'JKTTEA', 'TEA-3', 'Senior Development Engineer', 'STRATA 1', '2011-05-16', '1985-09-26'),
 (533212, 'Bunga Hapsari Aliya Putri', 'JKTTE', 'JKTTEL', 'TEL-1', 'Manager', 'STRATA 1', '2011-05-16', '1987-02-09'),
-(533213, 'Hendra Permana', 'JKTTE', 'JKTTEA', '', 'Senior Development Engineer', 'STRATA 1', '2011-05-16', '1986-02-16'),
+(533213, 'Hendra Permana', 'JKTTE', 'JKTTEA', 'JKTTEA', 'Senior Development Engineer', 'STRATA 1', '2011-05-16', '1986-02-16'),
 (533246, 'Yulian Ari Nugroho', 'JKTTE', 'JKTTER', 'TER-3', 'Senior Development Engineer', 'STRATA 1', '2011-06-01', '1987-07-13'),
-(533356, 'Judo Taryanto', 'JKTTE', 'JKTTEA', '', 'Senior Development Engineer', 'STRATA 1', '2011-07-01', '1981-10-17'),
+(533356, 'Judo Taryanto', 'JKTTE', 'JKTTEA', 'JKTTEA', 'Senior Development Engineer', 'STRATA 1', '2011-07-01', '1981-10-17'),
 (533375, 'Fenny Noviatus Syahriyah', 'JKTTE', 'JKTTED', 'TED-2', 'Senior Development Engineer', 'STRATA 1', '2011-07-01', '1988-03-01'),
 (580103, 'Aryo Nugroho', 'JKTTE', 'JKTTED', 'TED-3', 'Senior Development Engineer', 'STRATA 1', '2012-05-01', '1989-02-05'),
 (580104, 'Denny Indra Purnama', 'JKTTE', 'JKTTEA', 'TEA-1', 'Senior Development Engineer', 'STRATA 1', '2012-05-01', '1987-12-07'),
 (580129, 'Yunarko Dwi Wibowo', 'JKTTE', 'JKTTEA', 'TEA-2', 'Senior Development Engineer', 'STRATA 1', '2012-05-01', '1987-06-12'),
-(580176, 'Irwan Fauzi', 'JKTTE', '', '', 'Manager', 'STRATA 2', '2012-07-01', '1980-07-01'),
+(580176, 'Irwan Fauzi', 'JKTTE', 'JKTTE', 'JKTTE', 'Manager', 'STRATA 2', '2012-07-01', '1980-07-01'),
 (580177, 'Dahlon Satria Palu', 'JKTTE', 'JKTTER', 'TER-4', 'Senior Development Engineer', 'STRATA 1', '2012-07-01', '1985-05-29'),
 (580187, 'Aditya Eka Arisaputra', 'JKTTE', 'JKTTEA', 'TEA-3', 'Senior Development Engineer', 'STRATA 1', '2012-09-13', '1989-09-25'),
 (580189, 'Ignatius Danang Saptyadi', 'JKTTE', 'JKTTEL', 'TEL-2', 'Manager', 'STRATA 1', '2012-09-13', '1989-04-15'),
 (580202, 'Agib Faruq Afanny', 'JKTTE', 'JKTTEA', 'TEA-3', 'Senior Development Engineer', 'STRATA 1', '2012-11-27', '1989-10-11'),
 (580203, 'Raga Raditya Pramono', 'JKTTE', 'JKTTER', 'TER-3', 'Senior Development Engineer', 'STRATA 1', '2012-11-27', '1989-07-04'),
 (580204, 'Febrian Fajar Leksmana', 'JKTTE', 'JKTTER', 'TER-1', 'Senior Development Engineer', 'STRATA 1', '2012-11-27', '1988-02-20'),
-(580211, 'Byoma Wing Argyoganendro', 'JKTTE', '', '', 'General Manager', 'STRATA 2', '2012-12-11', '1986-05-23'),
-(580427, 'Muchamad Musyafa\'', 'JKTTE', 'JKTTEX', '', 'General Manager', 'STRATA 1', '2013-03-05', '1989-10-30'),
+(580211, 'Byoma Wing Argyoganendro', 'JKTTE', 'JKTTEB', 'JKTTEB', 'General Manager', 'STRATA 2', '2012-12-11', '1986-05-23'),
+(580427, 'Muchamad Musyafa\'', 'JKTTE', 'JKTTEX', 'JKTTEX', 'General Manager', 'STRATA 1', '2013-03-05', '1989-10-30'),
 (580431, 'Dhany Ahmad Barkah', 'JKTTE', 'JKTTEA', 'TEA-1', 'Senior Development Engineer', 'STRATA 1', '2013-03-25', '1988-05-07'),
 (580448, 'Aditya Ginanjar', 'JKTTE', 'JKTTER', 'TER-2', 'Senior Development Engineer', 'STRATA 1', '2013-05-01', '1989-02-23'),
 (580449, 'Nadia Fadhila Suryana', 'JKTTE', 'JKTTER', 'TER-5', 'Senior Technical Publication Officer', 'DIPLOMA III', '2013-05-01', '1991-01-13'),
@@ -187,53 +214,53 @@ INSERT INTO `pegawai` (`no_peg`, `nama_peg`, `dinas`, `bidang`, `unit`, `jabatan
 (581921, 'Dwiki Darmawan', 'JKTTE', 'JKTTEA', 'TEA-1', 'Development Engineer', 'STRATA 1', '2016-12-01', '1992-12-22'),
 (581922, 'Lukito Ardhi Nugroho', 'JKTTE', 'JKTTED', 'TED-4', 'Development Engineer', 'STRATA 2', '2016-12-01', '1990-03-06'),
 (581923, 'Dimas Aldiandra Adrians', 'JKTTE', 'JKTTEL', 'TEL-1', 'Development Engineer', 'STRATA 1', '2016-12-01', '1993-04-28'),
-(581925, 'Bangkit Rachmat Hilca', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 2', '2016-12-01', '1989-12-31'),
+(581925, 'Bangkit Rachmat Hilca', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 2', '2016-12-01', '1989-12-31'),
 (581926, 'Gesa Sukmawan', 'JKTTE', 'JKTTED', 'TED-1', 'Development Engineer', 'STRATA 1', '2016-12-01', '1993-10-17'),
 (581927, 'Lutfi Havidz Kirantho', 'JKTTE', 'JKTTEA', 'TEA-2', 'Development Engineer', 'STRATA 1', '2017-01-02', '1987-10-29'),
-(581928, 'Winaldo Satryadi', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2016-12-01', '1994-06-23'),
+(581928, 'Winaldo Satryadi', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2016-12-01', '1994-06-23'),
 (581929, 'Havid Satyaji Nugroho', 'JKTTE', 'JKTTER', 'TER-3', 'Development Engineer', 'STRATA 1', '2016-12-01', '1993-05-16'),
-(581930, 'M. Amirullah Akbar', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 2', '2016-12-01', '1991-08-24'),
+(581930, 'M. Amirullah Akbar', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 2', '2016-12-01', '1991-08-24'),
 (581931, 'Fanny Ardhy Pratama', 'JKTTE', 'JKTTER', 'TER-4', 'Development Engineer', 'STRATA 1', '2016-12-01', '1991-05-27'),
 (581932, 'Taufiq Rachman Hidayat', 'JKTTE', 'JKTTEA', 'TEA-1', 'Development Engineer', 'STRATA 1', '2016-12-01', '1993-08-02'),
 (581947, 'Ghufran Haris Suryadi', 'JKTTE', 'JKTTER', 'TER-1', 'Development Engineer', 'STRATA 1', '2017-01-02', '1993-12-11'),
 (581952, 'Muhammad Fitrah Sugita', 'JKTTE', 'JKTTEA', 'TEA-1', 'Development Engineer', 'STRATA 1', '2017-01-02', '1987-06-13'),
 (581982, 'M. Faisal Winarto', 'JKTTE', 'JKTTER', 'TER-4', 'Development Engineer', 'STRATA 1', '2017-02-01', '1992-01-29'),
 (581992, 'Siti Hidayati Mutiara Kurnia', 'JKTTE', 'JKTTER', 'TER-2', 'Development Engineer', 'STRATA 1', '2017-02-01', '1993-02-06'),
-(581997, 'Dhanistha Aryaditya', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2017-02-01', '1990-08-30'),
-(581998, 'Arjun Kholifatulloh', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2017-03-01', '1993-06-03'),
-(582008, 'Moh. Sidharta Yuliarta', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 2', '2017-04-01', '1983-07-31'),
+(581997, 'Dhanistha Aryaditya', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2017-02-01', '1990-08-30'),
+(581998, 'Arjun Kholifatulloh', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2017-03-01', '1993-06-03'),
+(582008, 'Moh. Sidharta Yuliarta', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 2', '2017-04-01', '1983-07-31'),
 (582014, 'Erlangga bin Rudy Sunaryo', 'JKTTE', 'JKTTEA', 'TEA-3', 'Development Engineer', 'STRATA 1', '2017-04-01', '1993-07-01'),
 (582044, 'Wanda Andreas Widyatmoko', 'JKTTE', 'JKTTED', 'TED-3', 'Development Engineer', 'STRATA 1', '2017-05-01', '1993-01-20'),
 (582068, 'Anugrah Fajar Iqbal Ikhsan', 'JKTTE', 'JKTTEA', 'TEA-2', 'Development Engineer', 'STRATA 1', '2017-05-01', '1993-06-02'),
 (582081, 'Aulia Faza', 'JKTTE', 'JKTTEA', 'TEA-4', 'Development Engineer', 'STRATA 2', '2017-05-01', '1993-03-18'),
-(582085, 'Martina Widiramdhani', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 2', '2017-05-01', '1992-03-14'),
+(582085, 'Martina Widiramdhani', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 2', '2017-05-01', '1992-03-14'),
 (582094, 'Haditya Wanaputra', 'JKTTE', 'JKTTEA', 'TEA-4', 'Development Engineer', 'STRATA 1', '2017-06-01', '1992-05-03'),
 (582151, 'Gita Andhika Swastanto', 'JKTTE', 'JKTTEA', 'TEA-2', 'Development Engineer', 'STRATA 1', '2017-06-01', '1992-07-12'),
-(582788, 'Arif F. De Mello', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-05-01', '1994-02-02'),
-(582790, 'Bisma Kertanegara', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-05-01', '1995-07-08'),
-(582797, 'Achmad Fathony', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1993-10-26'),
-(582798, 'Miftahurrohim', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1991-10-05'),
-(582801, 'Mochammad Nurwanto', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1994-10-13'),
-(582803, 'Bambang Muhammad Yusup', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1995-03-20'),
-(582804, 'Sarah Nabilah', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1995-12-28'),
-(582807, 'Aulia Lazuardi Muhammad', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 2', '2018-06-01', '1991-06-21'),
-(582810, 'Didit Pringgondani', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1994-10-13'),
-(582824, 'Dewi Larasati', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1995-11-29'),
-(582825, 'Selvi Keniapurna', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1991-02-07'),
-(582876, 'Ahmad Fadli', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-07-01', '1994-12-26'),
-(582882, 'Eko Priamadi', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 2', '2018-08-01', '1989-04-10'),
-(582887, 'Faishal Muhammad', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 2', '2018-08-01', '1995-10-25'),
-(582902, 'Puji Rochmat Kurniadi', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-08-01', '1995-05-11'),
-(582907, 'Daryo Rahmadi', 'JKTTE', '', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-09-01', '1995-07-20'),
-(582932, 'Danny Eldo', 'JKTTE', '', 'TEC-1', 'Trainee for Development Engineer', 'STRATA 2', '2018-05-07', '1988-04-10'),
-(582937, 'Fridam Amruloh Baqarizky', 'JKTTE', '', 'TEC-1', 'Trainee for Development Engineer', 'STRATA 1', '2018-05-07', '1997-08-17'),
-(582943, 'Ahmaf Furqan', 'JKTTE', '', 'TEC-1', 'Trainee for Development Engineer', 'STRATA 2', '2018-06-04', '1990-08-23'),
+(582788, 'Arif F. De Mello', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-05-01', '1994-02-02'),
+(582790, 'Bisma Kertanegara', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-05-01', '1995-07-08'),
+(582797, 'Achmad Fathony', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1993-10-26'),
+(582798, 'Miftahurrohim', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1991-10-05'),
+(582801, 'Mochammad Nurwanto', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1994-10-13'),
+(582803, 'Bambang Muhammad Yusup', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1995-03-20'),
+(582804, 'Sarah Nabilah', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1995-12-28'),
+(582807, 'Aulia Lazuardi Muhammad', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 2', '2018-06-01', '1991-06-21'),
+(582810, 'Didit Pringgondani', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1994-10-13'),
+(582824, 'Dewi Larasati', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1995-11-29'),
+(582825, 'Selvi Keniapurna', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-06-01', '1991-02-07'),
+(582876, 'Ahmad Fadli', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-07-01', '1994-12-26'),
+(582882, 'Eko Priamadi', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 2', '2018-08-01', '1989-04-10'),
+(582887, 'Faishal Muhammad', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 2', '2018-08-01', '1995-10-25'),
+(582902, 'Puji Rochmat Kurniadi', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-08-01', '1995-05-11'),
+(582907, 'Daryo Rahmadi', 'JKTTE', 'JKTTE', 'TEC-1', 'Development Engineer', 'STRATA 1', '2018-09-01', '1995-07-20'),
+(582932, 'Danny Eldo', 'JKTTE', 'JKTTE', 'TEC-1', 'Trainee for Development Engineer', 'STRATA 2', '2018-05-07', '1988-04-10'),
+(582937, 'Fridam Amruloh Baqarizky', 'JKTTE', 'JKTTE', 'TEC-1', 'Trainee for Development Engineer', 'STRATA 1', '2018-05-07', '1997-08-17'),
+(582943, 'Ahmaf Furqan', 'JKTTE', 'JKTTE', 'TEC-1', 'Trainee for Development Engineer', 'STRATA 2', '2018-06-04', '1990-08-23'),
 (781297, 'Mardjoko Taryono', 'JKTTE', 'JKTTER', 'TER-2', 'Senior Development Engineer', 'STRATA 1', '2012-05-14', '1956-03-10'),
 (782206, 'Mawardi', 'JKTTE', 'JKTTER', 'TER-2', 'Senior Development Engineer', 'STRATA 1', '2015-09-21', '1959-07-28'),
 (782391, 'Agus Subekti', 'JKTTE', 'JKTTED', 'TED-2', 'Senior Development Engineer', 'STRATA 1', '1983-10-01', '1960-08-11'),
-(782405, 'Aris Mundi Prabowo', 'JKTTE', '', '', 'Engineering Expert', 'STRATA 1', '1989-01-02', '1960-11-27'),
-(782407, 'I Gede Nyoman Sudikayasa', 'JKTTE', 'JKTTEA', '', 'Senior Development Engineer', 'STRATA 1', '2016-12-19', '1967-04-01'),
-(782457, 'Barjito', 'JKTTE', 'JKTTEA', '', 'Engineering Expert', 'STRATA 1', '1983-10-01', '1961-02-10'),
+(782405, 'Aris Mundi Prabowo', 'JKTTE', 'JKTTE', 'JKTTE', 'Engineering Expert', 'STRATA 1', '1989-01-02', '1960-11-27'),
+(782407, 'I Gede Nyoman Sudikayasa', 'JKTTE', 'JKTTEA', 'JKTTEA', 'Senior Development Engineer', 'STRATA 1', '2016-12-19', '1967-04-01'),
+(782457, 'Barjito', 'JKTTE', 'JKTTEA', 'JKTTEA', 'Engineering Expert', 'STRATA 1', '1983-10-01', '1961-02-10'),
 (782506, 'Mega Resty Sudigdo', 'JKTTE', 'JKTTER', 'TEC-1', 'Trainee for Development Engineer', 'STRATA 1', '2018-06-04', '1995-02-10');
 
 -- --------------------------------------------------------
@@ -245,33 +272,33 @@ INSERT INTO `pegawai` (`no_peg`, `nama_peg`, `dinas`, `bidang`, `unit`, `jabatan
 CREATE TABLE `training` (
   `id_status` int(11) NOT NULL,
   `no_peg` int(10) NOT NULL,
-  `done_human` date DEFAULT NULL,
-  `due_human` date DEFAULT NULL,
-  `stat_human` tinyint(1) NOT NULL,
-  `done_cas` date DEFAULT NULL,
-  `due_cas` date DEFAULT NULL,
-  `stat_cas` tinyint(1) NOT NULL,
-  `done_fts` date DEFAULT NULL,
-  `stat_fts` tinyint(1) NOT NULL,
-  `done_sms` date DEFAULT NULL,
-  `stat_sms` tinyint(1) NOT NULL,
-  `done_ewis` date DEFAULT NULL,
-  `stat_ewis` tinyint(1) NOT NULL,
-  `done_module` date DEFAULT NULL,
-  `stat_module` tinyint(1) NOT NULL,
-  `done_gqs` date DEFAULT NULL,
-  `stat_gqs` tinyint(1) NOT NULL,
-  `done_batk` date DEFAULT NULL,
-  `stat_batk` tinyint(1) NOT NULL,
-  `done_basic` date DEFAULT NULL,
-  `stat_basic` tinyint(1) NOT NULL,
-  `done_cont` date DEFAULT NULL,
-  `stat_cont` tinyint(1) NOT NULL,
-  `done_typer1` date DEFAULT NULL,
+  `done_human` date DEFAULT '0000-00-00',
+  `due_human` date DEFAULT '0000-00-00',
+  `stat_human` tinyint(1) DEFAULT '1',
+  `done_cas` date DEFAULT '0000-00-00',
+  `due_cas` date DEFAULT '0000-00-00',
+  `stat_cas` tinyint(1) DEFAULT '1',
+  `done_fts` date DEFAULT '0000-00-00',
+  `stat_fts` tinyint(1) DEFAULT '1',
+  `done_sms` date DEFAULT '0000-00-00',
+  `stat_sms` tinyint(1) DEFAULT '1',
+  `done_ewis` date DEFAULT '0000-00-00',
+  `stat_ewis` tinyint(1) DEFAULT '1',
+  `done_module` date DEFAULT '0000-00-00',
+  `stat_module` tinyint(1) DEFAULT '1',
+  `done_gqs` date DEFAULT '0000-00-00',
+  `stat_gqs` tinyint(1) DEFAULT '1',
+  `done_batk` date DEFAULT '0000-00-00',
+  `stat_batk` tinyint(1) DEFAULT '1',
+  `done_basic` date DEFAULT '0000-00-00',
+  `stat_basic` tinyint(1) DEFAULT '1',
+  `done_cont` date DEFAULT '0000-00-00',
+  `stat_cont` tinyint(1) DEFAULT '1',
+  `done_typer1` date DEFAULT '0000-00-00',
   `stat_typer1` varchar(15) DEFAULT NULL,
-  `done_typer2` date DEFAULT NULL,
+  `done_typer2` date DEFAULT '0000-00-00',
   `stat_typer2` varchar(15) DEFAULT NULL,
-  `done_typer3` date DEFAULT NULL,
+  `done_typer3` date DEFAULT '0000-00-00',
   `stat_typer3` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -280,9 +307,7 @@ CREATE TABLE `training` (
 --
 
 INSERT INTO `training` (`id_status`, `no_peg`, `done_human`, `due_human`, `stat_human`, `done_cas`, `due_cas`, `stat_cas`, `done_fts`, `stat_fts`, `done_sms`, `stat_sms`, `done_ewis`, `stat_ewis`, `done_module`, `stat_module`, `done_gqs`, `stat_gqs`, `done_batk`, `stat_batk`, `done_basic`, `stat_basic`, `done_cont`, `stat_cont`, `done_typer1`, `stat_typer1`, `done_typer2`, `stat_typer2`, `done_typer3`, `stat_typer3`) VALUES
-(1, 111111, NULL, NULL, 0, NULL, NULL, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 222222, NULL, NULL, 5, NULL, NULL, 5, NULL, 5, NULL, 5, NULL, 5, NULL, 5, NULL, 5, NULL, 5, NULL, 0, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 519884, '2016-12-25', '2018-12-24', 4, '2015-03-13', '2017-03-12', 1, '2012-02-15', 5, '2008-12-10', 5, '0000-00-00', 0, '0000-00-00', 4, '0000-00-00', 4, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', '', '0000-00-00', '', '0000-00-00', ''),
+(3, 519884, '2016-12-25', '2018-12-24', 4, '2015-03-13', '2017-03-12', 1, '2012-02-15', 1, '2008-12-10', 5, '0000-00-00', 0, '0000-00-00', 4, '0000-00-00', 4, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', '', '0000-00-00', '', '0000-00-00', ''),
 (4, 522776, '2017-12-05', '2019-12-04', 5, '2015-03-19', '2017-03-18', 1, '2010-10-26', 5, '2015-08-18', 5, '2015-05-29', 5, '2017-10-24', 5, '0000-00-00', 4, '1989-04-21', 5, '0000-00-00', 0, '0000-00-00', 4, '0000-00-00', '', '0000-00-00', '', '0000-00-00', ''),
 (5, 524943, '2017-05-16', '2019-05-15', 5, '2016-10-20', '2018-10-19', 4, '2010-05-25', 5, '2010-02-24', 5, '2017-03-24', 5, '0000-00-00', 4, '0000-00-00', 4, '0000-00-00', 0, '2005-03-15', 5, '0000-00-00', 4, '0000-00-00', '', '0000-00-00', '', '0000-00-00', ''),
 (6, 525307, '2017-05-16', '2019-05-15', 5, '0000-00-00', '0000-00-00', 4, '2008-04-22', 5, '2010-02-25', 5, '2017-06-09', 5, '0000-00-00', 4, '2018-06-28', 4, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 4, '0000-00-00', '', '0000-00-00', '', '0000-00-00', ''),
@@ -464,13 +489,14 @@ INSERT INTO `training` (`id_status`, `no_peg`, `done_human`, `due_human`, `stat_
 (182, 582937, '0000-00-00', '0000-00-00', 4, '0000-00-00', '0000-00-00', 4, '0000-00-00', 4, '2018-07-05', 5, '0000-00-00', 4, '0000-00-00', 4, '0000-00-00', 4, '2018-09-03', 4, '0000-00-00', 4, '0000-00-00', 4, '0000-00-00', '', '0000-00-00', '', '0000-00-00', ''),
 (183, 582943, '0000-00-00', '0000-00-00', 4, '0000-00-00', '0000-00-00', 4, '0000-00-00', 4, '2018-07-05', 5, '0000-00-00', 4, '0000-00-00', 4, '0000-00-00', 4, '2018-09-03', 4, '0000-00-00', 4, '0000-00-00', 4, '0000-00-00', '', '0000-00-00', '', '0000-00-00', ''),
 (184, 781297, '2017-07-20', '2019-07-19', 5, '2017-09-05', '2019-09-04', 5, '2015-08-21', 5, '2008-08-14', 5, '2015-08-20', 5, '2008-01-11', 5, '2017-09-07', 5, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '2004-06-07', 'B737 CL', '0000-00-00', '', '0000-00-00', ''),
-(185, 782206, '2018-04-05', '2020-04-04', 5, '0000-00-00', '0000-00-00', 4, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '1997-05-20', 'MD11', '0000-00-00', '', '0000-00-00', '');
+(185, 782206, '2018-04-05', '2020-04-04', 5, '0000-00-00', '0000-00-00', 4, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '1997-05-20', 'MD11', '0000-00-00', '', '0000-00-00', ''),
+(186, 782391, '2016-12-05', '2018-12-04', 4, '2015-03-13', '2017-03-12', 1, '2015-03-09', 5, '2008-08-14', 5, '2014-12-19', 5, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '1994-04-08', 'B747', '0000-00-00', '', '0000-00-00', '');
 INSERT INTO `training` (`id_status`, `no_peg`, `done_human`, `due_human`, `stat_human`, `done_cas`, `due_cas`, `stat_cas`, `done_fts`, `stat_fts`, `done_sms`, `stat_sms`, `done_ewis`, `stat_ewis`, `done_module`, `stat_module`, `done_gqs`, `stat_gqs`, `done_batk`, `stat_batk`, `done_basic`, `stat_basic`, `done_cont`, `stat_cont`, `done_typer1`, `stat_typer1`, `done_typer2`, `stat_typer2`, `done_typer3`, `stat_typer3`) VALUES
-(186, 782391, '2016-12-05', '2018-12-04', 4, '2015-03-13', '2017-03-12', 1, '2015-03-09', 5, '2008-08-14', 5, '2014-12-19', 5, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '1994-04-08', 'B747', '0000-00-00', '', '0000-00-00', ''),
 (187, 782405, '2018-04-05', '2020-04-04', 5, '2011-01-18', '2013-01-17', 1, '2008-04-22', 5, '2008-03-03', 5, '0000-00-00', 0, '0000-00-00', 4, '0000-00-00', 4, '1989-04-21', 5, '0000-00-00', 0, '1992-10-07', 5, '2000-11-22', 'B747', '0000-00-00', '', '0000-00-00', ''),
 (188, 782407, '0000-00-00', '0000-00-00', 4, '2018-07-24', '2020-07-23', 5, '2017-08-14', 5, '2018-07-05', 5, '0000-00-00', 0, '0000-00-00', 4, '0000-00-00', 4, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', '', '0000-00-00', '', '0000-00-00', ''),
 (189, 782457, '2018-02-27', '2020-02-26', 5, '0000-00-00', '0000-00-00', 4, '2010-07-01', 5, '2008-03-03', 5, '2012-03-26', 5, '0000-00-00', 4, '0000-00-00', 4, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', '', '0000-00-00', '', '0000-00-00', ''),
-(190, 782506, '0000-00-00', '0000-00-00', 4, '2018-05-04', '2020-05-03', 5, '0000-00-00', 4, '2018-07-05', 5, '0000-00-00', 4, '0000-00-00', 4, '0000-00-00', 4, '2018-09-03', 4, '0000-00-00', 4, '0000-00-00', 4, '0000-00-00', '', '0000-00-00', '', '0000-00-00', '');
+(190, 782506, '0000-00-00', '0000-00-00', 4, '2018-05-04', '2020-05-03', 5, '0000-00-00', 4, '2018-07-05', 5, '0000-00-00', 4, '0000-00-00', 4, '0000-00-00', 4, '2018-09-03', 4, '0000-00-00', 4, '0000-00-00', 4, '0000-00-00', '', '0000-00-00', '', '0000-00-00', ''),
+(192, 0, '0000-00-00', '0000-00-00', 0, '0000-00-00', '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', 0, '0000-00-00', NULL, '0000-00-00', NULL, '0000-00-00', NULL);
 
 -- --------------------------------------------------------
 
@@ -491,12 +517,27 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_admin`, `tipe`, `username`, `password`, `no_peg`) VALUES
-(1, 'super_admin', 'gmf', '123', 111111),
-(2, 'admin', 'syauqi', '123', 222222);
+(1, 'super_admin', 'gmf', '123', 532977),
+(2, 'admin', 'syauqi', '123', 532015),
+(3, 'admin', 'prima', '123', 532262),
+(4, 'admin', 'arif', '123', 530348),
+(5, 'admin', 'endi', '123', 530334),
+(6, 'admin', 'andriyono', '123', 532013),
+(7, 'admin', 'ferdinan', '123', 530341),
+(8, 'admin', 'byoma', '123', 580211),
+(9, 'admin', 'muchamad', '123', 580427),
+(10, 'admin', 'zuriati', '123', 528822),
+(11, 'admin', 'endik', '123', 525723);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `jenis_training`
+--
+ALTER TABLE `jenis_training`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pegawai`
@@ -523,16 +564,22 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `jenis_training`
+--
+ALTER TABLE `jenis_training`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `training`
 --
 ALTER TABLE `training`
-  MODIFY `id_status` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=191;
+  MODIFY `id_status` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=193;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables

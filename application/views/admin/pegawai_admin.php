@@ -45,8 +45,8 @@ include 'navbar.php';
 												echo date("d-M-Y",$tgl_bener);?></td>
 												<td><?php echo $peg->jabatan;?></td>
 												<td><?php echo $peg->pendidikan;?></td>
-												<td><a href="edit_pegawai/<?php echo $peg->no_peg;?>"><i class="la la-edit" style="font-size:20px"></i></a></td>
-												<td><a id="hasil" href="delete_pegawai/<?php echo $peg->no_peg;?>"><i class="la la-remove" style="font-size: 20px"></i></a></td>
+												<td><a href="edit_peg_admin/<?php echo $peg->no_peg;?>"><i class="la la-edit" style="font-size:20px"></i></a></td>
+												<td><a id="hasil" href="delete_peg_admin/<?php echo $peg->no_peg;?>"><i class="la la-remove" style="font-size: 20px"></i></a></td>
 
 											</tr>
 										<?php }

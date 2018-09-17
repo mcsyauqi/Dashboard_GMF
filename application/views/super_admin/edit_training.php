@@ -95,25 +95,21 @@ include 'navbar.php';
 								<h6 class="control-label col-sm-2" for="form_employee" style="margin-bottom: -1%"><strong>Type Rating</strong></h6>
 								<br>
 								<label class="control-label col-sm-2" for="form_employee">Tipe</label>
-								<label><select class="form-control form-control" id="defaultSelect" name="stat_typer1" style="width: 208%">
+								<label><select class="form-control form-control" id="defaultSelect" name="stat_typer1" style="width: 166%">
 									<option> <?php echo $train->stat_typer1;?></option>
-									<option>TEA-1</option>
-									<option>TEA-2</option>
-									<option>TEA-3</option>
-									<option>TEA-4</option>
-									<option>TEC-1</option>
-									<option>TED-1</option>
-									<option>TED-2</option>
-									<option>TED-3</option>
-									<option>TED-4</option>
-									<option>TED-5</option>
-									<option>TEL-1</option>
-									<option>TEL-2</option>
-									<option>TER-1</option>
-									<option>TER-2</option>
-									<option>TER-3</option>
-									<option>TER-4</option>
-									<option>TER-5</option>
+									<option></option>
+									<option>A330</option>
+									<option>A320</option>
+									<option>B787-8/9</option>
+									<option>B737 NG</option>
+									<option>B737 CL</option>
+									<option>B777</option>
+									<option>727-200</option>
+									<option>B747</option>
+									<option>CRJ</option>
+									<option>ATR72</option>
+									<option>A300</option>
+									<option>MD11</option>
 								</select></label>
 							</div>
 							<div class="card-action">

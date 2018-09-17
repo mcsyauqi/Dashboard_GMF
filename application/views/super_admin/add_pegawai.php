@@ -54,6 +54,17 @@ include 'navbar.php';
 									<select class="form-control form-control" id="defaultSelect" name="unit">
 										<option>--Pilih Unit--</option>
 										<option></option>
+										<option>JKTTE</option>
+										<option>JKTTEA</option>
+										<option>JKTTEC</option>
+										<option>JKTTED</option>
+										<option>JKTTEJ</option>
+										<option>JKTTEL</option>
+										<option>JKTTEN</option>
+										<option>JKTTEQ</option>
+										<option>JKTTER</option>
+										<option>JKTTEX</option>
+										<option>JKTTEZ</option>
 										<option>TEA-1</option>
 										<option>TEA-2</option>
 										<option>TEA-3</option>
@@ -92,8 +103,16 @@ include 'navbar.php';
 									</select>
 								</div>
 								<div class="form-group">
-									<label for="form_employee">Education</label>
-									<input type="text" class="form-control form-control" id="defaultInput" placeholder="Masukkan Pendidikan Terakhir" name="pendidikan">
+									<label for="defaultSelect">Education</label>
+									<select class="form-control form-control" id="defaultSelect" name="pendidikan">
+										<option>--Pendidikan Terakhir--</option>
+										<option></option>
+										<option>SLTA/SMK</option>
+										<option>DIPLOMA III</option>
+										<option>STRATA I</option>
+										<option>STRATA II</option>
+										<option>STRATA III</option>
+									</select>
 								</div>
 								<div class="form-group">
 									<label for="form_employee">Date Of Joining</label>
@@ -104,7 +123,7 @@ include 'navbar.php';
 									<input type="date" class="form-control form-control" id="defaultInput" name="tgl_lahir">
 								</div>
 								<div class="card-action">
-								<button class="btn btn-success">Add</button>
+								<button class="btn btn-success" style="margin-right: 2%">Add</button>
 								<input type="button" class="btn btn-danger" value="Cancel" style="margin-right:10px" onclick="history.back();"/>
 							</div>
 							</form>

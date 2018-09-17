@@ -10,30 +10,38 @@ include 'navbar.php';
 				<div class="col-md-12">
 					<div class="card">
 						<div class="card-header">
-							<div class="card-title">Add Employee</div>
+							<div class="card-title">Edit Employee</div>
 						</div>
-						<form method="post" action="<?php echo site_url('Pegawai/input_peg_admin')?>">
+						<?php
+						foreach ($pegawai -> result() as $peg) 
+						{
+							$no_peg = $peg->no_peg;
+
+						}
+
+						?>
+						<form method="post" action="<?php echo site_url('Pegawai/update_pegawai')?>">
 						<div class="card-body">
 							<div class="form-group">
 								<label for="form_employee">ID</label>
-								<input type="text" class="form-control form-control" id="defaultInput" placeholder="Masukkan ID" name="no_peg">
+								<input type="text" class="form-control form-control" id="defaultInput" value="<?php echo $peg->no_peg;?>" name="no_peg">
 							</div>
 							<div class="form-group">
 								<label for="form_employee">Name</label>
-								<input type="text" class="form-control form-control" id="defaultInput" placeholder="Masukkan Nama" name="nama_peg">
+								<input type="text" class="form-control form-control" id="defaultInput" value="<?php echo $peg->nama_peg;?>" name="nama_peg">
 							</div>
 							<div class="form-group">
 								<label for="defaultSelect">Dinas</label>
-								<select class="form-control form-control" id="defaultSelect" name="dinas">
-									<option>--Pilih Dinas--</option>
+								<select class="form-control form-control" id="defaultSelect" name="dinas" >
+									<option><?php echo $peg->dinas;?></option>
 									<option></option>
 									<option>JKTTE</option>
 								</select>
 							</div>
 							<div class="form-group">
 								<label for="defaultSelect">Bidang</label>
-								<select class="form-control form-control" id="defaultSelect" name="bidang">
-									<option>--Pilih Bidang--</option>
+								<select class="form-control form-control" id="defaultSelect" name="bidang" >
+									<option><?php echo $peg->bidang;?></option>
 									<option></option>
 									<option>JKTTEA</option>
 									<option>JKTTEC</option>
@@ -49,20 +57,9 @@ include 'navbar.php';
 							</div>
 							<div class="form-group">
 								<label for="defaultSelect">Unit</label>
-								<select class="form-control form-control" id="defaultSelect" name="unit">
-									<option>--Pilih Unit--</option>
+								<select class="form-control form-control" id="defaultSelect" name="unit" >
+									<option><?php echo $peg->unit;?></option>
 									<option></option>
-									<option>JKTTE</option>
-									<option>JKTTEA</option>
-									<option>JKTTEC</option>
-									<option>JKTTED</option>
-									<option>JKTTEJ</option>
-									<option>JKTTEL</option>
-									<option>JKTTEN</option>
-									<option>JKTTEQ</option>
-									<option>JKTTER</option>
-									<option>JKTTEX</option>
-									<option>JKTTEZ</option>
 									<option>TEA-1</option>
 									<option>TEA-2</option>
 									<option>TEA-3</option>
@@ -84,8 +81,8 @@ include 'navbar.php';
 							</div>
 							<div class="form-group">
 								<label for="defaultSelect">Function</label>
-								<select class="form-control form-control" id="defaultSelect" name="jabatan">
-									<option>--Pilih Function--</option>
+								<select class="form-control form-control" id="defaultSelect" name="jabatan" >
+									<option><?php echo $peg->jabatan;?></option>
 									<option></option>
 									<option>Development Engineer</option>
 									<option>Engineering Expert</option>
@@ -101,34 +98,26 @@ include 'navbar.php';
 								</select>
 							</div>
 							<div class="form-group">
-									<label for="defaultSelect">Education</label>
-									<select class="form-control form-control" id="defaultSelect" name="pendidikan">
-										<option>--Pendidikan Terakhir--</option>
-										<option></option>
-										<option>SLTA/SMK</option>
-										<option>DIPLOMA III</option>
-										<option>STRATA I</option>
-										<option>STRATA II</option>
-										<option>STRATA III</option>
-									</select>
+								<label for="form_employee">Education</label>
+								<input type="text" class="form-control form-control" id="defaultInput"  name="pendidikan" value="<?php echo $peg->pendidikan;?>">
 							</div>
 							<div class="form-group">
 								<label for="form_employee">Date Of Joining</label>
-								<input type="date" class="form-control form-control" id="defaultInput" name="tgl_masuk">
+								<input type="date" class="form-control form-control" id="defaultInput" name="tgl_masuk" value="<?php echo $peg->tgl_masuk;?>">
 							</div>
 							<div class="form-group">
 								<label for="form_employee">Date Of Birth</label>
-								<input type="date" class="form-control form-control" id="defaultInput" name="tgl_lahir">
+								<input type="date" class="form-control form-control" id="defaultInput" name="tgl_lahir" value="<?php echo $peg->tgl_lahir;?>">
 							</div>
 							<div class="card-action">
-								<button class="btn btn-success">Add</button>
-								<input type="button" class="btn btn-danger" value="Cancel" style="margin-right:10px" onclick="history.back();"/>
+								<button class="btn btn-success" style="margin-left:1%">Save</button>
+								
+								<a href="<?php echo site_url('Pegawai/pegawai_admin')?>" class="btn btn-danger">Cancel</a>
 							</div>
-							</form>
+						</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
