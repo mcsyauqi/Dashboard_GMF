@@ -54,6 +54,7 @@ class Pegawai extends CI_Controller {
 	{
 		$id = array('no_peg' => $this->uri->segment(3));
 		$this->Db_pegawai->delete_pegawai($id);
+		$this->Db_training->delete_training($id);
 		redirect (site_url('Pegawai/pegawai_super'));
 	}
 
@@ -79,6 +80,7 @@ class Pegawai extends CI_Controller {
 		);
 		$id = $this->input->post('no_peg');
 
+		$this->Db_pegawai->update_pegawai($data, $id);
 		$this->Db_pegawai->update_pegawai($data, $id);
 
 		redirect (site_url('Pegawai/pegawai_super'));

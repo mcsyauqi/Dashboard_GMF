@@ -40,5 +40,9 @@ class Db_training extends CI_Model{
 	public function update_training($data,$id){
 		$this->db->where('no_peg', $id)->update('training', $data);
 	}
+
+	public function delete_training($id){
+		$this->db->delete('training', $id);
+	}
 	
 }

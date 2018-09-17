@@ -11,7 +11,7 @@ class Login extends CI_Controller{
 
 	public function index()
 	{
-		if ($this->session->userdata('isLogin')==TRUE) { //ngecek udah login belum, kalau sudah kemabli ke halaman admin
+		if ($this->session->userdata('isLogin')==TRUE) { //ngecek udah login belum, kalau sudah kembali ke halaman admin
 
 				if ($_SESSION['tipe']=='super_admin') {
 					redirect('Dashboard_super');
@@ -44,6 +44,7 @@ class Login extends CI_Controller{
 					'username' => $username, //set session username
 					'password' => $password,
 					'tipe' => $cek->tipe,
+					'no_peg' => $cek->no_peg,
 					//'username' => $cek->username, //set sessiom password
 				/*	'nama' => $cek->nama,
 					'email' => $cek->email,
@@ -61,6 +62,7 @@ class Login extends CI_Controller{
 					'username' => $username, //set session username
 					'password' => $password,
 					'tipe' => $cek->tipe,
+					'no_peg' => $cek->no_peg,
 					//'username' => $cek->username, //set sessiom password
 					/*'nama' => $cek->nama,
 					'email' => $cek->email,

@@ -4,8 +4,19 @@
 					<div class="info">
 						<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true" style="text-align: center;">
 							<span>
-								GMF
-								<span class="user-level">Super Admin</span>
+								<?php
+									 $nama = $this->db->select('nama_peg')->from('pegawai')->where('no_peg',$this->session->userdata('no_peg'))->get()->row();
+									 echo $nama->nama_peg;
+									 ?>
+								<span class="user-level">
+									<?php 
+									if ($this->session->userdata('tipe')=='super_admin') {
+										echo "Super Admin";
+									} else {
+										echo "Admin";
+									}
+									?>
+								</span>
 							</span>
 						</a>
 						<div class="clearfix"></div>

@@ -46,7 +46,12 @@
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">						
 						<li class="nav-item dropdown">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="true"> 
-								<span>GMF</span>
+								<span>
+									<?php
+									 $nama = $this->db->select('nama_peg')->from('pegawai')->where('no_peg',$this->session->userdata('no_peg'))->get()->row();
+									 echo $nama->nama_peg;
+									 ?>
+								</span>
 							</a>
 							<ul class="dropdown-menu dropdown-user">
 								<a class="dropdown-item" href="#"><i class="ti-settings"></i> Change Password</a>
@@ -59,13 +64,13 @@
 				</div>
 			</nav>
 		</div>
-		<div class="sidebar" id="non_print">
+		<!-- <div class="sidebar" id="non_print">
 			<div class="scrollbar-inner sidebar-wrapper">
 				<div class="user">
 					<div class="info">
 						<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 							<span>
-								GMF
+								
 								<span class="user-level">Super Admin</span>
 							</span>
 						</a>
@@ -102,7 +107,7 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</div> -->
 
 		<?php echo $contents;?>
 
