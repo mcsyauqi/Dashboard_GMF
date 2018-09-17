@@ -36,6 +36,7 @@ class Administrator extends CI_Controller {
 		);
 
 		$this->Db_admin->input_admin($data);
+		$this->Db_training->input_training($data);
 
 		redirect (site_url('Administrator'));
 	}

@@ -45,7 +45,7 @@ class Db_pegawai extends CI_Model{
 	}
 
 	public function update_pegawai($data,$id){
-		$this->db->where('no_peg',$id)->update('pegawai', $data);
+		$this->db->where('no_peg', $id)->update('pegawai', $data);
 	}
 	
 }

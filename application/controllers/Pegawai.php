@@ -42,8 +42,10 @@ class Pegawai extends CI_Controller {
 			'tgl_masuk' => $this->input->post('tgl_masuk'),
 			'tgl_lahir' => $this->input->post('tgl_lahir'),
 		);
+		$dta = array('no_peg' => $this->input->post('no_peg'));
 
 		$this->Db_pegawai->input_pegawai($data);
+		$this->Db_training->input_training($dta);
 
 		redirect (site_url('Pegawai/pegawai_super'));
 	}
@@ -64,7 +66,6 @@ class Pegawai extends CI_Controller {
 
 	public function update_pegawai()
 	{
-		$id = $this->input->post('no_peg');
 		$data = array(
 			'no_peg' => $this->input->post('no_peg'),
 			'nama_peg' => $this->input->post('nama_peg'),
@@ -76,6 +77,7 @@ class Pegawai extends CI_Controller {
 			'tgl_masuk' => $this->input->post('tgl_masuk'),
 			'tgl_lahir' => $this->input->post('tgl_lahir'),
 		);
+		$id = $this->input->post('no_peg');
 
 		$this->Db_pegawai->update_pegawai($data, $id);
 

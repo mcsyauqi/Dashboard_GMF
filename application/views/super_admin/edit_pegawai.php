@@ -112,8 +112,7 @@ include 'navbar.php';
 							<div class="card-action">
 								<button class="btn btn-success">Save</button>
 								
-								<a href="<?php echo site_url('Pegawai/pegawai_super');?>">
-								<button class="btn btn-danger"  style="margin-right:10px">Cancel</button></a>
+								<a href="<?php echo site_url('Pegawai/pegawai_super')?>" class="btn btn-danger">Cancel</a>
 							</div>
 						</form>
 						</div>
