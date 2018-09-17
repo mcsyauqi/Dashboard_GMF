@@ -49,9 +49,9 @@ class Pegawai extends CI_Controller {
 
 		redirect (site_url('Pegawai/pegawai_super'));
 	}
-
-
-	public function delete_pegawai(){
+	
+	public function delete_pegawai()
+	{
 		$id = array('no_peg' => $this->uri->segment(3));
 		$this->Db_pegawai->delete_pegawai($id);
 		redirect (site_url('Pegawai/pegawai_super'));
@@ -114,6 +114,10 @@ class Pegawai extends CI_Controller {
 		$this->template->load('admin/static','admin/pegawai_admin',$data);
 	}
 
+	public function add_peg_admin()
+	{
+		$this->template->load('admin/static','admin/add_peg_admin');
+	}
 }
 
 ?>

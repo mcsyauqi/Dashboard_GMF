@@ -10,7 +10,7 @@ include 'navbar.php';
 				<div class="col-md-12">
 					<div class="card">
 						<div class="card-header">
-							<a href="<?php echo site_url('Pegawai/add_pegawai');?>">
+							<a href="<?php echo site_url('Pegawai/add_peg_admin');?>">
 								<button class="btn btn-info">Add Employee</button></a>
 							</div>
 							<div class="container" style="overflow-x: scroll;">

@@ -45,7 +45,6 @@ include 'navbar.php';
 												</div>
 												<div class="card-action">
 													<button class="btn btn-success">Add</button>
-													<a href="administrator.html"><button class="btn btn-danger"  style="margin-right:10px">Cancel</button></a>
 												</div>
 											</form>
 										</div>
@@ -154,8 +153,8 @@ include 'navbar.php';
 						<input type="text" name="password" class="form-control form-control" id="password" placeholder="Masukkan Password">
 					</div>
 					<div class="card-action">
-						<button class="btn btn-success">Save</button>
-						<button class="btn btn-danger" style="margin-right:10px">Cancel</button></a>
+						<button class="btn btn-success" style="margin-top: 8px">Save</button>
+						<button class="btn btn-danger" style="margin-right:10px;margin-top: 8px">Cancel</button></a>
 					</div>
 				</form>
 			</div>

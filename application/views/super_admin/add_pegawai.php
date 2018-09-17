@@ -104,9 +104,9 @@ include 'navbar.php';
 									<input type="date" class="form-control form-control" id="defaultInput" name="tgl_lahir">
 								</div>
 								<div class="card-action">
-									<button class="btn btn-success">Add</button>
-									<a href="<?php echo site_url('Pegawai/pegawai_super')?>" class="btn btn-danger">Cancel</a>
-								</div>
+								<button class="btn btn-success">Add</button>
+								<input type="button" class="btn btn-danger" value="Cancel" style="margin-right:10px" onclick="history.back();"/>
+							</div>
 							</form>
 						</div>
 					</div>
