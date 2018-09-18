@@ -20,6 +20,12 @@ $total_peg = mysqli_num_rows($peg);
 	padding: 8px;
 	color: white;
 }
+.tipe3 {
+	background-color: orange;
+	border-radius: 5px;
+	padding: 8px;
+	color: white;
+}
 </style>
 
 <div class="main-panel">
@@ -92,12 +98,23 @@ $total_peg = mysqli_num_rows($peg);
 											$due = preg_replace($pattern,'',$train->due_human);
 											$cek = $due - $sekarang; 
 											$done_bener = strtotime($train->done_human);
+
+											$date = new DateTime($train->due_human);
+											$now = new DateTime();
+											$interval = $date->diff($now);
+
+											// echo $interval->days;
 											?>
 
 
 											<?php if ($done_bener!=0000-00-00) { ?>
 												
-												<?php if ($cek >= 0) { ?>
+												<?php if ($interval->days<=60) { ?>
+													<td ><span class="tipe3"><?php $done_bener = strtotime($train->done_human); ?>
+													<?php echo date("d-M-Y",$done_bener);?></span></td> 
+												<?php
+												}
+												elseif ($cek >= 0) { ?>
 													<td ><span class="tipe1"><?php $done_bener = strtotime($train->done_human); ?>
 													<?php echo date("d-M-Y",$done_bener);?></span></td> 
 												<?php } 
@@ -128,7 +145,13 @@ $total_peg = mysqli_num_rows($peg);
 
 											<?php if ($done_bener!=0000-00-00) { ?>
 												
-												<?php if ($cek >= 0) { ?>
+												<?php if ($interval->days<=60) { ?>
+													<td ><span class="tipe3"><?php $done_bener = strtotime($train->done_cas); ?>
+													<?php echo date("d-M-Y",$done_bener);?></span></td> 
+												<?php
+												}
+
+												elseif ($cek >= 0) { ?>
 													<td><span class="tipe1"><?php $done_bener = strtotime($train->done_cas); ?>
 													<?php echo date("d-M-Y",$done_bener);?></span></td> 
 												<?php } 
@@ -409,107 +432,107 @@ $total_peg = mysqli_num_rows($peg);
 												
 												<?php if ($cek >= 0) { ?>
 													<td style="align-content: center;"><span class="tipe1">
-													<?php echo $train->stat_typer1;?></span></td> 
-												<?php } 
-												else { ?>
-													<td><span class="tipe2"><?php $done_bener = strtotime($train->done_typer1); 
-													echo date("d-M-Y",$done_bener);?></span></td> 
+														<?php echo $train->stat_typer1;?></span></td> 
+													<?php } 
+													else { ?>
+														<td><span class="tipe2"><?php $done_bener = strtotime($train->done_typer1); 
+														echo date("d-M-Y",$done_bener);?></span></td> 
 
-												<?php } ?>
+													<?php } ?>
 
-											<?php } else { ?>
-												<td>
-													<p style="background-color: red; border-radius: 5px; color: white;">  <?php echo ("Belum Training");?></p>
+												<?php } else { ?>
+													<td>
+														<p style="background-color: red; border-radius: 5px; color: white;">  <?php echo ("Belum Training");?></p>
+													</td>
+													<?php 	
+												} ?>
+												<!-- akhir tabel typer1 -->
+
+												<?php
+												$atas = 0;
+												$bawah = 0;
+												if ($train->stat_human==5||$train->stat_human==4){
+													$atas++;
+												}
+												if ($train->stat_cas==5||$train->stat_cas==4){
+													$atas++;
+												}
+												if ($train->stat_fts==5){
+													$atas++;
+												}
+												if ($train->stat_sms==5){
+													$atas++;
+												}
+												if ($train->stat_ewis==5){
+													$atas++;
+												}
+												if ($train->stat_module==5){
+													$atas++;
+												}
+												if ($train->stat_gqs==5){
+													$atas++;
+												}
+												if ($train->stat_batk==5){
+													$atas++;
+												}
+												if ($train->stat_basic==5){
+													$atas++;
+												}
+												if ($train->stat_cont==5){
+													$atas++;
+												}
+
+												if ($train->stat_human!=0){
+													$bawah++;
+												}
+												if ($train->stat_cas!=0){
+													$bawah++;
+												}
+												if ($train->stat_fts!=0){
+													$bawah++;
+												}
+												if ($train->stat_sms!=0){
+													$bawah++;
+												}
+												if ($train->stat_ewis!=0){
+													$bawah++;
+												}
+												if ($train->stat_module!=0){
+													$bawah++;
+												}
+												if ($train->stat_gqs!=0){
+													$bawah++;
+												}
+												if ($train->stat_batk!=0){
+													$bawah++;
+												}
+												if ($train->stat_basic!=0){
+													$bawah++;
+												}
+												if ($train->stat_cont!=0){
+													$bawah++;
+												}
+
+												$total=($atas/$bawah)*100;
+												$total = number_format($total, 2, '.', '');
+
+
+												?>
+												<td><p class="demo">
+													<div class="progress">
+														<div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $total;?>%" aria-valuenow="<?php echo $total;?>" aria-valuemin="0" aria-valuemax="100"><?php echo $total;?>%</div>
+													</div></p>
 												</td>
-												<?php 	
-											} ?>
-											<!-- akhir tabel typer1 -->
-
-											<?php
-											$atas = 0;
-											$bawah = 0;
-											if ($train->stat_human==5||$train->stat_human==4){
-												$atas++;
-											}
-											if ($train->stat_cas==5||$train->stat_cas==4){
-												$atas++;
-											}
-											if ($train->stat_fts==5){
-												$atas++;
-											}
-											if ($train->stat_sms==5){
-												$atas++;
-											}
-											if ($train->stat_ewis==5){
-												$atas++;
-											}
-											if ($train->stat_module==5){
-												$atas++;
-											}
-											if ($train->stat_gqs==5){
-												$atas++;
-											}
-											if ($train->stat_batk==5){
-												$atas++;
-											}
-											if ($train->stat_basic==5){
-												$atas++;
-											}
-											if ($train->stat_cont==5){
-												$atas++;
-											}
-
-											if ($train->stat_human!=0){
-												$bawah++;
-											}
-											if ($train->stat_cas!=0){
-												$bawah++;
-											}
-											if ($train->stat_fts!=0){
-												$bawah++;
-											}
-											if ($train->stat_sms!=0){
-												$bawah++;
-											}
-											if ($train->stat_ewis!=0){
-												$bawah++;
-											}
-											if ($train->stat_module!=0){
-												$bawah++;
-											}
-											if ($train->stat_gqs!=0){
-												$bawah++;
-											}
-											if ($train->stat_batk!=0){
-												$bawah++;
-											}
-											if ($train->stat_basic!=0){
-												$bawah++;
-											}
-											if ($train->stat_cont!=0){
-												$bawah++;
-											}
-
-											$total=($atas/$bawah)*100;
-											$total = number_format($total, 2, '.', '');
-
-
-											?>
-											<td><p class="demo">
-												<div class="progress">
-													<div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $total;?>%" aria-valuenow="<?php echo $total;?>" aria-valuemin="0" aria-valuemax="100"><?php echo $total;?>%</div>
-												</div></p>
-											</td>
-											<td><a href="edit_training/<?php echo $train->no_peg;?>"><i class="la la-edit" style="font-size:20px"></i></a></td>
-										</tr>
-									<?php }
-									?>
-								</tbody>
-							</table>
+												<td><a href="edit_training/<?php echo $train->no_peg;?>"><i class="la la-edit" style="font-size:20px"></i></a></td>
+											</tr>
+										<?php }
+										?>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>

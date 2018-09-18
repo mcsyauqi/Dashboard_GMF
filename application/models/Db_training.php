@@ -1,6 +1,6 @@
 <?php
+$connect = mysqli_connect('localhost','root','','db_gmf');
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Db_training extends CI_Model{
 	// public function __construct()
 	// {
@@ -39,6 +39,10 @@ class Db_training extends CI_Model{
 
 	public function update_training($data,$id){
 		$this->db->where('no_peg', $id)->update('training', $data);
+	}
+
+	public function update_due($id,$due){
+		$this->db->where('no_peg', $id)->update('training', $due);
 	}
 
 	public function delete_training($id){

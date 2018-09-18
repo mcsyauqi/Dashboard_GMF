@@ -464,7 +464,7 @@ $sisa_training_comp=100-$training_comp;
         dataLabels: {
           enabled: false
         }
-      }]
+      }],
     });
   </script>
 </div>
