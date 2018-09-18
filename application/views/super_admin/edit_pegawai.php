@@ -110,7 +110,7 @@ include 'navbar.php';
 								<input type="date" class="form-control form-control" id="defaultInput" name="tgl_lahir" value="<?php echo $peg->tgl_lahir;?>">
 							</div>
 							<div class="card-action">
-								<button class="btn btn-success">Save</button>
+								<button class="btn btn-success" style="margin-left: 1%">Save</button>
 								
 								<a href="<?php echo site_url('Pegawai/pegawai_super')?>" class="btn btn-danger">Cancel</a>
 							</div>

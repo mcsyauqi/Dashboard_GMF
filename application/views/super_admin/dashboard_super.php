@@ -306,6 +306,7 @@ $sisa_training_comp=100-$training_comp;
     },
     series: [{
       name: 'Population',
+      color:'#8085e9',
       data: [
       ['0-5 Tahun', <?php echo $masa0; ?>],
       ['6-10 Tahun', <?php echo $masa6; ?>],
@@ -458,6 +459,7 @@ $sisa_training_comp=100-$training_comp;
       },
       series: [{
         name: 'Kelompok usia kerja',
+        color:'#39a1a0',
         data: [<?php echo $baby?>, <?php echo $gen_x?>, <?php echo $gen_y?>, <?php echo $gen_z?>],
         dataLabels: {
           enabled: false

@@ -6143,17 +6143,17 @@ body {
 }
 
 .btn-primary {
-  background: #1D62F0 !important;
-  border-color: #1D62F0 !important;
+  background: #222d32 !important;
+  border-color: #222d32 !important;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:disabled {
-  background: #1D62F0 !important;
-  border-color: #1D62F0 !important;
+  background: #222d32!important;
+  border-color: #222d32 !important;
 }
 
 .btn-info {
-  background: #23CCEF !important;
-  border-color: #23CCEF !important;
+  background: #222d32 !important;
+  border-color: #222d32 !important;
 }
 .btn-info:hover, .btn-info:focus, .btn-info:disabled {
   background: #23CCEF;

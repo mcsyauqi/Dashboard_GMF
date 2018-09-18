@@ -209,7 +209,7 @@ g.highcharts-series,
 /* Series options */
 /* Default colors */
 .highcharts-color-0 {
-  fill: #7cb5ec;
+  fill: #000;
   stroke: #7cb5ec;
 }
 
