@@ -141,7 +141,14 @@ $total_peg = mysqli_num_rows($peg);
 											$due = preg_replace($pattern,'',$train->due_cas);
 											$cek = $due - $sekarang; 
 											$done_bener = strtotime($train->done_cas);
+
+											$date = new DateTime($train->due_cas);
+											$now = new DateTime();
+											$interval = $date->diff($now);
+
+											//echo $interval->days;
 											?>
+
 
 											<?php if ($done_bener!=0000-00-00) { ?>
 												
@@ -150,13 +157,12 @@ $total_peg = mysqli_num_rows($peg);
 													<?php echo date("d-M-Y",$done_bener);?></span></td> 
 												<?php
 												}
-
 												elseif ($cek >= 0) { ?>
-													<td><span class="tipe1"><?php $done_bener = strtotime($train->done_cas); ?>
+													<td ><span class="tipe1"><?php $done_bener = strtotime($train->done_cas); ?>
 													<?php echo date("d-M-Y",$done_bener);?></span></td> 
 												<?php } 
 												else { ?>
-													<td><span class="tipe2"><?php $done_bener = strtotime($train->done_cas); 
+													<td ><span class="tipe2"><?php $done_bener = strtotime($train->done_cas); 
 													echo date("d-M-Y",$done_bener);?></span></td> 
 
 												<?php } ?>
