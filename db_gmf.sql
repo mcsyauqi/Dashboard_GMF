@@ -31,10 +31,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `pegawai` (
   `no_peg` int(10) NOT NULL,
   `nama_peg` varchar(50) NOT NULL,
-  `dinas` enum('JKTTE','JKTTGW') NOT NULL DEFAULT 'JKTTE',
-  `bidang` enum('JKTTEA','JKTTEC','JKTTED','JKTTEJ','JKTTEL','JKTTEN','JKTTEQ','JKTTER','JKTTEX','JKTTEZ') NOT NULL,
-  `unit` enum('TEA-1','TEA-2','TEA-3','TEA-4','TEC-1','TED-1','TED-2','TED-3','TED-4','TED-5','TEL-1','TEL-2','TER-1','TER-2','TER-3','TER-4','TER-5') NOT NULL,
-  `jabatan` enum('Development Engineer','Engineering Expert','General Manager','Manager','Secretary','Senior Aircraft Data Officer','Senior Development Engineer','Senior Technical Publication Officer','Technical Publication Officer','Trainee for Development Engineer','Vice President') NOT NULL,
+  `dinas` enum('AA','BB') NOT NULL DEFAULT 'CC',
+  `bidang` enum('A','B','C','D','E','F','G','H','I','J') NOT NULL,
+  `unit` enum('A1','B1','C1','D1','E1','D1','E1','F1','G1','H1','I1','J1','K1','L1','M1','N1','O1') NOT NULL,
+  `jabatan` enum('1A','1B','1C','1D','1E','1F','1G','1H','1I','1J') NOT NULL,
   `pendidikan` varchar(50) NOT NULL DEFAULT '-',
   `tgl_masuk` date NOT NULL,
   `tgl_lahir` date NOT NULL
@@ -45,8 +45,8 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`no_peg`, `nama_peg`, `dinas`, `bidang`, `unit`, `jabatan`, `pendidikan`, `tgl_masuk`, `tgl_lahir`) VALUES
-(111111, 'GMF', '', '', 'TEC-1', 'Vice President', '-', '2017-01-01', '0000-00-00'),
-(222222, 'Ahmad Thariq Syauqi', '', '', 'TER-1', 'General Manager', 'S1 Teknologi Informasi', '2018-01-01', '0000-00-00');
+(111111, 'GMF', '', '', 'C', 'A1', '-', '2017-01-01', '0000-00-00'),
+(222222, 'Ahmad Thariq Syauqi', '', '', 'C1', 'A2', 'S1 Teknologi Informasi', '2018-01-01', '0000-00-00');
 
 -- --------------------------------------------------------
 
